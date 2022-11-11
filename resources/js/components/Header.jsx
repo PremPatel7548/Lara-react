@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {BrowserRouter,Routes,Link,Route} from 'react-router-dom';
 import InsertForm from './InsertForm';
 import Home  from './Home';
+import Customers from './Customers';
 
 class Header extends Component {
     render(){
@@ -22,6 +23,9 @@ class Header extends Component {
                         <li className="nav-item">
                             <Link className="nav-link" to="/insertform">Form</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/customers">Customers</Link>
+                        </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -32,6 +36,7 @@ class Header extends Component {
             <Routes>
             <Route exact path="/Home" element={<Home />}/>      
             <Route exact path="/insertform" element={<InsertForm />}/>      
+            <Route exact path="/customers" element={<Customers />}/>      
             </Routes>
             </BrowserRouter>
         );
