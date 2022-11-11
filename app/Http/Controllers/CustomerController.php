@@ -10,7 +10,7 @@ class CustomerController extends Controller
     public function add(Request $request)
     {
         $customer = New customer;
-        $customer->custName=$request['name']; 
+        $customer->custName=$request['name'];
         $customer->City=$request['city'];
         $customer->save();
     }
@@ -18,5 +18,20 @@ class CustomerController extends Controller
     {
         $cust=customer::all();
         return json_encode($cust);
+    }
+
+    public function delete($id)
+    {
+        $customer = customer::find($id);
+        $customer->delete();
+    }
+
+    public function edit($id)
+    {
+        $customer = customer::find($id);
+
+        return response()->json([
+            'customer' => $customer,
+        ]);
     }
 }
