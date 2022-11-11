@@ -24,3 +24,6 @@ Route::get('/customers',[CustomerController::class,'table']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+route::delete('delete/{id}',[CustomerController::class,'delete']);
+route::get('/edit/{id}',[CustomerController::class,'edit']);

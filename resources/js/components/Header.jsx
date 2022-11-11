@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
-import {BrowserRouter,Routes,Link,Route} from 'react-router-dom';
+import {BrowserRouter,Routes,Link,Route, matchPath,useParams} from 'react-router-dom';
 import InsertForm from './InsertForm';
 import Home  from './Home';
 import Customers from './Customers';
+import Edit from './Edit';
 
 class Header extends Component {
     render(){
@@ -37,6 +38,8 @@ class Header extends Component {
             <Route exact path="/Home" element={<Home />}/>
             <Route exact path="/insertform" element={<InsertForm />}/>
             <Route exact path="/customers" element={<Customers />}/>
+            <Route exact path="/edit/:id" element={<Edit />}/>
+            {/* <Route exact path="/edit/:id" element={(matchProps)=> <Edit {...matchProps}{...this.props} /> }/> */}
             </Routes>
             </BrowserRouter>
         );
