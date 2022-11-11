@@ -34,9 +34,9 @@ class Header extends Component {
                </nav>
             </div>
             <Routes>
-            <Route exact path="/Home" element={<Home />}/>      
-            <Route exact path="/insertform" element={<InsertForm />}/>      
-            <Route exact path="/customers" element={<Customers />}/>      
+            <Route exact path="/Home" element={<Home />}/>
+            <Route exact path="/insertform" element={<InsertForm />}/>
+            <Route exact path="/customers" element={<Customers />}/>
             </Routes>
             </BrowserRouter>
         );

@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::post('/add', [CustomerController::class,'add']);
-
+Route::get('/customers',[CustomerController::class,'table']);
 
 Auth::routes();
 

@@ -14,4 +14,9 @@ class CustomerController extends Controller
         $customer->City=$request['city'];
         $customer->save();
     }
+    public function table()
+    {
+        $cust=customer::all();
+        return json_encode($cust);
+    }
 }

@@ -50,7 +50,7 @@ class InsertForm extends Component {
     {
         return (
             <div className="container">
-                <form action="" method="post" className="col-md-5" onSubmit={this.onSubmit}>
+                <form action="" method="post" className="col-md-5 mt-4 bg-dark text-white" onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Name :- </label>
                         <input type="text" className="form-control" name="name" id="n1" onChange={this.onChangename} value={this.state.name}/>
