@@ -7070,29 +7070,87 @@ var InsertForm = /*#__PURE__*/function (_Component) {
   _inherits(InsertForm, _Component);
   var _super = _createSuper(InsertForm);
   function InsertForm() {
+    var _this;
     _classCallCheck(this, InsertForm);
-    return _super.apply(this, arguments);
+    _this = _super.call(this);
+    _this.onChangename = _this.onChangename.bind(_assertThisInitialized(_this));
+    _this.onChangeCity = _this.onChangeCity.bind(_assertThisInitialized(_this));
+    _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this));
+    _this.state = {
+      name: '',
+      city: ''
+    };
+    return _this;
   }
   _createClass(InsertForm, [{
+    key: "onChangename",
+    value: function onChangename(e) {
+      this.setState({
+        name: e.target.value
+      });
+    }
+  }, {
+    key: "onChangeCity",
+    value: function onChangeCity(e) {
+      this.setState({
+        city: e.target.value
+      });
+    }
+  }, {
+    key: "onSubmit",
+    value: function onSubmit(e) {
+      e.preventDefault();
+      var user = {
+        name: this.state.name,
+        city: this.state.city
+      };
+      // const user = "name="+this.state.name+"&city="+this.state.city;
+      //var qs = require 'qs';
+
+      // axios.post('http://127.0.0.1:8000/add',user)
+      // .then(res=>console.log(res.user));
+
+      //axios.post('http://127.0.0.1:8000/add', qs.stringfy(user))
+      axios.post('http://127.0.0.1:8000/add', user).then(alert("Inserted"));
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "row justify-content-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-md-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "card",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "card-header",
-                children: "Insert Component"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "card-body",
-                children: "Insert component!"
-              })]
-            })
-          })
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+          action: "",
+          method: "post",
+          className: "col-md-5",
+          onSubmit: this.onSubmit,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: "Name :- "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text",
+              className: "form-control",
+              name: "name",
+              id: "n1",
+              onChange: this.onChangename,
+              value: this.state.name
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: "City :- "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text",
+              className: "form-control",
+              name: "city",
+              id: "p1",
+              onChange: this.onChangeCity,
+              value: this.state.city
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            className: "btn btn-outline-primary",
+            children: "Add"
+          })]
         })
       });
     }
