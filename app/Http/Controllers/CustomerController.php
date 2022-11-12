@@ -30,8 +30,7 @@ class CustomerController extends Controller
     {
         $customer = customer::find($id);
 
-        return response()->json([
-            'customer' => $customer,
-        ]);
+        return $customer;
+        
     }
 }
