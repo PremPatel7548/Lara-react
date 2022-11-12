@@ -11,7 +11,6 @@ class InsertForm extends Component {
             city:'',
         };
     }
-
     onChangename(e)
     {
         this.setState({
@@ -42,7 +41,7 @@ class InsertForm extends Component {
 
         //axios.post('http://127.0.0.1:8000/add', qs.stringfy(user))
         axios.post('http://127.0.0.1:8000/add', user)
-        .then(alert("Inserted"));
+        .then(alert('Customer Record Inserted'));
 
     }
 
@@ -55,7 +54,7 @@ class InsertForm extends Component {
                         <label>Name :- </label>
                         <input type="text" className="form-control" name="name" id="n1" onChange={this.onChangename} value={this.state.name}/>
                     </div>
-    
+
                     <div className="form-group">
                         <label>City :- </label>
                         <input type="text" className="form-control" name="city" id="p1" onChange={this.onChangeCity}  value={this.state.city}/>
@@ -66,6 +65,7 @@ class InsertForm extends Component {
         );
     }
 }
+
 
 export default InsertForm;
 

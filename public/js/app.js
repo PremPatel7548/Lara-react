@@ -6949,18 +6949,18 @@ function Edit(props) {
     city = _useState4[0],
     setCity = _useState4[1];
   var listParam = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
   var handleUpdate = function handleUpdate() {
     var data = {
       name: name,
       city: city
     };
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/edit/' + listParam.id, data).then(function (Response) {
-      alert('Record Updated');
-      // setName(Response.data.name)
-      // setCity(Response.data.city)
-      // console.log(Response);
-      // setData({name:Response.data.custName,city:Response.data.City});
-    });
+    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/edit/' + listParam.id, data).then(navigate('/customers')
+    // setName(Response.data.name)
+    // setCity(Response.data.city)
+    // console.log(Response);
+    // setData({name:Response.data.custName,city:Response.data.City});
+    );
   };
 
   // console.log(listParam.id);
@@ -7014,6 +7014,7 @@ function Edit(props) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         className: "btn btn-outline-primary",
+        onClick: handleUpdate,
         children: "Update"
       })]
     })
@@ -7359,7 +7360,7 @@ var InsertForm = /*#__PURE__*/function (_Component) {
       // .then(res=>console.log(res.user));
 
       //axios.post('http://127.0.0.1:8000/add', qs.stringfy(user))
-      axios.post('http://127.0.0.1:8000/add', user).then(alert("Inserted"));
+      axios.post('http://127.0.0.1:8000/add', user).then(alert('Customer Record Inserted'));
     }
   }, {
     key: "render",

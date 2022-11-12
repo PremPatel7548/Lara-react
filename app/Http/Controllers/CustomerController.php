@@ -31,6 +31,15 @@ class CustomerController extends Controller
         $customer = customer::find($id);
 
         return $customer;
-        
+
+    }
+
+    public function update(Request $data,$id)
+    {
+        $customer = customer::find($id);
+
+        $customer->custName = $data['name'];
+        $customer->City = $data['city'];
+        $customer->save();
     }
 }

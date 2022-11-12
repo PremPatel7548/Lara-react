@@ -1,6 +1,6 @@
 import React,{Component,useState,useEffect} from 'react';
 import axios from 'axios';
-import {useParams,Link} from 'react-router-dom';
+import {useParams,Link,useNavigate} from 'react-router-dom';
 
 // class Edit extends Component {
 //     constructor(props){
@@ -79,7 +79,7 @@ import {useParams,Link} from 'react-router-dom';
 // }
 
 function Edit(props)
-{    
+{
     // const [data, setData] = useState([])
     const [name, setName] = useState('')
     const [city, setCity] = useState('')
@@ -88,19 +88,21 @@ function Edit(props)
 
     let listParam  = useParams();
 
+    const navigate =useNavigate();
+
+
     const handleUpdate = () => {
         const data = {
             name: name,
             city: city
         }
-        axios.post('http://127.0.0.1:8000/edit/'+listParam.id, data)
-        .then(Response => {
-            alert('Record Updated');
+        axios.post('http://127.0.0.1:8000/edit/'+listParam.id,data)
+        .then(navigate('/customers')
             // setName(Response.data.name)
             // setCity(Response.data.city)
             // console.log(Response);
             // setData({name:Response.data.custName,city:Response.data.City});
-        });
+        );
     }
 
     // console.log(listParam.id);
@@ -129,10 +131,10 @@ function Edit(props)
     // console.log(this.props);
 
 
-   
+
         return (
             <div className="container">
-                <form action="" method="post" className="col-md-5 mt-4 bg-dark text-white">
+                <form action="" method="post" className="col-md-5 mt-4 bg-dark text-white" >
                     <div className="form-group">
                         <label>Name :- </label>
                         <input type="text" className="form-control" name="name" id="n1" value={name} onChange={handleNameChange}/>
@@ -142,11 +144,11 @@ function Edit(props)
                         <label>City :- </label>
                         <input type="text" className="form-control" name="city" id="p1" value={city} onChange={handleCityChange}/>
                     </div>
-                    <button className="btn btn-outline-primary">Update</button>
+                    <button className="btn btn-outline-primary" onClick={handleUpdate}>Update</button>
                 </form>
             </div>
         );
-    
+
 }
 
 

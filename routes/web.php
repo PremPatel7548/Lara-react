@@ -27,3 +27,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 route::delete('delete/{id}',[CustomerController::class,'delete']);
 route::get('/edit/{id}',[CustomerController::class,'edit']);
+route::post('/edit/{id}',[CustomerController::class,'update']);
