@@ -7025,7 +7025,7 @@ var Header = /*#__PURE__*/function (_Component) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "container",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("nav", {
-            className: "navbar navbar-expand-sm navbar-light bg-dark",
+            className: "navbar navbar-expand-sm navbar-light bg-dark text-white",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
               className: "navbar-brand",
               href: "#",
