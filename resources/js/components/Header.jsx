@@ -11,7 +11,7 @@ class Header extends Component {
             <BrowserRouter>
             <div className="container">
                <nav className="navbar navbar-expand-sm navbar-light bg-dark text-white">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <a className="navbar-brand text-white" href="#">Navbar</a>
                 <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -19,13 +19,13 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="collapsibleNavId">
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className="nav-item active">
-                            <Link className="nav-link" to="/home">Home <span className="sr-only">(current)</span></Link>
+                            <Link className="nav-link text-white" to="/home">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/insertform">Form</Link>
+                            <Link className="nav-link text-white" to="/insertform">Form</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/customers">Customers</Link>
+                            <Link className="nav-link text-white" to="/customers">Customers</Link>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
