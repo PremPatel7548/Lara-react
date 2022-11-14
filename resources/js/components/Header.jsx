@@ -22,9 +22,6 @@ class Header extends Component {
                             <Link className="nav-link text-white" to="/home">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="/insertform">Form</Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link text-white" to="/customers">Customers</Link>
                         </li>
                     </ul>
@@ -36,9 +33,9 @@ class Header extends Component {
             </div>
             <Routes>
             <Route exact path="/Home" element={<Home />}/>
-            <Route exact path="/insertform" element={<InsertForm />}/>
             <Route exact path="/customers" element={<Customers />}/>
             <Route exact path="/edit/:id" element={<Edit />}/>
+            <Route exact path="/insert" element={<InsertForm />}/>
             {/* <Route exact path="/edit/:id" element={(matchProps)=> <Edit {...matchProps}{...this.props} /> }/> */}
             </Routes>
             </BrowserRouter>

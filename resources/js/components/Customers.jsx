@@ -41,6 +41,11 @@ class Customers extends Component {
             <table className="table bg-dark text-white mt-4">
                 <thead>
                     <tr>
+                        <th>
+                            <Link className="btn btn-outline-primary" to="/insert">Add</Link>
+                        </th>
+                    </tr>
+                    <tr>
                         <th>Customer Id</th>
                         <th>Customer Name</th>
                         <th>City</th>

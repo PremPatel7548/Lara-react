@@ -78,7 +78,7 @@ import {useParams,Link,useNavigate} from 'react-router-dom';
 //     }
 // }
 
-function Edit(props)
+function Edit()
 {
     // const [data, setData] = useState([])
     const [name, setName] = useState('')
