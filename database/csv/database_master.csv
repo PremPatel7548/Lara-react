@@ -84,7 +84,7 @@ zip,type,primary_city,state,county,timezone,area_codes,latitude,longitude,irs_es
 35049,STANDARD,Cleveland,AL,Blount County,America/Chicago,205,33.99,-86.57,3420
 35051,STANDARD,Columbiana,AL,Shelby County,America/Chicago,205,33.17,-86.6,7150
 35053,STANDARD,Crane Hill,AL,Cullman County,America/Chicago,256,34.07,-87.05,2350
-35054,STANDARD,Cropwell,AL,St. Clair County,America/Chicago,"256,205",33.5,-86.34,3740
+35054,STANDARD,Cropwell,AL,St. Clair County,America/Chicago,256,33.5,-86.34,3740
 35055,STANDARD,Cullman,AL,Cullman County,America/Chicago,256,34.17,-86.83,16570
 35057,STANDARD,Cullman,AL,Cullman County,America/Chicago,256,34.18,-86.93,11630
 35058,STANDARD,Cullman,AL,Cullman County,America/Chicago,256,34.23,-86.74,8860
