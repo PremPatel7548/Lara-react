@@ -7496,7 +7496,29 @@ function Header() {
     _useState8 = _slicedToArray(_useState7, 2),
     cpassword = _useState8[0],
     setcpassword = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState10 = _slicedToArray(_useState9, 2),
+    msg = _useState10[0],
+    setMsg = _useState10[1];
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  var validate = function validate() {
+    // if(name =='' || email =='' ||  password =='' || cpassword == '')
+    // {
+    //     setMsg('Please Full Fill the Form');
+    //     navigate('/signup');
+    // }
+    // else
+    // {
+    //     HandleInsert();
+    // }
+
+    if (password == cpassword) {
+      HandleInsert();
+    } else {
+      alert('Passwords Do not Match');
+      navigate('/');
+    }
+  };
   var HandleInsert = function HandleInsert() {
     var data = {
       name: name,
@@ -7519,10 +7541,13 @@ function Header() {
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-      "class": "bg-dark text-white mt-4",
+      className: "col-md-5 mt-4 bg-dark text-white SignupForm",
       method: "post",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        "class": "form-group ",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+        className: "text-white my-2",
+        children: "SignUp"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        "class": "form-group my-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
           "for": "Username",
           children: "Username"
@@ -7531,7 +7556,8 @@ function Header() {
           "class": "form-control",
           name: "name",
           onChange: changeName,
-          value: name
+          value: name,
+          required: true
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         "class": "form-group",
@@ -7555,7 +7581,8 @@ function Header() {
           "class": "form-control",
           name: "password",
           onChange: changePassword,
-          value: password
+          value: password,
+          required: true
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         "class": "form-group",
@@ -7567,11 +7594,12 @@ function Header() {
           "class": "form-control",
           name: "cpassword",
           onChange: changeCpassword,
-          value: cpassword
+          value: cpassword,
+          required: true
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-        "class": "btn btn-success",
-        onClick: HandleInsert,
+        "class": "btn btn-success my-3",
+        onClick: validate,
         children: "Sign Up"
       })]
     })

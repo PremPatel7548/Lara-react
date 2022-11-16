@@ -8,8 +8,32 @@ function Header() {
     const [email, setEmail] = useState('')
     const [password, setpassword] = useState('')
     const [cpassword, setcpassword] = useState('')
+    const [msg,setMsg] = useState('');
 
     const navigate = useNavigate();
+
+    const validate = () =>{
+
+        // if(name =='' || email =='' ||  password =='' || cpassword == '')
+        // {
+        //     setMsg('Please Full Fill the Form');
+        //     navigate('/signup');
+        // }
+        // else
+        // {
+        //     HandleInsert();
+        // }
+
+        if(password == cpassword)
+        {
+            HandleInsert();
+        }
+        else
+        {
+            alert('Passwords Do not Match');
+            navigate('/');
+        }
+    }
 
     const HandleInsert = () => {
         const data = {
@@ -38,11 +62,13 @@ function Header() {
 
     return (
         <div>
-            <form class="bg-dark text-white mt-4" method='post'>
+            <form className="col-md-5 mt-4 bg-dark text-white SignupForm" method='post'>
 
-                <div class="form-group ">
+                <h2 className='text-white my-2'>SignUp</h2>
+
+                <div class="form-group my-2">
                     <label for="Username">Username</label>
-                    <input type="text" class="form-control" name="name" onChange={changeName} value={name} />
+                    <input type="text" class="form-control" name="name" onChange={changeName} value={name} required={true}/>
                 </div>
 
                 <div class="form-group">
@@ -52,15 +78,15 @@ function Header() {
 
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input type="password" class="form-control" name="password" onChange={changePassword} value={password} />
+                    <input type="password" class="form-control" name="password" onChange={changePassword} value={password} required={true}/>
                 </div>
 
                 <div class="form-group">
                     <label for="">Confirm Password</label>
-                    <input type="password" class="form-control" name="cpassword" onChange={changeCpassword} value={cpassword} />
+                    <input type="password" class="form-control" name="cpassword" onChange={changeCpassword} value={cpassword} required={true}/>
                 </div>
 
-                <button class="btn btn-success" onClick={HandleInsert}>Sign Up</button>
+                <button class="btn btn-success my-3" onClick={validate}>Sign Up</button>
             </form>
         </div>
     );
