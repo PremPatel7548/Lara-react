@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\usercontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 route::delete('delete/{id}',[CustomerController::class,'delete']);
 route::get('/edit/{id}',[CustomerController::class,'edit']);
 route::post('/edit/{id}',[CustomerController::class,'update']);
+
+route::post('/signup',[usercontroller::class,'signup']);
