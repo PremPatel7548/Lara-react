@@ -2,44 +2,129 @@
 
 namespace App\Http\Controllers;
 use App\Models\customer;
+use App\Models\zipcodesearch;
+use App\Models\realtorScrapedDump;
 
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    public function add(Request $request)
+    public function insertmaster(Request $request)
     {
-        $customer = New customer;
-        $customer->custName=$request['name'];
-        $customer->City=$request['city'];
+        $customer = New zipcodesearch;
+        $customer->zip=$request['zip'];
+        $customer->type=$request['typemaster'];
+        $customer->primary_city=$request['primary_city'];
+        $customer->state=$request['state'];
+        $customer->county=$request['county'];
+        $customer->timezone=$request['timezone'];
+        $customer->area_code=$request['area_code'];
+        $customer->latitude=$request['latitude'];
+        $customer->longitude=$request['longitude'];
+        $customer->irs_estimated_population=$request['irs_estimated_population'];
+
+        //print_r($request->all());
+
         $customer->save();
     }
-    public function table()
+    public function zipmaster()
     {
-        $cust=customer::all();
+        $cust=zipcodesearch::all();
         return json_encode($cust);
     }
 
     public function delete($id)
     {
-        $customer = customer::find($id);
+        $customer = zipcodesearch::find($id);
         $customer->delete();
     }
 
     public function edit($id)
     {
-        $customer = customer::find($id);
+        $customer = zipcodesearch::find($id);
 
         return $customer;
 
     }
 
-    public function update(Request $data,$id)
+    public function update(Request $request,$id)
     {
-        $customer = customer::find($id);
+        $customer = zipcodesearch::find($id);
 
-        $customer->custName = $data['name'];
-        $customer->City = $data['city'];
+        // $customer->custName = $data['name'];
+        // $customer->City = $data['city'];
+        // $customer->save();
+
+        $customer->zip=$request['zip'];
+        $customer->type=$request['typemaster'];
+        $customer->primary_city=$request['primary_city'];
+        $customer->state=$request['state'];
+        $customer->county=$request['county'];
+        $customer->timezone=$request['timezone'];
+        $customer->area_code=$request['area_code'];
+        $customer->latitude=$request['latitude'];
+        $customer->longitude=$request['longitude'];
+        $customer->irs_estimated_population=$request['irs_estimated_population'];
+
         $customer->save();
+    }
+
+
+    public function zipchild()
+    {
+        $cust=realtorScrapedDump::all();
+        return json_encode($cust);
+    } 
+
+    public function insertchild(Request $request)
+    {
+        $customer = New realtorScrapedDump;
+        $customer->Zip=$request['Zip'];
+        $customer->City=$request['City'];
+        $customer->State=$request['State'];
+        $customer->HomeSale=$request['HomeSale'];
+        $customer->HomeBaseValue=$request['HomeBaseValue'];
+        $customer->HomeMaxValue=$request['HomeMaxValue'];
+        $customer->MedianListPrice=$request['MedianListPrice'];
+        $customer->MedianSoldPrice=$request['MedianSoldPrice'];
+        $customer->Year=$request['Year'];
+        //print_r($request->all());
+
+        $customer->save();
+    }
+
+    public function editchild($id)
+    {
+        $customer = realtorScrapedDump::find($id);
+
+        return $customer;
+
+    }
+
+    public function updatechild(Request $request,$id)
+    {
+        $customer = realtorScrapedDump::find($id);
+
+        // $customer->custName = $data['name'];
+        // $customer->City = $data['city'];
+        // $customer->save();
+        $customer->Zip=$request['Zip'];
+        $customer->City=$request['City'];
+        $customer->State=$request['State'];
+        $customer->HomeSale=$request['HomeSale'];
+        $customer->HomeBaseValue=$request['HomeBaseValue'];
+        $customer->HomeMaxValue=$request['HomeMaxValue'];
+        $customer->MedianListPrice=$request['MedianListPrice'];
+        $customer->MedianSoldPrice=$request['MedianSoldPrice'];
+        $customer->Year=$request['Year'];
+        //print_r($request->all());
+
+        $customer->save();
+    }
+
+    public function deletechild($id)
+    {
+        $customer = realtorScrapedDump::find($id);
+        $customer->delete();
     }
 }

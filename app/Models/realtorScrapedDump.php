@@ -9,6 +9,7 @@ class realtorScrapedDump extends Model
 {
     use HasFactory;
     protected $table="realtor_scraped_dumps";
+    protected $primaryKey="Zip";
     protected $fillable=[
         'Zip',
         'City',

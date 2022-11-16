@@ -9,6 +9,7 @@ class zipcodesearch extends Model
 {
     use HasFactory;
     protected $table="zipcodesearches";
+    protected $primaryKey="zip";
     protected $fillable=[
         'zip',
         'type',

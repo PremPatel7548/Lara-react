@@ -68,67 +68,62 @@ import {useNavigate} from 'react-router-dom';
 //     }
 // }
 
-function InsertForm() {
-    const [zip,setZip] = useState('')
-    const [typemaster,setTypemaster] = useState('')
-    const [primary_city,setPrimary_city] = useState('')
-    const [state,setState] = useState('')
-    const [county,setCounty] = useState('')
-    const [timezone,setTimezone] = useState('')
-    const [area_code,setArea_code] = useState('')
-    const [latitude,setLatitude] = useState('')
-    const [longitude,setLongitude] = useState('')
-    const [irs_estimated_population,setIrs_estimated_population] = useState('')
+function InsertChild() {
+    const [Zip,setZip] = useState('')
+    const [City,setCity] = useState('')
+    const [State,setState] = useState('')
+    const [HomeSale,setHomeSale] = useState('')
+    const [HomeBaseValue,setHomeBaseValue] = useState('')
+    const [HomeMaxValue,setHomeMaxValue] = useState('')
+    const [MedianListPrice,setMedianListPrice] = useState('')
+    const [MedianSoldPrice,setMedianSoldPrice] = useState('')
+    const [Year,setYear] = useState('')
 
     const navigate = useNavigate();
 
     const HandleInsert = ()=>{
         const data = {
-            zip:zip,
-            typemaster:typemaster,
-            primary_city:primary_city,
-            state:state,
-            county:county,
-            timezone:timezone,
-            area_code:area_code,
-            latitude:latitude,
-            longitude:longitude,
-            irs_estimated_population:irs_estimated_population
+            Zip:Zip,
+            City:City,
+            State:State,
+            HomeSale:HomeSale,
+            HomeBaseValue:HomeBaseValue,
+            HomeMaxValue:HomeMaxValue,
+            MedianListPrice:MedianListPrice,
+            MedianSoldPrice:MedianSoldPrice,
+            Year:Year
         }
 
-        axios.post('http://127.0.0.1:8000/insertmaster',data)
-        .then(navigate('/zipmaster'));
+        axios.post('http://127.0.0.1:8000/insertchild',data)
+        .then(navigate('/zipchild'));
     }
 
     const changeZip = (e) =>{
         setZip(e.target.value);
     }
-    const changeTypemaster = (e) =>{
-        setTypemaster(e.target.value);
-    }
-    const changePrimary_city = (e) =>{
-        setPrimary_city(e.target.value);
+    const changeCity = (e) =>{
+        setCity(e.target.value);
     }
     const changeState = (e) =>{
         setState(e.target.value);
     }
-    const changeCounty = (e) =>{
-        setCounty(e.target.value);
+    const changeHomeSale = (e) =>{
+        setHomeSale(e.target.value);
     }
-    const changeTimezone = (e) =>{
-        setTimezone(e.target.value);
+    const changeHomeBaseValue = (e) =>{
+        setHomeBaseValue(e.target.value);
     }
-    const changeArea_code = (e) =>{
-        setArea_code(e.target.value);
+    const changeHomeMaxValue = (e) =>{
+        setHomeMaxValue(e.target.value);
     }
-    const changeLatitude = (e) =>{
-        setLatitude(e.target.value);
+    const changeMedianListPrice = (e) =>{
+        setMedianListPrice(e.target.value);
     }
-    const changeLongitude = (e) =>{
-        setLongitude(e.target.value);
+    const changeMedianSoldPrice = (e) =>{
+        setMedianSoldPrice(e.target.value);
     }
-    const changeIrs_estimated_population = (e) =>{
-        setIrs_estimated_population(e.target.value);
+    const changeYear = (e) =>{
+        setYear(e.target.value);
     }
 
     return (
@@ -136,52 +131,47 @@ function InsertForm() {
             <form action="" method="post" className="col-md-5 mt-4 bg-dark text-white">
                 <div className="form-group">
                     <label>Zip :- </label>
-                    <input type="text" className="form-control" name="zip" onChange={changeZip} value={zip}/>
+                    <input type="text" className="form-control" name="Zip" onChange={changeZip} value={Zip}/>
                 </div>
 
                 <div className="form-group">
-                    <label>Type :- </label>
-                    <input type="text" className="form-control" name="typemaster" onChange={changeTypemaster} value={typemaster}/>
+                    <label>City :- </label>
+                    <input type="text" className="form-control" name="City" onChange={changeCity} value={City}/>
                 </div>
                 
                 <div className="form-group">
-                    <label>Primary_city :- </label>
-                    <input type="text" className="form-control" name="primary_city" onChange={changePrimary_city} value={primary_city}/>
-                </div>
-
-                <div className="form-group">
                     <label>State :- </label>
-                    <input type="text" className="form-control" name="state" onChange={changeState} value={state}/>
+                    <input type="text" className="form-control" name="State" onChange={changeState} value={State}/>
                 </div>
 
                 <div className="form-group">
-                    <label>County :- </label>
-                    <input type="text" className="form-control" name="county" onChange={changeCounty} value={county}/>
+                    <label>HomeSale :- </label>
+                    <input type="text" className="form-control" name="HomeSale" onChange={changeHomeSale} value={HomeSale}/>
                 </div>
 
                 <div className="form-group">
-                    <label>Timezone :- </label>
-                    <input type="text" className="form-control" name="timezone" onChange={changeTimezone} value={timezone}/>
+                    <label>HomeBaseValue :- </label>
+                    <input type="text" className="form-control" name="HomeBaseValue" onChange={changeHomeBaseValue} value={HomeBaseValue}/>
                 </div>
 
                 <div className="form-group">
-                    <label>Area_code :- </label>
-                    <input type="text" className="form-control" name="area_code" onChange={changeArea_code} value={area_code}/>
+                    <label>HomeMaxValue :- </label>
+                    <input type="text" className="form-control" name="HomeMaxValue" onChange={changeHomeMaxValue} value={HomeMaxValue}/>
                 </div>
 
                 <div className="form-group">
-                    <label>Latitude :- </label>
-                    <input type="text" className="form-control" name="latitude" onChange={changeLatitude} value={latitude}/>
+                    <label>MedianListPrice :- </label>
+                    <input type="text" className="form-control" name="MedianListPrice" onChange={changeMedianListPrice} value={MedianListPrice}/>
                 </div>
 
                 <div className="form-group">
-                    <label>Longitude :- </label>
-                    <input type="text" className="form-control" name="longitude" onChange={changeLongitude} value={longitude}/>
+                    <label>MedianSoldPrice :- </label>
+                    <input type="text" className="form-control" name="MedianSoldPrice" onChange={changeMedianSoldPrice} value={MedianSoldPrice}/>
                 </div>
 
                 <div className="form-group">
-                    <label>Irs_estimated_population :- </label>
-                    <input type="text" className="form-control" name="irs_estimated_population" onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
+                    <label>Year :- </label>
+                    <input type="text" className="form-control" name="Year" onChange={changeYear} value={Year}/>
                 </div>
 
                 <button className="btn btn-outline-primary my-2" onClick={HandleInsert}>Add</button>
@@ -191,5 +181,5 @@ function InsertForm() {
 }
 
 
-export default InsertForm;
+export default InsertChild;
 

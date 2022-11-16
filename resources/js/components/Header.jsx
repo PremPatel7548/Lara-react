@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Routes, Link, Route, matchPath, useParams } from 'react-router-dom';
 import InsertForm from './InsertForm';
+import InsertChild from './InsertChild';
 import Home from './Home';
 import Customers from './Customers';
+import ChildCustomers from './ChildCustomers';
 import Edit from './Edit';
 import Signup from './Signup';
+import EditChild from './EditChild';
 
 class Header extends Component {
     render() {
@@ -23,7 +26,11 @@ class Header extends Component {
                                     <Link className="nav-link text-white" to="/home">Home <span className="sr-only">(current)</span></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link text-white" to="/customers">Customers</Link>
+                                    <Link className="nav-link text-white" to="/zipmaster">zipMaster</Link>
+                                </li>
+
+                                <li className="nav-item">
+                                    <Link className="nav-link text-white" to="/zipchild">zipChild</Link>
                                 </li>
                             </ul>
                             <div className="form-inline my-2 my-lg-0 mx-2">
@@ -35,9 +42,13 @@ class Header extends Component {
                 </div>
                 <Routes>
                     <Route exact path="/Home" element={<Home />} />
-                    <Route exact path="/customers" element={<Customers />} />
+                    <Route exact path="/zipmaster" element={<Customers />} />
+                    <Route exact path="/zipchild" element={<ChildCustomers />} />
+
                     <Route exact path="/edit/:id" element={<Edit />} />
-                    <Route exact path="/insert" element={<InsertForm />} />
+                    <Route exact path="/editchild/:id" element={<EditChild />} />
+                    <Route exact path="/insertmaster" element={<InsertForm />} />
+                    <Route exact path="/insertchild" element={<InsertChild />} />
                     <Route exact path="/signup" element={<Signup />}/>
                     {/* <Route exact path="/edit/:id" element={(matchProps)=> <Edit {...matchProps}{...this.props} /> }/> */}
                 </Routes>

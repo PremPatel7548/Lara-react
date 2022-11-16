@@ -7,14 +7,14 @@ class Customers extends Component {
     {
         super();
         this.state={
-            customers:[]
+            zipmasters:[]
         };
     }
 
     componentDidMount()
     {
-        axios.get("http://127.0.0.1:8000/customers")
-        .then(response=>{this.setState({customers:response.data});
+        axios.get("http://127.0.0.1:8000/zipmaster")
+        .then(response=>{this.setState({zipmasters:response.data});
     });
     }
 
@@ -23,14 +23,14 @@ class Customers extends Component {
         axios.delete('http://127.0.0.1:8000/delete/'+customer_id)
         .then(response=>{
 
-            var customers = this.state.customers;
+            var zipmasters = this.state.zipmasters;
 
-            for(var i=0;i<customers.length;i++)
+            for(var i=0;i<zipmasters.length;i++)
             {
-                if(customers[i].custID == customer_id)
+                if(zipmasters[i].zip == customer_id)
                 {
-                    customers.splice(i,1);
-                    this.setState({customers:customers});
+                    zipmasters.splice(i,1);
+                    this.setState({zipmasters:zipmasters});
                 }
             }
         });
@@ -42,25 +42,40 @@ class Customers extends Component {
                 <thead>
                     <tr>
                         <th>
-                            <Link className="btn btn-outline-primary" to="/insert">Add</Link>
+                            <Link className="btn btn-outline-primary" to="/insertmaster">Add</Link>
                         </th>
                     </tr>
                     <tr>
-                        <th>Customer Id</th>
-                        <th>Customer Name</th>
-                        <th>City</th>
+                        <th>zip</th>
+                        <th>type</th>
+                        <th>primary_city</th>
+                        <th>state</th>
+                        <th>county</th>
+                        <th>timezone</th>
+                        <th>area_code</th>
+                        <th>latitude</th>
+                        <th>longitude</th>
+                        <th>irs_estimated_population</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        this.state.customers.map(customer=>{
+                        this.state.zipmasters.map(zipmaster=>{
                             return(
                                 <tr>
-                                    <td>{customer.custID}</td>
-                                    <td>{customer.custName}</td>
-                                    <td>{customer.City}</td>
-                                    <td><Link class="btn btn-outline-warning" to={`/edit/${customer.custID}`}>Edit</Link>
-                                        <a href="#" onClick={this.onDelete.bind(this,customer.custID)}><button className="btn btn-outline-danger mx-2">Delete</button></a></td>
+                                    <td>{zipmaster.zip}</td>
+                                    <td>{zipmaster.type}</td>
+                                    <td>{zipmaster.primary_city}</td>
+                                    <td>{zipmaster.state}</td>
+                                    <td>{zipmaster.county}</td>
+                                    <td>{zipmaster.timezone}</td>
+                                    <td>{zipmaster.area_code}</td>
+                                    <td>{zipmaster.latitude}</td>
+                                    <td>{zipmaster.longitude}</td>
+                                    <td>{zipmaster.irs_estimated_population}</td>
+                                    <td><Link class="btn btn-outline-warning" to={`/edit/${zipmaster.zip}`}>Edit</Link>
+                                        <a href="#" onClick={this.onDelete.bind(this,zipmaster.zip)}><button className="btn btn-outline-danger mx-2">Delete</button></a></td>
                                 </tr>
                             )
                         })
