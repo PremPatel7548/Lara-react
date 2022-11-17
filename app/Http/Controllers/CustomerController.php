@@ -29,8 +29,10 @@ class CustomerController extends Controller
     }
     public function zipmaster()
     {
-        $cust=zipcodesearch::all();
-        return json_encode($cust);
+        $cust=zipcodesearch::paginate(30);
+        return $cust;
+        // $cust=realtorScrapedDump::all();
+        // return json_encode($cust);
     }
 
     public function delete($id)
@@ -72,8 +74,10 @@ class CustomerController extends Controller
 
     public function zipchild()
     {
-        $cust=realtorScrapedDump::all();
-        return json_encode($cust);
+        $cust=realtorScrapedDump::paginate(30);
+        return $cust;
+        // $cust=realtorScrapedDump::all();
+        // return json_encode($cust);
     } 
 
     public function insertchild(Request $request)
