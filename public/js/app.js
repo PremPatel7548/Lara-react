@@ -8056,14 +8056,11 @@ var Index = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "container",
+        className: "row justify-content-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "row justify-content-center",
+          className: "col-md-8",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            className: "col-md-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "card"
-            })
+            className: "card"
           })
         })]
       });
@@ -8815,32 +8812,35 @@ function Header() {
           type: "text",
           name: "name",
           placeholder: "Full name",
-          className: "text-dark"
+          className: "text-dark",
+          onChange: changeName,
+          value: name
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-          type: "text",
-          name: "name",
+          type: "email",
+          name: "email",
           placeholder: "Email",
-          className: "text-dark"
+          className: "text-dark",
+          onChange: changeEmail,
+          value: email
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-          type: "text",
-          name: "name",
-          placeholder: "Phone number",
-          className: "text-dark"
+          type: "password",
+          name: "password",
+          placeholder: "Password",
+          className: "text-dark",
+          onChange: changePassword,
+          value: password
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-          type: "text",
-          name: "name",
-          placeholder: "Website",
-          className: "text-dark"
+          type: "password",
+          name: "cpassword",
+          placeholder: "Confirm Password",
+          className: "text-dark",
+          onChange: changeCpassword,
+          value: cpassword
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-        children: "Message"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("textarea", {
-          rows: "4"
-        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
         type: "submit",
-        className: "btn btn-danger",
+        className: "btn btn-danger col-md-11 mx-3",
+        onClick: validate,
         children: "Sign Up"
       })]
     })]
@@ -16136,7 +16136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html, body {\r\n    min-height: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n    font-family: Roboto, Arial, sans-serif;\r\n    font-size: 14px;\r\n    color: #666;\r\n    }\r\n    h1 {\r\n    margin: 0 0 20px;\r\n    font-weight: 400;\r\n    color: #1c87c9;\r\n    }\r\n    p {\r\n    margin: 0 0 5px;\r\n    }\r\n    .main-block {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-height: 100vh;\r\n    background: #121306;\r\n    }\r\n    form {\r\n    padding: 25px;\r\n    margin: 25px;\r\n    box-shadow: 0 2px 5px #f5f5f5; \r\n    background: #f5f5f5; \r\n    }\r\n    .fas {\r\n    margin: 25px 10px 0;\r\n    font-size: 72px;\r\n    color: #fff;\r\n    }\r\n    .fa-envelope {\r\n    transform: rotate(-20deg);\r\n    }\r\n    .fa-at , .fa-mail-bulk{\r\n    transform: rotate(10deg);\r\n    }\r\n    input, textarea {\r\n    width: calc(100% - 18px);\r\n    padding: 8px;\r\n    margin-bottom: 20px;\r\n    border: 1px solid #1c87c9;\r\n    outline: none;\r\n    }\r\n    input::-moz-placeholder {\r\n    color: #666;\r\n    }\r\n    input::placeholder {\r\n    color: #666;\r\n    }\r\n    button {\r\n    width: 100%;\r\n    padding: 10px;\r\n    border: none;\r\n    background: #1c87c9; \r\n    font-size: 16px;\r\n    font-weight: 400;\r\n    color: #fff;\r\n    }\r\n    button:hover {\r\n    background: #2371a0;\r\n    }    \r\n    @media (min-width: 568px) {\r\n    .main-block {\r\n    flex-direction: row;\r\n    }\r\n    .left-part, form {\r\n    width: 50%;\r\n    }\r\n    .fa-envelope {\r\n    margin-top: 0;\r\n    margin-left: 20%;\r\n    }\r\n    .fa-at {\r\n    margin-top: -10%;\r\n    margin-left: 65%;\r\n    }\r\n    .fa-mail-bulk {\r\n    margin-top: 2%;\r\n    margin-left: 28%;\r\n    }\r\n    }", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html, body {\n    min-height: 100%;\n    padding: 0;\n    margin: 0;\n    font-family: Roboto, Arial, sans-serif;\n    font-size: 14px;\n    color: #666;\n    }\n    h1 {\n    margin: 0 0 20px;\n    font-weight: 400;\n    color: #1c87c9;\n    }\n    p {\n    margin: 0 0 5px;\n    }\n    .main-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    min-height: 100vh;\n    background: #121306;\n    }\n    form {\n    padding: 25px;\n    margin: 25px;\n    box-shadow: 0 2px 5px #f5f5f5;\n    background: #f5f5f5;\n    }\n    .fas {\n    margin: 25px 10px 0;\n    font-size: 72px;\n    color: #fff;\n    }\n    .fa-envelope {\n    transform: rotate(-20deg);\n    }\n    .fa-at , .fa-mail-bulk{\n    transform: rotate(10deg);\n    }\n    input, textarea {\n    width: calc(100% - 18px);\n    padding: 8px;\n    margin-bottom: 20px;\n    border: 1px solid #1c87c9;\n    outline: none;\n    }\n    input::-moz-placeholder {\n    color: #666;\n    }\n    input::placeholder {\n    color: #666;\n    }\n    /* button {\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: #1c87c9;\n    font-size: 16px;\n    font-weight: 400;\n    color: #fff;\n    } */\n    button:hover {\n    background: #2371a0;\n    }\n    @media (min-width: 568px) {\n    .main-block {\n    flex-direction: row;\n    }\n    .left-part, form {\n    width: 50%;\n    }\n    .fa-envelope {\n    margin-top: 0;\n    margin-left: 20%;\n    }\n    .fa-at {\n    margin-top: -10%;\n    margin-left: 65%;\n    }\n    .fa-mail-bulk {\n    margin-top: 2%;\n    margin-left: 28%;\n    }\n    }\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

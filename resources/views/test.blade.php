@@ -5,19 +5,19 @@
     border-radius:20px;
 }
 
- /* sign up  */
+ /* back Ground  */
  $pink: #ff1552;
 $white: #fff;
 $black: #000;
 
 html{
-	font-size: 100%; 
+	font-size: 100%;
   box-sizing: border-box;
 }
 
 *,
 *:before,
-*:after { 
+*:after {
 	box-sizing: inherit;
 }
 
@@ -33,7 +33,7 @@ input{
 	font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-weight: 400;
-  font-size: 0.938rem; 
+  font-size: 0.938rem;
   line-height: 1.15;
 }
 body{
@@ -98,7 +98,7 @@ a{
 	filter: blur(5px);
 }
 /**
- * Panel 
+ * Panel
  */
 .panel{
 	position: relative;
@@ -112,8 +112,8 @@ a{
 		padding: 10%;
 		background-color: rgba(0,0,0,0.5);
 		overflow-y: auto;
-		@media screen and (min-width: 768px){ 
-			padding: 10% 15%; 
+		@media screen and (min-width: 768px){
+			padding: 10% 15%;
 			border-radius: 10px;
 			overflow-y: visible;
 		}
@@ -122,7 +122,7 @@ a{
 	&__prev-btn{
 		width:24px;
 		height: 24px;
-		background: none; 
+		background: none;
 		padding: 0;
 		svg{ transition: fill 0.3s; }
 		&:hover > svg{ fill: $pink; }
@@ -141,7 +141,7 @@ a{
 			font-size: 3rem;
 		}
 	}
-  
+
 	&__link{
 		color: inherit;
 		transition: all 0.3s;
@@ -254,7 +254,7 @@ a{
 
 
             </style>
-        
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 

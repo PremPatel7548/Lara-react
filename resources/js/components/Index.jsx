@@ -6,16 +6,14 @@ class Index extends Component {
     render()
     {
         return (
-            <div className="container">
-                <Header />
-                <div className="row justify-content-center">
+            <div className="row justify-content-center">
+                    <Header />
                     <div className="col-md-8">
                         <div className="card">
 
                         </div>
                     </div>
                 </div>
-            </div>
         );
     }
 }

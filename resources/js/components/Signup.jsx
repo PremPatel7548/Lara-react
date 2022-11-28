@@ -93,7 +93,7 @@ function Header() {
     //     </div>
     // );
 
-    return( 
+    return(
 <div class="main-block">
       <div class="left-part">
         <i class="fas fa-envelope"></i>
@@ -103,16 +103,12 @@ function Header() {
       <form action="/">
         <h1>Sign Up</h1>
         <div class="info">
-          <input class="fname" type="text" name="name" placeholder="Full name" className='text-dark' />
-          <input type="text" name="name" placeholder="Email" className='text-dark'/>
-          <input type="text" name="name" placeholder="Phone number" className='text-dark' />
-          <input type="text" name="name" placeholder="Website" className='text-dark' />
+          <input class="fname" type="text" name="name" placeholder="Full name" className='text-dark' onChange={changeName} value={name}/>
+          <input type="email" name="email" placeholder="Email" className='text-dark'onChange={changeEmail} value={email}/>
+          <input type="password" name="password" placeholder="Password" className='text-dark' onChange={changePassword} value={password}/>
+          <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/>
         </div>
-        <p>Message</p>
-        <div>
-          <textarea rows="4"></textarea>
-        </div>
-        <button type="submit" className='btn btn-danger'>Sign Up</button>
+        <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={validate}>Sign Up</button>
       </form>
     </div>
     );
