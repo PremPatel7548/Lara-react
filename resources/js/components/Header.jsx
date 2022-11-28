@@ -14,7 +14,7 @@ class Header extends Component {
         return (
             <BrowserRouter>
                 <div className="container">
-                    <nav className="navbar navbar-expand-sm navbar-light bg-dark text-white">
+                    <nav className="navbar navbar-expand-sm navbar-light bg-secondary text-white">
                         <a className="navbar-brand text-white" href="/">Navbar</a>
                         <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                             aria-expanded="false" aria-label="Toggle navigation">
