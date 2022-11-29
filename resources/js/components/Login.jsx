@@ -45,8 +45,8 @@ function Login() {
             password:password
         }
 
-        axios.post('http://127.0.0.1:8000/signup', data)
-            .then(navigate('/'));
+        axios.post('http://127.0.0.1:8000/login', data);
+            //.then(navigate('/'));
     }
 
     // const changeName = (e) => {

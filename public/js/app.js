@@ -8761,7 +8761,8 @@ function Login() {
       email: email,
       password: password
     };
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/signup', data).then(navigate('/'));
+    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/login', data);
+    //.then(navigate('/'));
   };
 
   // const changeName = (e) => {
