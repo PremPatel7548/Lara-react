@@ -42,10 +42,7 @@ route::post('/editchild/{id}',[CustomerController::class,'updatechild']);
 
 route::post('/signup',[usercontroller::class,'signup']);
 
-<<<<<<< HEAD
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
 route::post('/login',[usercontroller::class,'login']);
->>>>>>> origin/master
