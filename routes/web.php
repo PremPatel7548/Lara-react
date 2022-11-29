@@ -27,7 +27,7 @@ Route::get('/zipchild',[CustomerController::class,'zipchild']);
 Route::post('/insertchild',[CustomerController::class,'insertchild']);
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
