@@ -74,7 +74,7 @@ function Login() {
         <h1>Login</h1>
         <div className="info">
           {/* <input class="fname" type="text" name="name" placeholder="Name" className='text-dark' onChange={changeName} value={name}/> */}
-          <input type="email" name="email" placeholder="Email" className='text-dark'onChange={changeEmail} value={email}/>
+          <input type="email" name="email" placeholder="Email" className='text-dark' onChange={changeEmail} value={email}/>
           <input type="password" name="password" placeholder="Password" className='text-dark' onChange={changePassword} value={password}/>
           {/* <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/> */}
         </div>
