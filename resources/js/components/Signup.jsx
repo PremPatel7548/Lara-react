@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate,Link} from 'react-router-dom';
 import "./style.css";
 
 //import ReactDOM from 'react-dom';
@@ -107,6 +107,10 @@ function Header() {
           <input type="email" name="email" placeholder="Email" className='text-dark'onChange={changeEmail} value={email}/>
           <input type="password" name="password" placeholder="Password" className='text-dark' onChange={changePassword} value={password}/>
           <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/>
+
+          <div className="loginlink">
+            <Link className="nav-link text-primary size-20" to="/login"> already have a account?</Link>
+            </div>
         </div>
         <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={validate}>Sign Up</button>
       </form>
