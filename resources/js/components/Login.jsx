@@ -63,25 +63,24 @@ function Login() {
     // }
 
     return(
-    
+
 <div class="main-block">
-      <div class="left-part">
-        <i class="fas fa-envelope"></i>
-        <i class="fas fa-at"></i>
-        <i class="fas fa-mail-bulk"></i>
+      <div className="left-part">
+        <i className="fas fa-envelope"></i>
+        <i className="fas fa-at"></i>
+        <i className="fas fa-mail-bulk"></i>
       </div>
       <form action="/">
         <h1>Login</h1>
-        <div class="info">
+        <div className="info">
           {/* <input class="fname" type="text" name="name" placeholder="Name" className='text-dark' onChange={changeName} value={name}/> */}
           <input type="email" name="email" placeholder="Email" className='text-dark'onChange={changeEmail} value={email}/>
           <input type="password" name="password" placeholder="Password" className='text-dark' onChange={changePassword} value={password}/>
           {/* <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/> */}
         </div>
 
-        
-         <div>
-            <Link class="text-dark mx-2" id='l1' to={'/signup'}>SignUp</Link>
+         <div className='signuplink'>
+            <Link className="text-primary mx-2" id='l1' to={'/signup'}>New Account</Link>
          </div>
         <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={HandleInsert}>Login</button>
       </form>
