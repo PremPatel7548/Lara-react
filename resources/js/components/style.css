@@ -19,8 +19,9 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #121306;
+    min-height: 70vh;
+    margin-top: 5%;
+    background: #16616b;
     }
     form {
     padding: 25px;

@@ -103,7 +103,7 @@ function Header() {
       <form action="/">
         <h1>Sign Up</h1>
         <div class="info">
-          <input class="fname" type="text" name="name" placeholder="Full name" className='text-dark' onChange={changeName} value={name}/>
+          <input class="fname" type="text" name="name" placeholder="Name" className='text-dark' onChange={changeName} value={name}/>
           <input type="email" name="email" placeholder="Email" className='text-dark'onChange={changeEmail} value={email}/>
           <input type="password" name="password" placeholder="Password" className='text-dark' onChange={changePassword} value={password}/>
           <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/>
