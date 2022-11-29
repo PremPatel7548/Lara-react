@@ -41,3 +41,7 @@ route::get('/editchild/{id}',[CustomerController::class,'editchild']);
 route::post('/editchild/{id}',[CustomerController::class,'updatechild']);
 
 route::post('/signup',[usercontroller::class,'signup']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
