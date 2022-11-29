@@ -8,6 +8,7 @@ import ChildCustomers from './ChildCustomers';
 import Edit from './Edit';
 import Signup from './Signup';
 import EditChild from './EditChild';
+import Login from './Login';
 
 class Header extends Component {
     render() {
@@ -35,7 +36,7 @@ class Header extends Component {
                             </ul>
                             <div className="form-inline my-2 my-lg-0 mx-2">
                                 <Link class="btn btn-outline-success text-white mx-2" to={'/signup'}>SignUp</Link>
-                                <button class="btn btn-outline-success my-2 my-sm-0" >Login</button>
+                                <Link class="btn btn-outline-success my-2 my-sm-0" to={'/login'}>Login</Link>
                             </div>
                         </div>
                     </nav>
@@ -50,6 +51,7 @@ class Header extends Component {
                     <Route exact path="/insertmaster" element={<InsertForm />} />
                     <Route exact path="/insertchild" element={<InsertChild />} />
                     <Route exact path="/signup" element={<Signup />}/>
+                    <Route exact path="/login" element={<Login />}/>
                     {/* <Route exact path="/edit/:id" element={(matchProps)=> <Edit {...matchProps}{...this.props} /> }/> */}
                 </Routes>
             </BrowserRouter>
