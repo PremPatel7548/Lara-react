@@ -8917,12 +8917,16 @@ function Header() {
   // }
 
   var HandleInsert = function HandleInsert() {
-    var data = {
-      name: name,
-      email: email,
-      password: password
-    };
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/signup', data).then(navigate('/'));
+    if (name == "" || email == "" || password == "" || cpassword == "") {
+      setMsg("Please Enter The valid Field");
+    } else {
+      var data = {
+        name: name,
+        email: email,
+        password: password
+      };
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/signup', data).then(navigate('/'));
+    }
   };
   var changeName = function changeName(e) {
     setName(e.target.value);
@@ -8947,8 +8951,8 @@ function Header() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
         "class": "fas fa-mail-bulk"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
-      action: "/",
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "form",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
         children: "Sign Up"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -8982,6 +8986,9 @@ function Header() {
           className: "text-dark",
           onChange: changeCpassword,
           value: cpassword
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "text-danger",
+          children: msg
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "loginlink",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {

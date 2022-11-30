@@ -38,14 +38,23 @@ function Header() {
     // }
 
     const HandleInsert = () => {
-        const data = {
-            name: name,
-            email:email,
-            password:password
+
+        if(name == "" || email == "" || password == "" || cpassword == "")
+        {
+            setMsg("Please Enter The valid Field");
+        }
+        else
+        {
+            const data = {
+                name: name,
+                email:email,
+                password:password
+            }
+    
+            axios.post('http://127.0.0.1:8000/signup', data)
+            .then(navigate('/'));
         }
 
-        axios.post('http://127.0.0.1:8000/signup', data)
-            .then(navigate('/'));
     }
 
     const changeName = (e) => {
@@ -68,20 +77,22 @@ function Header() {
         <i class="fas fa-at"></i>
         <i class="fas fa-mail-bulk"></i>
       </div>
-      <form action="/">
+      <div className='form'>
+
         <h1>Sign Up</h1>
         <div class="info">
           <input class="fname" type="text" name="name" placeholder="Name" className='text-dark' onChange={changeName} value={name}/>
           <input type="email" name="email" placeholder="Email" className='text-dark'onChange={changeEmail} value={email}/>
           <input type="password" name="password" placeholder="Password" className='text-dark' onChange={changePassword} value={password}/>
           <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/>
-
+ 
+          <div className='text-danger'>{msg}</div>
           <div className="loginlink">
             <Link className="nav-link text-primary size-20" to="/login"> already have a account?</Link>
             </div>
         </div>
         <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={HandleInsert}>Sign Up</button>
-      </form>
+      </div>
     </div> 
 
     );
