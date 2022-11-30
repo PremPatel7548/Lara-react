@@ -94,7 +94,7 @@ function Header() {
     // );
 
     return(
-<div class="main-block">
+ <div class="main-block">
       <div class="left-part">
         <i class="fas fa-envelope"></i>
         <i class="fas fa-at"></i>
@@ -114,7 +114,8 @@ function Header() {
         </div>
         <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={validate}>Sign Up</button>
       </form>
-    </div>
+    </div> 
+
     );
 }
 
