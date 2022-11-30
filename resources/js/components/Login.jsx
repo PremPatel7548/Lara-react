@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import { BrowserRouter, Routes, Link, Route, matchPath, useParams, Navigate } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
@@ -11,7 +11,7 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setpassword] = useState('')
     //const [cpassword, setcpassword] = useState('')
-    //const [msg,setMsg] = useState('');
+    const [msg,setMsg] = useState('');
 
     const navigate = useNavigate();
 
@@ -38,6 +38,10 @@ function Login() {
     //     }
     // }
 
+    const LoginCheck = () =>{
+        axios.post('http://127.0.0.1:8000/logindata')
+        .then(Response => Response.data == "[]" ? alert("Invalid User Name Or Password") : navigate("/zipmaster"));
+    }
     const HandleLogin = () => {
         const data = {
             //name: name,
@@ -45,8 +49,12 @@ function Login() {
             password:password
         }
 
-        axios.post('http://127.0.0.1:8000/login', data);
+        axios.post('http://127.0.0.1:8000/logindata',data)
+        .then(LoginCheck)
+
+        // console.log(data);
     }
+
 
     // const changeName = (e) => {
     //     setName(e.target.value);
@@ -57,6 +65,7 @@ function Login() {
     const changePassword = (e) => {
         setpassword(e.target.value);
     }
+
     // const changeCpassword = (e) => {
     //     setcpassword(e.target.value);
     // }
@@ -69,8 +78,9 @@ function Login() {
         <i className="fas fa-at"></i>
         <i className="fas fa-mail-bulk"></i>
       </div>
-      <div class="form">
+      <div className='form'>
         <h1>Login</h1>
+        {/* <p style={{color:red}}>{msg}</p> */}
         <div className="info">
           {/* <input class="fname" type="text" name="name" placeholder="Name" className='text-dark' onChange={changeName} value={name}/> */}
           <input type="email" name="email" placeholder="Email" className='text-dark' onChange={changeEmail} value={email}/>
@@ -81,9 +91,9 @@ function Login() {
          <div className='signuplink'>
             <Link className="text-primary mx-2" id='l1' to={'/signup'}>New Account</Link>
          </div>
-        <button className='btn btn-danger col-md-11 mx-3' onClick={HandleLogin}>Login</button>
-      </div>
+        <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={HandleLogin} >Login</button>
     </div>
+      </div>
 
     );
 

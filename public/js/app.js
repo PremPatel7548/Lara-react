@@ -8728,8 +8728,10 @@ function Login() {
     password = _useState4[0],
     setpassword = _useState4[1];
   //const [cpassword, setcpassword] = useState('')
-  //const [msg,setMsg] = useState('');
-
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    msg = _useState6[0],
+    setMsg = _useState6[1];
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
 
   // const validate = () =>{
@@ -8755,13 +8757,20 @@ function Login() {
   //     }
   // }
 
+  var LoginCheck = function LoginCheck() {
+    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/logindata').then(function (Response) {
+      return Response.data == "[]" ? alert("Invalid User Name Or Password") : navigate("/zipmaster");
+    });
+  };
   var HandleLogin = function HandleLogin() {
     var data = {
       //name: name,
       email: email,
       password: password
     };
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/login', data);
+    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/logindata', data).then(LoginCheck);
+
+    // console.log(data);
   };
 
   // const changeName = (e) => {
@@ -8773,6 +8782,7 @@ function Login() {
   var changePassword = function changePassword(e) {
     setpassword(e.target.value);
   };
+
   // const changeCpassword = (e) => {
   //     setcpassword(e.target.value);
   // }
@@ -8789,7 +8799,7 @@ function Login() {
         className: "fas fa-mail-bulk"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      "class": "form",
+      className: "form",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
         children: "Login"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -8818,6 +8828,7 @@ function Login() {
           children: "New Account"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        type: "submit",
         className: "btn btn-danger col-md-11 mx-3",
         onClick: HandleLogin,
         children: "Login"
@@ -16306,7 +16317,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html, body {\n    min-height: 100%;\n    padding: 0;\n    margin: 0;\n    font-family: Roboto, Arial, sans-serif;\n    font-size: 14px;\n    color: #666;\n    }\n    h1 {\n    margin: 0 0 20px;\n    font-weight: 400;\n    color: #1c87c9;\n    }\n    p {\n    margin: 0 0 5px;\n    }\n    .main-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    min-height: 70vh;\n    margin-top: 5%;\n    background: #16616b;\n    }\n    .form {\n    padding: 25px;\n    margin: 25px;\n    box-shadow: 0 2px 5px #f5f5f5;\n    background: #f5f5f5;\n    }\n    .fas {\n    margin: 25px 10px 0;\n    font-size: 72px;\n    color: #fff;\n    }\n    .fa-envelope {\n    transform: rotate(-20deg);\n    }\n    .fa-at , .fa-mail-bulk{\n    transform: rotate(10deg);\n    }\n    input, textarea {\n    width: calc(100% - 18px);\n    padding: 8px;\n    margin-bottom: 20px;\n    border: 1px solid #1c87c9;\n    outline: none;\n    }\n    input::-moz-placeholder {\n    color: #666;\n    }\n    input::placeholder {\n    color: #666;\n    }\n    /* button {\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: #1c87c9;\n    font-size: 16px;\n    font-weight: 400;\n    color: #fff;\n    } */\n    button:hover {\n    background: #2371a0;\n    }\n    @media (min-width: 568px) {\n    .main-block {\n    flex-direction: row;\n    }\n    .left-part, form {\n    width: 50%;\n    }\n    .fa-envelope {\n    margin-top: 0;\n    margin-left: 20%;\n    }\n    .fa-at {\n    margin-top: -10%;\n    margin-left: 65%;\n    }\n    .fa-mail-bulk {\n    margin-top: 2%;\n    margin-left: 28%;\n    }\n    }\n\n    .loginlink{\n        margin-left : 280px;\n        font-size: 20px;\n    }\n\n    .signuplink{\n        margin-left : 185px;\n        font-size: 40px;\n        margin-bottom: 10px;\n    }\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html, body {\n    min-height: 100%;\n    padding: 0;\n    margin: 0;\n    font-family: Roboto, Arial, sans-serif;\n    font-size: 14px;\n    color: #666;\n    }\n    h1 {\n    margin: 0 0 20px;\n    font-weight: 400;\n    color: #1c87c9;\n    }\n    p {\n    margin: 0 0 5px;\n    }\n    .main-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    min-height: 70vh;\n    margin-top: 5%;\n    background: #16616b;\n    }\n    .form {\n    padding: 25px;\n    margin: 25px;\n    box-shadow: 0 2px 5px #f5f5f5;\n    background: #f5f5f5;\n    }\n\n    form {\n        padding: 25px;\n        margin: 25px;\n        box-shadow: 0 2px 5px #f5f5f5;\n        background: #f5f5f5;\n        }\n    .fas {\n    margin: 25px 10px 0;\n    font-size: 72px;\n    color: #fff;\n    }\n    .fa-envelope {\n    transform: rotate(-20deg);\n    }\n    .fa-at , .fa-mail-bulk{\n    transform: rotate(10deg);\n    }\n    input, textarea {\n    width: calc(100% - 18px);\n    padding: 8px;\n    margin-bottom: 20px;\n    border: 1px solid #1c87c9;\n    outline: none;\n    }\n    input::-moz-placeholder {\n    color: #666;\n    }\n    input::placeholder {\n    color: #666;\n    }\n    /* button {\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: #1c87c9;\n    font-size: 16px;\n    font-weight: 400;\n    color: #fff;\n    } */\n    button:hover {\n    background: #2371a0;\n    }\n    @media (min-width: 568px) {\n    .main-block {\n    flex-direction: row;\n    }\n    .left-part, form {\n    width: 50%;\n    }\n    .fa-envelope {\n    margin-top: 0;\n    margin-left: 20%;\n    }\n    .fa-at {\n    margin-top: -10%;\n    margin-left: 65%;\n    }\n    .fa-mail-bulk {\n    margin-top: 2%;\n    margin-left: 28%;\n    }\n    }\n\n    .loginlink{\n        margin-left : 280px;\n        font-size: 20px;\n    }\n\n    .signuplink{\n        margin-left : 185px;\n        font-size: 40px;\n        margin-bottom: 10px;\n    }\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
