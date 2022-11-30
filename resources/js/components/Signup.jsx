@@ -80,7 +80,7 @@ function Header() {
             <Link className="nav-link text-primary size-20" to="/login"> already have a account?</Link>
             </div>
         </div>
-        <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={validate}>Sign Up</button>
+        <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={HandleInsert}>Sign Up</button>
       </form>
     </div> 
 
