@@ -43,3 +43,4 @@ route::post('/editchild/{id}',[CustomerController::class,'updatechild']);
 route::post('/signup',[usercontroller::class,'signup']);
 
 route::post('/logindata',[usercontroller::class,'logindata']);
+

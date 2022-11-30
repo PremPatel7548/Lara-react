@@ -8757,20 +8757,15 @@ function Login() {
   //     }
   // }
 
-  var LoginCheck = function LoginCheck() {
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/logindata').then(function (Response) {
-      return Response.data == "[]" ? alert("Invalid User Name Or Password") : navigate("/zipmaster");
-    });
-  };
   var HandleLogin = function HandleLogin() {
     var data = {
       //name: name,
       email: email,
       password: password
     };
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/logindata', data).then(LoginCheck);
-
-    // console.log(data);
+    axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/logindata', data).then(function (Response) {
+      return Response.data == "" ? setMsg("Invalid Email Or Password") : navigate("/zipmaster");
+    });
   };
 
   // const changeName = (e) => {
@@ -8802,7 +8797,10 @@ function Login() {
       className: "form",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
         children: "Login"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
+        className: "text-danger",
+        children: msg
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "info",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
           type: "email",
@@ -8894,24 +8892,30 @@ function Header() {
     msg = _useState10[0],
     setMsg = _useState10[1];
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
-  var validate = function validate() {
-    // if(name =='' || email =='' ||  password =='' || cpassword == '')
-    // {
-    //     setMsg('Please Full Fill the Form');
-    //     navigate('/signup');
-    // }
-    // else
-    // {
-    //     HandleInsert();
-    // }
 
-    if (password == cpassword) {
-      HandleInsert();
-    } else {
-      alert('Passwords Do not Match');
-      navigate('/');
-    }
-  };
+  // const validate = () =>{
+
+  //     if(name =='' || email =='' ||  password =='' || cpassword == '')
+  //     {
+  //         setMsg('Please Full Fill the Form');
+  //         navigate('/signup');
+  //     }
+  //     else
+  //     {
+  //         HandleInsert();
+  //     }
+
+  //     if(password == cpassword)
+  //     {
+  //         HandleInsert();
+  //     }
+  //     else
+  //     {
+  //         alert('Passwords Do not Match');
+  //         navigate('/');
+  //     }
+  // }
+
   var HandleInsert = function HandleInsert() {
     var data = {
       name: name,
@@ -8932,38 +8936,6 @@ function Header() {
   var changeCpassword = function changeCpassword(e) {
     setcpassword(e.target.value);
   };
-
-  // return (
-  //     <div>
-  //         <form className="col-md-5 mt-4 bg-dark text-white SignupForm" method='post'>
-
-  //             <h2 className='text-white my-2'>SignUp</h2>
-
-  //             <div class="form-group my-2">
-  //                 <label for="Username">Username</label>
-  //                 <input type="text" class="form-control" name="name" onChange={changeName} value={name} required={true}/>
-  //             </div>
-
-  //             <div class="form-group">
-  //                 <label for="Email">Email</label>
-  //                 <input type="email" class="form-control" name="email" onChange={changeEmail} value={email} />
-  //             </div>
-
-  //             <div class="form-group">
-  //                 <label for="">Password</label>
-  //                 <input type="password" class="form-control" name="password" onChange={changePassword} value={password} required={true}/>
-  //             </div>
-
-  //             <div class="form-group">
-  //                 <label for="">Confirm Password</label>
-  //                 <input type="password" class="form-control" name="cpassword" onChange={changeCpassword} value={cpassword} required={true}/>
-  //             </div>
-
-  //             <button class="btn btn-success my-3" onClick={validate}>Sign Up</button>
-  //         </form>
-  //     </div>
-  // );
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     "class": "main-block",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {

@@ -38,10 +38,6 @@ function Login() {
     //     }
     // }
 
-    const LoginCheck = () =>{
-        axios.post('http://127.0.0.1:8000/logindata')
-        .then(Response => Response.data == "[]" ? alert("Invalid User Name Or Password") : navigate("/zipmaster"));
-    }
     const HandleLogin = () => {
         const data = {
             //name: name,
@@ -50,9 +46,8 @@ function Login() {
         }
 
         axios.post('http://127.0.0.1:8000/logindata',data)
-        .then(LoginCheck)
+        .then(Response => Response.data == "" ? setMsg("Invalid Email Or Password") : navigate("/zipmaster"))
 
-        // console.log(data);
     }
 
 
@@ -80,7 +75,7 @@ function Login() {
       </div>
       <div className='form'>
         <h1>Login</h1>
-        {/* <p style={{color:red}}>{msg}</p> */}
+        <h4 className='text-danger'>{msg}</h4><br/>
         <div className="info">
           {/* <input class="fname" type="text" name="name" placeholder="Name" className='text-dark' onChange={changeName} value={name}/> */}
           <input type="email" name="email" placeholder="Email" className='text-dark' onChange={changeEmail} value={email}/>
