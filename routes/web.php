@@ -47,9 +47,10 @@ route::post('/signup',[usercontroller::class,'signup']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-route::post('/login',[usercontroller::class,'login']);
+//route::post('/login',[usercontroller::class,'login']);
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/logindata',[usercontroller::class,'logindata']);
