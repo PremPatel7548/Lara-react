@@ -28,6 +28,7 @@ class usercontroller extends Controller
         }
         else
         {
+            session()->put('username',$user->name);
             return  $user->email;
         }
     }
