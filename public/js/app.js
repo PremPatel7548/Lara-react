@@ -8003,23 +8003,23 @@ var Home = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "row justify-content-center",
+      className: "row justify-content-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-md-8",
+        className: "col-md-8",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "card",
+          className: "card",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "card-header",
+            className: "card-header",
                 children: "Home Component"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "card-body",
+            className: "card-body",
                 children: "Home component!"
-              })]
-            })
-          })
+          })]
         })
-      });
-    }
+      })
+    })
+  });
+}
   }]);
   return Home;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
@@ -8781,20 +8781,20 @@ function Login() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     "class": "main-block",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      "class": "left-part",
+      className: "left-part",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
-        "class": "fas fa-envelope"
+        className: "fas fa-envelope"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
-        "class": "fas fa-at"
+        className: "fas fa-at"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
-        "class": "fas fa-mail-bulk"
+        className: "fas fa-mail-bulk"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
       action: "/",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
         children: "Login"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        "class": "info",
+        className: "info",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
           type: "email",
           name: "email",
@@ -8811,11 +8811,12 @@ function Login() {
           value: password
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "signuplink",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-          "class": "text-dark mx-2",
+          className: "text-primary mx-2",
           id: "l1",
           to: '/signup',
-          children: "SignUp"
+          children: "New Account"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
         type: "submit",
@@ -16307,7 +16308,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html, body {\n    min-height: 100%;\n    padding: 0;\n    margin: 0;\n    font-family: Roboto, Arial, sans-serif;\n    font-size: 14px;\n    color: #666;\n    }\n    h1 {\n    margin: 0 0 20px;\n    font-weight: 400;\n    color: #1c87c9;\n    }\n    p {\n    margin: 0 0 5px;\n    }\n    .main-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    min-height: 70vh;\n    margin-top: 5%;\n    background: #16616b;\n    }\n    form {\n    padding: 25px;\n    margin: 25px;\n    box-shadow: 0 2px 5px #f5f5f5;\n    background: #f5f5f5;\n    }\n    .fas {\n    margin: 25px 10px 0;\n    font-size: 72px;\n    color: #fff;\n    }\n    .fa-envelope {\n    transform: rotate(-20deg);\n    }\n    .fa-at , .fa-mail-bulk{\n    transform: rotate(10deg);\n    }\n    input, textarea {\n    width: calc(100% - 18px);\n    padding: 8px;\n    margin-bottom: 20px;\n    border: 1px solid #1c87c9;\n    outline: none;\n    }\n    input::-moz-placeholder {\n    color: #666;\n    }\n    input::placeholder {\n    color: #666;\n    }\n    /* button {\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: #1c87c9;\n    font-size: 16px;\n    font-weight: 400;\n    color: #fff;\n    } */\n    button:hover {\n    background: #2371a0;\n    }\n    @media (min-width: 568px) {\n    .main-block {\n    flex-direction: row;\n    }\n    .left-part, form {\n    width: 50%;\n    }\n    .fa-envelope {\n    margin-top: 0;\n    margin-left: 20%;\n    }\n    .fa-at {\n    margin-top: -10%;\n    margin-left: 65%;\n    }\n    .fa-mail-bulk {\n    margin-top: 2%;\n    margin-left: 28%;\n    }\n    }\n\n    .loginlink{\n        margin-left : 280px;\n        font-size: 20px;\n    }\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html, body {\n    min-height: 100%;\n    padding: 0;\n    margin: 0;\n    font-family: Roboto, Arial, sans-serif;\n    font-size: 14px;\n    color: #666;\n    }\n    h1 {\n    margin: 0 0 20px;\n    font-weight: 400;\n    color: #1c87c9;\n    }\n    p {\n    margin: 0 0 5px;\n    }\n    .main-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    min-height: 70vh;\n    margin-top: 5%;\n    background: #16616b;\n    }\n    form {\n    padding: 25px;\n    margin: 25px;\n    box-shadow: 0 2px 5px #f5f5f5;\n    background: #f5f5f5;\n    }\n    .fas {\n    margin: 25px 10px 0;\n    font-size: 72px;\n    color: #fff;\n    }\n    .fa-envelope {\n    transform: rotate(-20deg);\n    }\n    .fa-at , .fa-mail-bulk{\n    transform: rotate(10deg);\n    }\n    input, textarea {\n    width: calc(100% - 18px);\n    padding: 8px;\n    margin-bottom: 20px;\n    border: 1px solid #1c87c9;\n    outline: none;\n    }\n    input::-moz-placeholder {\n    color: #666;\n    }\n    input::placeholder {\n    color: #666;\n    }\n    /* button {\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: #1c87c9;\n    font-size: 16px;\n    font-weight: 400;\n    color: #fff;\n    } */\n    button:hover {\n    background: #2371a0;\n    }\n    @media (min-width: 568px) {\n    .main-block {\n    flex-direction: row;\n    }\n    .left-part, form {\n    width: 50%;\n    }\n    .fa-envelope {\n    margin-top: 0;\n    margin-left: 20%;\n    }\n    .fa-at {\n    margin-top: -10%;\n    margin-left: 65%;\n    }\n    .fa-mail-bulk {\n    margin-top: 2%;\n    margin-left: 28%;\n    }\n    }\n\n    .loginlink{\n        margin-left : 280px;\n        font-size: 20px;\n    }\n\n    .signuplink{\n        margin-left : 185px;\n        font-size: 40px;\n        margin-bottom: 10px;\n    }\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -64791,8 +64792,41 @@ if (
 ) {
   __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 }
-        
+
   })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/client.js":
+/*!******************************************!*\
+  !*** ./node_modules/react-dom/client.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var m = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+if (false) {} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
 }
 
 
@@ -73850,7 +73884,7 @@ if (
 ) {
   __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 }
-        
+
   })();
 }
 
@@ -74527,7 +74561,7 @@ if (
 ) {
   __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 }
-        
+
   })();
 }
 
@@ -74565,7 +74599,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./style.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/style.css");
 
-            
+
 
 var options = {};
 
@@ -76990,7 +77024,7 @@ function buildURL(url, params, options) {
   if (!params) {
     return url;
   }
-  
+
   const _encode = options && options.encode || encode;
 
   const serializeFn = options && options.serialize;
@@ -78718,7 +78752,7 @@ const toFiniteNumber = (value, defaultValue) => {
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -78732,20 +78766,20 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
 /******/ 	(() => {
@@ -78778,7 +78812,7 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			return result;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -78790,7 +78824,7 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -78802,7 +78836,7 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -78814,12 +78848,12 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			}
 /******/ 		})();
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -78830,7 +78864,7 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -78839,11 +78873,11 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			return module;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
-/******/ 		
+/******/
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
@@ -78851,19 +78885,19 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			"/js/app": 0,
 /******/ 			"public": 0
 /******/ 		};
-/******/ 		
+/******/
 /******/ 		// no chunk on demand loading
-/******/ 		
+/******/
 /******/ 		// no prefetching
-/******/ 		
+/******/
 /******/ 		// no preloaded
-/******/ 		
+/******/
 /******/ 		// no HMR
-/******/ 		
+/******/
 /******/ 		// no HMR manifest
-/******/ 		
+/******/
 /******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
+/******/
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
 /******/ 			var [chunkIds, moreModules, runtime] = data;
@@ -78888,25 +78922,25 @@ const toFiniteNumber = (value, defaultValue) => {
 /******/ 			}
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
-/******/ 		
+/******/
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
-/******/ 	
+/******/
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["public"], () => (__webpack_require__("./resources/js/app.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public"], () => (__webpack_require__("./resources/sass/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+/******/
 /******/ })()
 ;
