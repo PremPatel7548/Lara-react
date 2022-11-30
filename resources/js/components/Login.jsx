@@ -84,7 +84,7 @@ function Login() {
         </div>
 
          <div className='signuplink'>
-            <Link className="text-primary mx-2" id='l1' to={'/signup'}>SignUp</Link>
+            <Link className="text-primary mx-2" id='l1' to={'/signup'}>New Account</Link>
          </div>
         <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={HandleLogin} >Login</button>
     </div>
