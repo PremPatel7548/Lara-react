@@ -16,13 +16,19 @@ class usercontroller extends Controller
         $user->password=Hash::make($req['password']);
         $user->save();
     }
-    public function login(Request $req)
+    public function logindata(Request $req)
     {
         $user=UserModel::where('email',$req->email)->first();
-        if(!$user || !Hash::check($req->password,$user))
+
+        // print_r($user->password);
+        // exit;
+        if(!$user || !Hash::check($req->password,$user->password))
         {
-            return ["error"=>"Email or password is not matched"];
+               return NULL;
         }
-        return $user;
+        else
+        {
+            return  $user->email;
+        }
     }
 }

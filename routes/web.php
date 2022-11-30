@@ -29,7 +29,7 @@ Route::post('/insertchild',[CustomerController::class,'insertchild']);
 
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 route::delete('delete/{id}',[CustomerController::class,'delete']);
 route::delete('deletechild/{id}',[CustomerController::class,'deletechild']);
