@@ -27,8 +27,8 @@ function Header() {
         {
             emailMsg('please Enter Valid Email');
         }
-        else if (name.length < 1) {
-            nameMsg('Name Atlease 1 Character');
+        else if (name.length < 2) {
+            nameMsg('Name Atlease 2 Character');
         }
         else if (password.length < 7) {
             passwordMsg('Password Atleast 8 Character');
