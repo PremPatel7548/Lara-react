@@ -55,11 +55,11 @@ function Login() {
 
         if(sessionStorage.getItem('user') == "Admin")
         {
-            navigate('/zipmaster');
+            navigate('/Adminzipmaster');
         }
         else
         {
-            navigate('/zipchild');
+            navigate('/Adminzipchild');
         }
     }
 
