@@ -73,7 +73,7 @@ function Login() {
         <i className="fas fa-at"></i>
         <i className="fas fa-mail-bulk"></i>
       </div>
-      <div className='form'>
+      <div className='formlogin'>
         <h1>Login</h1>
         <h4 className='text-danger'>{msg}</h4><br/>
         <div className="info">

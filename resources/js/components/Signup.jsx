@@ -10,51 +10,56 @@ function Header() {
     const [email, setEmail] = useState('')
     const [password, setpassword] = useState('')
     const [cpassword, setcpassword] = useState('')
-    const [msg,setMsg] = useState('');
+    const [errorName, nameMsg] = useState('');
+    const [errorPassword, passwordMsg] = useState('');
+    const [errorCpassword, cpasswordMsg] = useState('');
+    const [errorEmail,emailMsg] = useState('');
+    const [errorAll,AllMsg] = useState('');
 
     const navigate = useNavigate();
 
-    // const validate = () =>{
+    const validate = () => {
 
-    //     if(name =='' || email =='' ||  password =='' || cpassword == '')
-    //     {
-    //         setMsg('Please Full Fill the Form');
-    //         navigate('/signup');
-    //     }
-    //     else
-    //     {
-    //         HandleInsert();
-    //     }
-
-    //     if(password == cpassword)
-    //     {
-    //         HandleInsert();
-    //     }
-    //     else
-    //     {
-    //         alert('Passwords Do not Match');
-    //         navigate('/');
-    //     }
-    // }
+        if (name == '' || email == '' || password == ''|| cpassword == '') {
+            AllMsg('Please Fill All Field');
+        }
+        else if(!email.includes('@') && email.length < 12)
+        {
+            emailMsg('please Enter Valid Email');
+        }
+        else if (name.length < 1) {
+            nameMsg('Name Atlease 1 Character');
+        }
+        else if (password.length < 7) {
+            passwordMsg('Password Atleast 8 Character');
+        }
+        else if (password != cpassword) {
+            cpasswordMsg('Passwords Do not Same');
+        }
+        else {
+            return true;
+        }
+    }
 
     const HandleInsert = () => {
 
-        if(name == "" || email == "" || password == "" || cpassword == "")
-        {
-            setMsg("Please Enter The valid Field");
-        }
-        else
-        {
+
+        nameMsg("");
+        passwordMsg("");
+        cpasswordMsg("");
+        AllMsg("");
+
+        if (validate()) {
+
             const data = {
                 name: name,
-                email:email,
-                password:password
+                email: email,
+                password: password
             }
-    
-            axios.post('http://127.0.0.1:8000/signup', data)
-            .then(navigate('/'));
-        }
 
+            axios.post('http://127.0.0.1:8000/signup', data)
+                .then(navigate('/'));
+        }
     }
 
     const changeName = (e) => {
@@ -77,23 +82,28 @@ function Header() {
         <i class="fas fa-at"></i>
         <i class="fas fa-mail-bulk"></i>
       </div>
-      <div className='form'>
+      <div className='formsignup'>
 
         <h1>Sign Up</h1>
+          <p className='text-danger all'>{errorAll}</p>
         <div class="info">
           <input class="fname" type="text" name="name" placeholder="Name" className='text-dark' onChange={changeName} value={name}/>
-          <input type="email" name="email" placeholder="Email" className='text-dark'onChange={changeEmail} value={email}/>
+          <p className='text-danger'>{errorName}</p>
+          <input type="text" name="email" placeholder="Email" className='text-dark'onChange={changeEmail} value={email}/>
+          <p className='text-danger'>{errorEmail}</p>
           <input type="password" name="password" placeholder="Password" className='text-dark' onChange={changePassword} value={password}/>
+          <p className='text-danger'>{errorPassword}</p>
           <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/>
- 
-          <div className='text-danger'>{msg}</div>
+          <p className='text-danger'>{errorCpassword}</p>
+
+
           <div className="loginlink">
             <Link className="nav-link text-primary size-20" to="/login"> already have a account?</Link>
             </div>
         </div>
         <button type="submit" className='btn btn-danger col-md-11 mx-3' onClick={HandleInsert}>Sign Up</button>
       </div>
-    </div> 
+    </div>
 
     );
 }
