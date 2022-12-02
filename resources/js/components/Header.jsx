@@ -35,7 +35,7 @@ class Header extends Component {
                                 </li>
                             </ul>
                             <div className="form-inline my-2 my-lg-0 mx-2">
-                                <Link class="btn btn-outline-success text-white mx-2" to={'/signup'}>SignUp</Link>
+                                <Link class="btn btn-outline-success my-2 my-sm-0" to={'/signup'}>SignUp</Link>
                                 <Link class="btn btn-outline-success my-2 my-sm-0" to={'/login'}>Login</Link>
                             </div>
                         </div>
