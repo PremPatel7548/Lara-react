@@ -127,54 +127,54 @@ function InsertChild() {
     }
 
     return (
-        <div className="container">
-            <form action="" method="post" className="col-md-5 mt-4 bg-dark text-white">
-                <div className="form-group">
+        <div className="container col-md-9">
+            <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+                <div className="form-group mx-5">
                     <label>Zip :- </label>
                     <input type="text" className="form-control" name="Zip" onChange={changeZip} value={Zip}/>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mx-5">
                     <label>City :- </label>
                     <input type="text" className="form-control" name="City" onChange={changeCity} value={City}/>
                 </div>
-                
-                <div className="form-group">
+
+                <div className="form-group mx-5">
                     <label>State :- </label>
                     <input type="text" className="form-control" name="State" onChange={changeState} value={State}/>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mx-5">
                     <label>HomeSale :- </label>
                     <input type="text" className="form-control" name="HomeSale" onChange={changeHomeSale} value={HomeSale}/>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mx-5">
                     <label>HomeBaseValue :- </label>
                     <input type="text" className="form-control" name="HomeBaseValue" onChange={changeHomeBaseValue} value={HomeBaseValue}/>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mx-5">
                     <label>HomeMaxValue :- </label>
                     <input type="text" className="form-control" name="HomeMaxValue" onChange={changeHomeMaxValue} value={HomeMaxValue}/>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mx-5">
                     <label>MedianListPrice :- </label>
                     <input type="text" className="form-control" name="MedianListPrice" onChange={changeMedianListPrice} value={MedianListPrice}/>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mx-5">
                     <label>MedianSoldPrice :- </label>
                     <input type="text" className="form-control" name="MedianSoldPrice" onChange={changeMedianSoldPrice} value={MedianSoldPrice}/>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mx-5">
                     <label>Year :- </label>
                     <input type="text" className="form-control" name="Year" onChange={changeYear} value={Year}/>
                 </div>
 
-                <button className="btn btn-outline-primary my-2" onClick={HandleInsert}>Add</button>
+                <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Add</button>
             </form>
         </div>
     )
