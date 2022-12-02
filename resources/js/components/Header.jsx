@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Link, Route, matchPath, useParams } from 'react-
 import InsertForm from './InsertForm';
 import InsertChild from './InsertChild';
 import Home from './Home';
-import Customers from './Customers';
-import ChildCustomers from './ChildCustomers';
 import Edit from './Edit';
 import Signup from './Signup';
 import EditChild from './EditChild';
 import Login from './Login';
+import AdminZipmaster from './Adminzipmaster';
+import AdminzipChild from './Adminzipchild';
 
 class Header extends Component {
     render() {
@@ -27,11 +27,11 @@ class Header extends Component {
                                     <Link className="nav-link text-white" to="/home">Home <span className="sr-only">(current)</span></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link text-white" to="/zipmaster">zipMaster</Link>
+                                    <Link className="nav-link text-white" to="/Adminzipmaster">zipMaster</Link>
                                 </li>
 
                                 <li className="nav-item">
-                                    <Link className="nav-link text-white" to="/zipchild">zipChild</Link>
+                                    <Link className="nav-link text-white" to="/Adminzipchild">zipChild</Link>
                                 </li>
                             </ul>
                             <div className="form-inline my-2 my-lg-0 mx-2">
@@ -43,8 +43,8 @@ class Header extends Component {
                 </div>
                 <Routes>
                     <Route exact path="/Home" element={<Home />} />
-                    <Route exact path="/zipmaster" element={<Customers />} />
-                    <Route exact path="/zipchild" element={<ChildCustomers />} />
+                    <Route exact path="/Adminzipmaster" element={<AdminZipmaster />} />
+                    <Route exact path="/Adminzipchild" element={<AdminzipChild />} />
 
                     <Route exact path="/edit/:id" element={<Edit />} />
                     <Route exact path="/editchild/:id" element={<EditChild />} />

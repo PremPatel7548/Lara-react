@@ -46,8 +46,21 @@ function Login() {
         }
 
         axios.post('http://127.0.0.1:8000/logindata',data)
-        .then(Response => Response.data == "" ? setMsg("Invalid Email Or Password") : navigate("/zipmaster"))
+        .then(Response => Response.data == "" ? setMsg("Invalid Email Or Password") : checkuser(Response.data.name))
 
+    }
+
+    const checkuser = (e) => {
+        sessionStorage.setItem('user',e);
+
+        if(sessionStorage.getItem('user') == "Admin")
+        {
+            navigate('/zipmaster');
+        }
+        else
+        {
+            navigate('/zipchild');
+        }
     }
 
 

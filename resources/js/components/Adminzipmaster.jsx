@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
 
-class Customers extends Component {
+class AdminZipmaster extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,8 +19,8 @@ class Customers extends Component {
     componentDidMount() {
         axios.get("http://127.0.0.1:8000/zipmaster")
             .then(response => {
-                this.setState({ 
-                    zipmasters: response.data.data, 
+                this.setState({
+                    zipmasters: response.data.data,
                     itemsCountPerPage: response.data.per_page,
                     totalItemsCount: response.data.total,
                     activePage: response.data.current_page
@@ -51,8 +51,8 @@ class Customers extends Component {
         // this.setState({ activePage: pageNumber });
         axios.get("http://127.0.0.1:8000/zipmaster?page="+pageNumber)
             .then(response => {
-                this.setState({ 
-                    zipmasters: response.data.data, 
+                this.setState({
+                    zipmasters: response.data.data,
                     itemsCountPerPage: response.data.per_page,
                     totalItemsCount: response.data.total,
                     activePage: response.data.current_page
@@ -130,4 +130,4 @@ class Customers extends Component {
     }
 }
 
-export default Customers;
+export default AdminZipmaster;

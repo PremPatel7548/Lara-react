@@ -6717,10 +6717,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/ChildCustomers.jsx":
-/*!****************************************************!*\
-  !*** ./resources/js/components/ChildCustomers.jsx ***!
-  \****************************************************/
+/***/ "./resources/js/components/Adminzipchild.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Adminzipchild.jsx ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6751,12 +6751,12 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var ChildCustomers = /*#__PURE__*/function (_Component) {
-  _inherits(ChildCustomers, _Component);
-  var _super = _createSuper(ChildCustomers);
-  function ChildCustomers() {
+var AdminzipChild = /*#__PURE__*/function (_Component) {
+  _inherits(AdminzipChild, _Component);
+  var _super = _createSuper(AdminzipChild);
+  function AdminzipChild() {
     var _this;
-    _classCallCheck(this, ChildCustomers);
+    _classCallCheck(this, AdminzipChild);
     _this = _super.call(this);
     _this.state = {
       zipchilds: [],
@@ -6768,7 +6768,7 @@ var ChildCustomers = /*#__PURE__*/function (_Component) {
     _this.handlePageChange = _this.handlePageChange.bind(_assertThisInitialized(_this));
     return _this;
   }
-  _createClass(ChildCustomers, [{
+  _createClass(AdminzipChild, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -6908,16 +6908,16 @@ var ChildCustomers = /*#__PURE__*/function (_Component) {
       });
     }
   }]);
-  return ChildCustomers;
+  return AdminzipChild;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChildCustomers);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AdminzipChild);
 
 /***/ }),
 
-/***/ "./resources/js/components/Customers.jsx":
-/*!***********************************************!*\
-  !*** ./resources/js/components/Customers.jsx ***!
-  \***********************************************/
+/***/ "./resources/js/components/Adminzipmaster.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Adminzipmaster.jsx ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6948,12 +6948,12 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var Customers = /*#__PURE__*/function (_Component) {
-  _inherits(Customers, _Component);
-  var _super = _createSuper(Customers);
-  function Customers() {
+var AdminZipmaster = /*#__PURE__*/function (_Component) {
+  _inherits(AdminZipmaster, _Component);
+  var _super = _createSuper(AdminZipmaster);
+  function AdminZipmaster() {
     var _this;
-    _classCallCheck(this, Customers);
+    _classCallCheck(this, AdminZipmaster);
     _this = _super.call(this);
     _this.state = {
       zipmasters: [],
@@ -6965,7 +6965,7 @@ var Customers = /*#__PURE__*/function (_Component) {
     _this.handlePageChange = _this.handlePageChange.bind(_assertThisInitialized(_this));
     return _this;
   }
-  _createClass(Customers, [{
+  _createClass(AdminZipmaster, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
@@ -7113,9 +7113,9 @@ var Customers = /*#__PURE__*/function (_Component) {
       });
     }
   }]);
-  return Customers;
+  return AdminZipmaster;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Customers);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AdminZipmaster);
 
 /***/ }),
 
@@ -7809,12 +7809,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InsertForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InsertForm */ "./resources/js/components/InsertForm.jsx");
 /* harmony import */ var _InsertChild__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InsertChild */ "./resources/js/components/InsertChild.jsx");
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.jsx");
-/* harmony import */ var _Customers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Customers */ "./resources/js/components/Customers.jsx");
-/* harmony import */ var _ChildCustomers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ChildCustomers */ "./resources/js/components/ChildCustomers.jsx");
-/* harmony import */ var _Edit__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Edit */ "./resources/js/components/Edit.jsx");
-/* harmony import */ var _Signup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Signup */ "./resources/js/components/Signup.jsx");
-/* harmony import */ var _EditChild__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./EditChild */ "./resources/js/components/EditChild.jsx");
-/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Login */ "./resources/js/components/Login.jsx");
+/* harmony import */ var _Edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Edit */ "./resources/js/components/Edit.jsx");
+/* harmony import */ var _Signup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Signup */ "./resources/js/components/Signup.jsx");
+/* harmony import */ var _EditChild__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./EditChild */ "./resources/js/components/EditChild.jsx");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Login */ "./resources/js/components/Login.jsx");
+/* harmony import */ var _Adminzipmaster__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Adminzipmaster */ "./resources/js/components/Adminzipmaster.jsx");
+/* harmony import */ var _Adminzipchild__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Adminzipchild */ "./resources/js/components/Adminzipchild.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7889,14 +7889,14 @@ var Header = /*#__PURE__*/function (_Component) {
                   className: "nav-item",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
                     className: "nav-link text-white",
-                    to: "/zipmaster",
+                    to: "/Adminzipmaster",
                     children: "zipMaster"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("li", {
                   className: "nav-item",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
                     className: "nav-link text-white",
-                    to: "/zipchild",
+                    to: "/Adminzipchild",
                     children: "zipChild"
                   })
                 })]
@@ -7921,20 +7921,20 @@ var Header = /*#__PURE__*/function (_Component) {
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_3__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
-            path: "/zipmaster",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Customers__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+            path: "/Adminzipmaster",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Adminzipmaster__WEBPACK_IMPORTED_MODULE_8__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
-            path: "/zipchild",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_ChildCustomers__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+            path: "/Adminzipchild",
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Adminzipchild__WEBPACK_IMPORTED_MODULE_9__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
             path: "/edit/:id",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Edit__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Edit__WEBPACK_IMPORTED_MODULE_4__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
             path: "/editchild/:id",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_EditChild__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_EditChild__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
             path: "/insertmaster",
@@ -7946,11 +7946,11 @@ var Header = /*#__PURE__*/function (_Component) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
             path: "/signup",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Signup__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Signup__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
             exact: true,
             path: "/login",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_7__["default"], {})
           })]
         })]
       });
@@ -8764,8 +8764,16 @@ function Login() {
       password: password
     };
     axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/logindata', data).then(function (Response) {
-      return Response.data == "" ? setMsg("Invalid Email Or Password") : navigate("/zipmaster");
+      return Response.data == "" ? setMsg("Invalid Email Or Password") : checkuser(Response.data.name);
     });
+  };
+  var checkuser = function checkuser(e) {
+    sessionStorage.setItem('user', e);
+    if (sessionStorage.getItem('user') == "Admin") {
+      navigate('/zipmaster');
+    } else {
+      navigate('/zipchild');
+    }
   };
 
   // const changeName = (e) => {

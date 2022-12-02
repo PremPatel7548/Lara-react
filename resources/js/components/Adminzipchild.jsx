@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
 
-class ChildCustomers extends Component {
+class AdminzipChild extends Component {
     constructor() {
         super();
         this.state = {
@@ -124,4 +124,4 @@ class ChildCustomers extends Component {
     }
 }
 
-export default ChildCustomers;
+export default AdminzipChild;
