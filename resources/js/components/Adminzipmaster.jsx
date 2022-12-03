@@ -101,7 +101,7 @@ class AdminZipmaster extends Component {
                                         <td>{zipmaster.longitude}</td>
                                         <td >{zipmaster.irs_estimated_population}</td>
                                         <td><Link class="btn btn-outline-warning" to={`/edit/${zipmaster.zip}`}>Edit</Link>
-                                            <a href="#" onClick={this.onDelete.bind(this, zipmaster.zip)}><button className="btn btn-outline-danger my-1">Delete</button></a></td>
+                                            <a href="#" onClick={this.onDelete.bind(this, zipmaster.zip)}><button className="btn btn-outline-danger my-1 mx-1">Delete</button></a></td>
                                     </tr>
                                 )
                             })

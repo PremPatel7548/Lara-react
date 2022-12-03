@@ -45,11 +45,11 @@ function Header() {
                                     <Link className="nav-link text-white" to="/Adminzipchild">zipChild</Link>
                                 </li>
                             </ul>
-                            <div className="form-inline my-2 my-lg-0 mx-2">
-                                <Link class="btn btn-outline-success my-2 my-sm-0" to={'/signup'}>SignUp</Link>
-                                <Link class="btn btn-outline-success my-2 my-sm-0" to={'/login'}>Login</Link>
+                            <div className="form-inline my-2 my-lg-0">
+                                <Link class="btn btn-outline-success my-2 my-sm-0 text-white" to={'/signup'}>SignUp</Link>
+                                <Link class="btn btn-outline-success my-2 my-sm-0 ml-2 mr-2 text-white" to={'/login'}>Login</Link>
+                            <button class="btn btn-outline-success my-2 my-sm-0 text-white" onClick={logout}>Logout</button>
                             </div>
-                            <button class="btn btn-outline-success my-2 my-sm-0" onClick={logout}>Logout</button>
                         </div>
                     </nav>
                 <Routes>

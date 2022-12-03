@@ -95,7 +95,7 @@ class AdminzipChild extends Component {
                                         <td>{zipchild.MedianSoldPrice}</td>
                                         <td>{zipchild.Year}</td>
                                         <td><Link class="btn btn-outline-warning" to={`/editchild/${zipchild.Zip}`}>Edit</Link>
-                                            <a href="#" onClick={this.onDelete.bind(this, zipchild.Zip)}><button className="btn btn-outline-danger my-1">Delete</button></a></td>
+                                            <a href="#" onClick={this.onDelete.bind(this, zipchild.Zip)}><button className="btn btn-outline-danger my-1 mx-1">Delete</button></a></td>
                                     </tr>
                                 )
                             })
