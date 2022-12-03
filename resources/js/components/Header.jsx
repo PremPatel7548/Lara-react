@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Routes, Link, Route, matchPath, useParams } from 'react-router-dom';
+import React, { Component,useState,useEffect } from 'react';
+import { BrowserRouter, Routes, Link, Route, matchPath, useParams,useNavigate } from 'react-router-dom';
 import InsertForm from './InsertForm';
 import InsertChild from './InsertChild';
 import Home from './Home';
@@ -10,10 +10,21 @@ import Login from './Login';
 import AdminZipmaster from './Adminzipmaster';
 import AdminzipChild from './Adminzipchild';
 
-class Header extends Component {
-    render() {
+function Header() {
+
+    const navigate = useNavigate();
+    const logout = () =>
+    {
+        var user=sessionStorage.getItem('user');
+        console.log(user);
+          if(user)
+          {
+            sessionStorage.clear();
+            navigate('/home');
+          }
+    }
+
         return (
-            <BrowserRouter>
                 <div className="container">
                     <nav className="navbar navbar-expand-sm navbar-light bg-secondary text-white">
                         <a className="navbar-brand text-white" href="/">Navbar</a>
@@ -36,11 +47,11 @@ class Header extends Component {
                             </ul>
                             <div className="form-inline my-2 my-lg-0 mx-2">
                                 <Link class="btn btn-outline-success text-white mx-2" to={'/signup'}>SignUp</Link>
-                                <Link class="btn btn-outline-success my-2 my-sm-0" to={'/login'}>Login</Link>
+                                <Link class="btn btn-outline-success my-2 my-sm-0" to={'/login'}>Login</Link>                        
                             </div>
+                            <button class="btn btn-outline-success my-2 my-sm-0" onClick={logout}>Logout</button>
                         </div>
                     </nav>
-                </div>
                 <Routes>
                     <Route exact path="/Home" element={<Home />} />
                     <Route exact path="/Adminzipmaster" element={<AdminZipmaster />} />
@@ -54,9 +65,8 @@ class Header extends Component {
                     <Route exact path="/login" element={<Login />}/>
                     {/* <Route exact path="/edit/:id" element={(matchProps)=> <Edit {...matchProps}{...this.props} /> }/> */}
                 </Routes>
-            </BrowserRouter>
+                </div>
         );
     }
-}
 
 export default Header;
