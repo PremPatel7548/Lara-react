@@ -181,58 +181,58 @@ function Edit()
 
         return (
             <div className="container">
-                            <form action="" method="post" className="col-md-5 mt-4 bg-dark text-white">
-                <div className="form-group">
-                    <label>Zip :- </label>
+                            <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+                <div className="form-group mx-5">
+                    <label>Zip </label>
                     <input type="text" className="form-control" name="zip" onChange={changeZip} value={zip}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Type :- </label>
+                <div className="form-group mx-5">
+                    <label>Type </label>
                     <input type="text" className="form-control" name="typemaster" onChange={changeTypemaster} value={typemaster}/>
                 </div>
                 
-                <div className="form-group">
-                    <label>Primary_city :- </label>
+                <div className="form-group mx-5">
+                    <label>Primary_city </label>
                     <input type="text" className="form-control" name="primary_city" onChange={changePrimary_city} value={primary_city}/>
                 </div>
 
-                <div className="form-group">
-                    <label>State :- </label>
+                <div className="form-group mx-5">
+                    <label>State </label>
                     <input type="text" className="form-control" name="state" onChange={changeState} value={state}/>
                 </div>
 
-                <div className="form-group">
-                    <label>County :- </label>
+                <div className="form-group mx-5">
+                    <label>County </label>
                     <input type="text" className="form-control" name="county" onChange={changeCounty} value={county}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Timezone :- </label>
+                <div className="form-group mx-5">
+                    <label>Timezone </label>
                     <input type="text" className="form-control" name="timezone" onChange={changeTimezone} value={timezone}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Area_code :- </label>
+                <div className="form-group mx-5">
+                    <label>Area_code </label>
                     <input type="text" className="form-control" name="area_code" onChange={changeArea_code} value={area_code}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Latitude :- </label>
+                <div className="form-group mx-5">
+                    <label>Latitude </label>
                     <input type="text" className="form-control" name="latitude" onChange={changeLatitude} value={latitude}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Longitude :- </label>
+                <div className="form-group mx-5">
+                    <label>Longitude </label>
                     <input type="text" className="form-control" name="longitude" onChange={changeLongitude} value={longitude}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Irs_estimated_population :- </label>
+                <div className="form-group mx-5">
+                    <label>Irs_estimated_population </label>
                     <input type="text" className="form-control" name="irs_estimated_population" onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
                 </div>
 
-                <button className="btn btn-outline-primary my-2" onClick={handleUpdate}>Update</button>
+                <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
             </form>
             </div>
         );

@@ -133,58 +133,58 @@ function InsertForm() {
 
     return (
         <div className="container">
-            <form action="" method="post" className="col-md-5 mt-4 bg-dark text-white">
-                <div className="form-group">
-                    <label>Zip :- </label>
-                    <input type="text" className="form-control" name="zip" onChange={changeZip} value={zip}/>
+            <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+                <div className="form-group mx-5">
+                    <label>Zip </label>
+                    <input type="text" className="form-control" name="zip" placeholder='Zip' onChange={changeZip} value={zip}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Type :- </label>
-                    <input type="text" className="form-control" name="typemaster" onChange={changeTypemaster} value={typemaster}/>
+                <div className="form-group mx-5">
+                    <label>Type </label>
+                    <input type="text" className="form-control" name="typemaster" placeholder='Type' onChange={changeTypemaster} value={typemaster}/>
                 </div>
                 
-                <div className="form-group">
-                    <label>Primary_city :- </label>
-                    <input type="text" className="form-control" name="primary_city" onChange={changePrimary_city} value={primary_city}/>
+                <div className="form-group mx-5">
+                    <label>Primary city </label>
+                    <input type="text" className="form-control" name="primary_city" placeholder='Primary City' onChange={changePrimary_city} value={primary_city}/>
                 </div>
 
-                <div className="form-group">
-                    <label>State :- </label>
-                    <input type="text" className="form-control" name="state" onChange={changeState} value={state}/>
+                <div className="form-group mx-5">
+                    <label>State </label>
+                    <input type="text" className="form-control" name="state" placeholder='State' onChange={changeState} value={state}/>
                 </div>
 
-                <div className="form-group">
-                    <label>County :- </label>
-                    <input type="text" className="form-control" name="county" onChange={changeCounty} value={county}/>
+                <div className="form-group mx-5">
+                    <label>County </label>
+                    <input type="text" className="form-control" name="county" placeholder='County' onChange={changeCounty} value={county}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Timezone :- </label>
-                    <input type="text" className="form-control" name="timezone" onChange={changeTimezone} value={timezone}/>
+                <div className="form-group mx-5">
+                    <label>Timezone </label>
+                    <input type="text" className="form-control" name="timezone" placeholder='Timezone' onChange={changeTimezone} value={timezone}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Area_code :- </label>
-                    <input type="text" className="form-control" name="area_code" onChange={changeArea_code} value={area_code}/>
+                <div className="form-group mx-5">
+                    <label>Area code </label>
+                    <input type="text" className="form-control" name="area_code" placeholder='Area Code' onChange={changeArea_code} value={area_code}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Latitude :- </label>
-                    <input type="text" className="form-control" name="latitude" onChange={changeLatitude} value={latitude}/>
+                <div className="form-group mx-5">
+                    <label>Latitude </label>
+                    <input type="text" className="form-control" name="latitude" placeholder='Latitude' onChange={changeLatitude} value={latitude}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Longitude :- </label>
-                    <input type="text" className="form-control" name="longitude" onChange={changeLongitude} value={longitude}/>
+                <div className="form-group mx-5">
+                    <label>Longitude </label>
+                    <input type="text" className="form-control" name="longitude" placeholder='Longitude' onChange={changeLongitude} value={longitude}/>
                 </div>
 
-                <div className="form-group">
-                    <label>Irs_estimated_population :- </label>
-                    <input type="text" className="form-control" name="irs_estimated_population" onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
+                <div className="form-group mx-5">
+                    <label>Irs estimated population </label>
+                    <input type="text" className="form-control" name="irs_estimated_population" placeholder='Irs Estimated Population' onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
                 </div>
 
-                <button className="btn btn-outline-primary my-2" onClick={HandleInsert}>Add</button>
+                <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Add</button>
             </form>
         </div>
     )

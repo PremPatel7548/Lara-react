@@ -20,10 +20,16 @@ html, body {
     justify-content: center;
     align-items: center;
     min-height: 70vh;
+<<<<<<< HEAD
     height : 470px;
     width : 800px;
     margin-top: 5%;
     margin-left: 15%;
+=======
+    width: 850px;
+    margin-top: 5%;
+    margin-left: 10%;
+>>>>>>> origin/master
     background: #16616b;
     }
     .formsignup {
