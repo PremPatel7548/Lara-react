@@ -130,48 +130,48 @@ function InsertChild() {
         <div className="container col-md-9">
             <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
                 <div className="form-group mx-5">
-                    <label>Zip :- </label>
-                    <input type="text" className="form-control" name="Zip" onChange={changeZip} value={Zip}/>
+                    <label>Zip </label>
+                    <input type="text" className="form-control" name="Zip" placeholder='Zip' onChange={changeZip} value={Zip}/>
                 </div>
 
                 <div className="form-group mx-5">
-                    <label>City :- </label>
-                    <input type="text" className="form-control" name="City" onChange={changeCity} value={City}/>
+                    <label>City </label>
+                    <input type="text" className="form-control" name="City" placeholder='City' onChange={changeCity} value={City}/>
                 </div>
 
                 <div className="form-group mx-5">
-                    <label>State :- </label>
-                    <input type="text" className="form-control" name="State" onChange={changeState} value={State}/>
+                    <label>State </label>
+                    <input type="text" className="form-control" name="State" placeholder='State' onChange={changeState} value={State}/>
                 </div>
 
                 <div className="form-group mx-5">
-                    <label>HomeSale :- </label>
-                    <input type="text" className="form-control" name="HomeSale" onChange={changeHomeSale} value={HomeSale}/>
+                    <label>HomeSale </label>
+                    <input type="text" className="form-control" name="HomeSale" placeholder='Home Sale' onChange={changeHomeSale} value={HomeSale}/>
                 </div>
 
                 <div className="form-group mx-5">
-                    <label>HomeBaseValue :- </label>
-                    <input type="text" className="form-control" name="HomeBaseValue" onChange={changeHomeBaseValue} value={HomeBaseValue}/>
+                    <label>HomeBaseValue </label>
+                    <input type="text" className="form-control" name="HomeBaseValue" placeholder='Home Base Value' onChange={changeHomeBaseValue} value={HomeBaseValue}/>
                 </div>
 
                 <div className="form-group mx-5">
-                    <label>HomeMaxValue :- </label>
-                    <input type="text" className="form-control" name="HomeMaxValue" onChange={changeHomeMaxValue} value={HomeMaxValue}/>
+                    <label>HomeMaxValue </label>
+                    <input type="text" className="form-control" name="HomeMaxValue" placeholder='Home Max Value' onChange={changeHomeMaxValue} value={HomeMaxValue}/>
                 </div>
 
                 <div className="form-group mx-5">
-                    <label>MedianListPrice :- </label>
-                    <input type="text" className="form-control" name="MedianListPrice" onChange={changeMedianListPrice} value={MedianListPrice}/>
+                    <label>MedianListPrice </label>
+                    <input type="text" className="form-control" name="MedianListPrice" placeholder='Median List Price' onChange={changeMedianListPrice} value={MedianListPrice}/>
                 </div>
 
                 <div className="form-group mx-5">
-                    <label>MedianSoldPrice :- </label>
-                    <input type="text" className="form-control" name="MedianSoldPrice" onChange={changeMedianSoldPrice} value={MedianSoldPrice}/>
+                    <label>MedianSoldPrice </label>
+                    <input type="text" className="form-control" name="MedianSoldPrice" placeholder='Median Sold Price' onChange={changeMedianSoldPrice} value={MedianSoldPrice}/>
                 </div>
 
                 <div className="form-group mx-5">
-                    <label>Year :- </label>
-                    <input type="text" className="form-control" name="Year" onChange={changeYear} value={Year}/>
+                    <label>Year </label>
+                    <input type="text" className="form-control" name="Year" placeholder='YYYY' onChange={changeYear} value={Year}/>
                 </div>
 
                 <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Add</button>
