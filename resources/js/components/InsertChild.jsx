@@ -127,7 +127,7 @@ function InsertChild() {
     }
 
     return (
-        <div className="container col-md-9">
+        <div className="container">
             <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
                 <div className="form-group mx-5">
                     <label>Zip </label>
