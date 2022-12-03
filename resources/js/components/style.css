@@ -20,7 +20,9 @@ html, body {
     justify-content: center;
     align-items: center;
     min-height: 70vh;
+    width: 850px;
     margin-top: 5%;
+    margin-left: 10%;
     background: #16616b;
     }
     .formsignup {

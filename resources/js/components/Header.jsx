@@ -46,13 +46,8 @@ function Header() {
                                 </li>
                             </ul>
                             <div className="form-inline my-2 my-lg-0 mx-2">
-<<<<<<< HEAD
                                 <Link class="btn btn-outline-success my-2 my-sm-0" to={'/signup'}>SignUp</Link>
                                 <Link class="btn btn-outline-success my-2 my-sm-0" to={'/login'}>Login</Link>
-=======
-                                <Link class="btn btn-outline-success text-white mx-2" to={'/signup'}>SignUp</Link>
-                                <Link class="btn btn-outline-success my-2 my-sm-0" to={'/login'}>Login</Link>                        
->>>>>>> origin/master
                             </div>
                             <button class="btn btn-outline-success my-2 my-sm-0" onClick={logout}>Logout</button>
                         </div>
