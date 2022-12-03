@@ -20,7 +20,10 @@ html, body {
     justify-content: center;
     align-items: center;
     min-height: 70vh;
+    height : 470px;
+    width : 800px;
     margin-top: 5%;
+    margin-left: 15%;
     background: #16616b;
     }
     .formsignup {
@@ -100,11 +103,11 @@ html, body {
     }
 
     .loginlink{
-        margin-left: 200px;
+        margin-left: 190px;
     }
 
     .signuplink{
-        margin-left : 205px;
+        margin-left : 225px;
         font-size: 40px;
         margin-bottom: 10px;
     }

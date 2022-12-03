@@ -64,7 +64,7 @@ class AdminZipmaster extends Component {
         return (
             <div>
 
-                <table className="table bg-dark text-white mt-4">
+                <table className="table bg-dark text-white mt-4 text-center">
                     <thead>
                         <tr>
                             <th>
@@ -99,9 +99,9 @@ class AdminZipmaster extends Component {
                                         <td>{zipmaster.area_code}</td>
                                         <td>{zipmaster.latitude}</td>
                                         <td>{zipmaster.longitude}</td>
-                                        <td>{zipmaster.irs_estimated_population}</td>
+                                        <td >{zipmaster.irs_estimated_population}</td>
                                         <td><Link class="btn btn-outline-warning" to={`/edit/${zipmaster.zip}`}>Edit</Link>
-                                            <a href="#" onClick={this.onDelete.bind(this, zipmaster.zip)}><button className="btn btn-outline-danger mx-2">Delete</button></a></td>
+                                            <a href="#" onClick={this.onDelete.bind(this, zipmaster.zip)}><button className="btn btn-outline-danger my-1">Delete</button></a></td>
                                     </tr>
                                 )
                             })

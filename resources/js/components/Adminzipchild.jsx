@@ -61,7 +61,7 @@ class AdminzipChild extends Component {
         return (
             <div>
 
-                <table className="table bg-dark text-white mt-4">
+                <table className="table bg-dark text-white mt-4 text-center">
                     <thead>
                         <tr>
                             <th>
@@ -95,7 +95,7 @@ class AdminzipChild extends Component {
                                         <td>{zipchild.MedianSoldPrice}</td>
                                         <td>{zipchild.Year}</td>
                                         <td><Link class="btn btn-outline-warning" to={`/editchild/${zipchild.Zip}`}>Edit</Link>
-                                            <a href="#" onClick={this.onDelete.bind(this, zipchild.Zip)}><button className="btn btn-outline-danger mx-2">Delete</button></a></td>
+                                            <a href="#" onClick={this.onDelete.bind(this, zipchild.Zip)}><button className="btn btn-outline-danger my-1">Delete</button></a></td>
                                     </tr>
                                 )
                             })
