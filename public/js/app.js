@@ -8846,7 +8846,7 @@ function Login() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
         type: "submit",
-        className: "btn btn-outline-danger col-md-11 mx-3",
+        className: "btn btn-danger col-md-11 mx-3",
         onClick: HandleLogin,
         children: "Login"
       })]
