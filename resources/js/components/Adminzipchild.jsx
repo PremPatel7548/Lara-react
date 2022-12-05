@@ -29,18 +29,22 @@ class AdminzipChild extends Component {
     }
 
     onDelete(customer_id) {
-        axios.delete('http://127.0.0.1:8000/deletechild/' + customer_id)
-            .then(response => {
-
-                var zipchilds = this.state.zipchilds;
-
-                for (var i = 0; i < zipchilds.length; i++) {
-                    if (zipchilds[i].Zip == customer_id) {
-                        zipchilds.splice(i, 1);
-                        this.setState({ zipchilds: zipchilds });
+        var d=confirm("Are You Sure Delete This Record");
+        if(d == true)
+        {
+            axios.delete('http://127.0.0.1:8000/deletechild/' + customer_id)
+                .then(response => {
+    
+                    var zipchilds = this.state.zipchilds;
+    
+                    for (var i = 0; i < zipchilds.length; i++) {
+                        if (zipchilds[i].Zip == customer_id) {
+                            zipchilds.splice(i, 1);
+                            this.setState({ zipchilds: zipchilds });
+                        }
                     }
-                }
-            });
+                });
+        }
     }
 
     handlePageChange(pageNumber) {

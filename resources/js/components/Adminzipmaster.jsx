@@ -17,18 +17,21 @@ class AdminZipmaster extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/zipmaster")
-            .then(response => {
-                this.setState({
-                    zipmasters: response.data.data,
-                    itemsCountPerPage: response.data.per_page,
-                    totalItemsCount: response.data.total,
-                    activePage: response.data.current_page
+            axios.get("http://127.0.0.1:8000/zipmaster")
+                .then(response => {
+                    this.setState({
+                        zipmasters: response.data.data,
+                        itemsCountPerPage: response.data.per_page,
+                        totalItemsCount: response.data.total,
+                        activePage: response.data.current_page
+                    });
                 });
-            });
     }
 
     onDelete(customer_id) {
+        var d=confirm("Are You Sure Delete This Record");
+        if(d  == true)
+        {
         axios.delete('http://127.0.0.1:8000/delete/' + customer_id)
             .then(response => {
 
@@ -41,7 +44,9 @@ class AdminZipmaster extends Component {
                     }
                 }
             });
+        }
     }
+
 
     // "per_page" = 20;
     // "total" = 20000;

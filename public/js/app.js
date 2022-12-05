@@ -6785,17 +6785,20 @@ var AdminzipChild = /*#__PURE__*/function (_Component) {
     key: "onDelete",
     value: function onDelete(customer_id) {
       var _this3 = this;
-      axios__WEBPACK_IMPORTED_MODULE_1__["default"]["delete"]('http://127.0.0.1:8000/deletechild/' + customer_id).then(function (response) {
-        var zipchilds = _this3.state.zipchilds;
-        for (var i = 0; i < zipchilds.length; i++) {
-          if (zipchilds[i].Zip == customer_id) {
-            zipchilds.splice(i, 1);
-            _this3.setState({
-              zipchilds: zipchilds
-            });
+      var d = confirm("Are You Sure Delete This Record");
+      if (d == true) {
+        axios__WEBPACK_IMPORTED_MODULE_1__["default"]["delete"]('http://127.0.0.1:8000/deletechild/' + customer_id).then(function (response) {
+          var zipchilds = _this3.state.zipchilds;
+          for (var i = 0; i < zipchilds.length; i++) {
+            if (zipchilds[i].Zip == customer_id) {
+              zipchilds.splice(i, 1);
+              _this3.setState({
+                zipchilds: zipchilds
+              });
+            }
           }
-        }
-      });
+        });
+      }
     }
   }, {
     key: "handlePageChange",
@@ -6982,17 +6985,20 @@ var AdminZipmaster = /*#__PURE__*/function (_Component) {
     key: "onDelete",
     value: function onDelete(customer_id) {
       var _this3 = this;
-      axios__WEBPACK_IMPORTED_MODULE_1__["default"]["delete"]('http://127.0.0.1:8000/delete/' + customer_id).then(function (response) {
-        var zipmasters = _this3.state.zipmasters;
-        for (var i = 0; i < zipmasters.length; i++) {
-          if (zipmasters[i].zip == customer_id) {
-            zipmasters.splice(i, 1);
-            _this3.setState({
-              zipmasters: zipmasters
-            });
+      var d = confirm("Are You Sure Delete This Record");
+      if (d == true) {
+        axios__WEBPACK_IMPORTED_MODULE_1__["default"]["delete"]('http://127.0.0.1:8000/delete/' + customer_id).then(function (response) {
+          var zipmasters = _this3.state.zipmasters;
+          for (var i = 0; i < zipmasters.length; i++) {
+            if (zipmasters[i].zip == customer_id) {
+              zipmasters.splice(i, 1);
+              _this3.setState({
+                zipmasters: zipmasters
+              });
+            }
           }
-        }
-      });
+        });
+      }
     }
 
     // "per_page" = 20;
