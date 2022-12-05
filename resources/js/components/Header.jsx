@@ -44,26 +44,24 @@ function Header() {
                             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                                 {
                                    sessionStorage.getItem('user') == "Admin"?
-                                <li className="nav-item active">
-                                    <Link className="nav-link text-white" to="/home">Home <span className="sr-only">(current)</span></Link>
-                                </li>: <li className="nav-item active">
-                                    <Link className="nav-link text-white" to="/userhome"> User Home <span className="sr-only">(current)</span></Link>
-                                </li>
-                                }
-                                {
-                                    sessionStorage.getItem('user') == "Admin"?
-                                    <div className='row'>
+                                   <div className='row'>
 
+                                <li className="nav-item active">
+                                    <Link className="nav-link text-white ml-2" to="/home">Home <span className="sr-only">(current)</span></Link>
+                                </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link text-white ml-3" to="/Adminzipmaster">zipMaster</Link>
+                                    <Link className="nav-link text-white" to="/Adminzipmaster">zipMaster</Link>
                                     </li>
                                 <li className="nav-item">
                                     <Link className="nav-link text-white" to="/Adminzipchild">zipChild</Link>
                                 </li>
-                                        </div>:
-                                <li className="nav-item">
-                                <Link className="nav-link text-white" to="/Adminzipchild">User Table</Link>
-                               </li>
+                                   </div>
+                                :
+                                <div>
+                                <li className="nav-item active">
+                                    <Link className="nav-link text-white" to="/userhome"> User Home <span className="sr-only">(current)</span></Link>
+                                </li>
+                                </div>
                                 }
 
                             </ul>
