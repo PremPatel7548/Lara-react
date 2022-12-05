@@ -11,6 +11,8 @@ import AdminZipmaster from './Adminzipmaster';
 import AdminzipChild from './Adminzipchild';
 
 function Header() {
+    const [loggedin,setloggedin] = useState(false);
+
 
     const navigate = useNavigate();
     const logout = () =>
@@ -19,8 +21,13 @@ function Header() {
         console.log(user);
           if(user)
           {
-            sessionStorage.clear();
-            navigate('/home');
+             var r = confirm("Sure You want to Logout");
+            if(r == true)
+            {
+                sessionStorage.clear();
+                navigate('/home');
+            }
+
           }
     }
 
