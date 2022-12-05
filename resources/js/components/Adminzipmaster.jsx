@@ -77,16 +77,16 @@ class AdminZipmaster extends Component {
                             </th>
                         </tr>
                         <tr>
-                            <th>zip</th>
-                            <th>type</th>
-                            <th>primary_city</th>
-                            <th>state</th>
-                            <th>county</th>
-                            <th>timezone</th>
-                            <th>area_code</th>
-                            <th>latitude</th>
-                            <th>longitude</th>
-                            <th>irs_estimated_population</th>
+                            <th>Zip</th>
+                            <th>Type</th>
+                            <th>PrimaryCity</th>
+                            <th>State</th>
+                            <th>County</th>
+                            <th>Timezone</th>
+                            <th>AreaCode</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Irs_Estimated_Population</th>
 
                         </tr>
                     </thead>
