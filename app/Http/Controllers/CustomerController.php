@@ -131,4 +131,19 @@ class CustomerController extends Controller
         $customer = realtorScrapedDump::find($id);
         $customer->delete();
     }
+
+    public function search(Request $req)
+    {
+        $search=$req['search'];
+        if($search!="")
+        {
+            $display=zipcodesearch::where('zip','=',$search)->first();
+            return $display;
+        }
+        else
+        {
+            $display=zipcodesearch::paginate(30);
+            return $display;
+        }
+    }
 }

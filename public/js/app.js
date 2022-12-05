@@ -9105,7 +9105,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var react_js_pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-js-pagination */ "./node_modules/react-js-pagination/dist/Pagination.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -9120,34 +9122,169 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
+
 var Userhome = /*#__PURE__*/function (_Component) {
   _inherits(Userhome, _Component);
   var _super = _createSuper(Userhome);
   function Userhome() {
+    var _this;
     _classCallCheck(this, Userhome);
-    return _super.apply(this, arguments);
+    _this = _super.call(this);
+    _this.state = {
+      zipmasters: [],
+      search: '',
+      activePage: 1,
+      itemsCountPerPage: 1,
+      totalItemsCount: 1,
+      pageRangeDisplayed: 5
+    };
+    _this.handlePageChange = _this.handlePageChange.bind(_assertThisInitialized(_this));
+    _this.onsearch = _this.onsearch.bind(_assertThisInitialized(_this));
+    _this.ontype = _this.ontype.bind(_assertThisInitialized(_this));
+    return _this;
   }
   _createClass(Userhome, [{
+    key: "onsearch",
+    value: function onsearch() {
+      var _this2 = this;
+      var data = {
+        search: this.state.search
+      };
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].post("http://127.0.0.1:8000/search", data).then(function (response) {
+        _this2.setState({
+          zipmasters: response.data.data,
+          itemsCountPerPage: response.data.per_page,
+          totalItemsCount: response.data.total,
+          activePage: response.data.current_page
+        });
+      });
+    }
+  }, {
+    key: "ontype",
+    value: function ontype(e) {
+      this.setState({
+        search: e.target.value
+      });
+    }
+    // componentDidMount() {
+    //         axios.get("http://127.0.0.1:8000/zipmaster")
+    //             .then(response => {
+    //                 this.setState({
+    // zipmasters: response.data.data,
+    // itemsCountPerPage: response.data.per_page,
+    // totalItemsCount: response.data.total,
+    // activePage: response.data.current_page
+    //                 });
+    //             });
+    // }
+
+    // "per_page" = 20;
+    // "total" = 20000;
+    // "current_page" = 1;
+  }, {
+    key: "handlePageChange",
+    value: function handlePageChange(pageNumber) {
+      var _this3 = this;
+      console.log('active page is ${pageNumber}');
+      // this.setState({ activePage: pageNumber });
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipmaster?page=" + pageNumber).then(function (response) {
+        _this3.setState({
+          zipmasters: response.data.data,
+          itemsCountPerPage: response.data.per_page,
+          totalItemsCount: response.data.total,
+          activePage: response.data.current_page
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "container",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "row justify-content-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "col-md-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "card",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "card-header",
-                children: " User Home Component"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                className: "card-body",
-                children: "User component!"
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            type: "text",
+            name: "search",
+            className: "col-md-4 text-dark",
+            onChange: this.ontype,
+            value: this.state.search
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            className: "btn btn-warning",
+            onClick: this.onsearch,
+            children: "Search"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+          className: "table bg-dark text-white mt-4 text-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "zip"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "type"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "primary_city"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "state"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "county"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "timezone"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "area_code"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "latitude"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "longitude"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "irs_estimated_population"
               })]
             })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
+            children: this.state.zipmasters.map(function (zipmaster) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.zip
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.type
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.primary_city
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.state
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.county
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.timezone
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.area_code
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.latitude
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.longitude
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.irs_estimated_population
+                })]
+              });
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "d-flex justify-content-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            activePage: this.state.activePage,
+            itemsCountPerPage: this.state.itemsCountPerPage,
+            totalItemsCount: this.state.totalItemsCount,
+            pageRangeDisplayed: this.state.pageRangeDisplayed,
+            onChange: this.handlePageChange,
+            itemClass: "page-item",
+            linkClass: "page-link"
+            // itemsCountPerPage={20}
+            // totalItemsCount={10000}
+            // pageRangeDisplayed={5}
+            // onChange={this.handlePageChange}
+            // itemClass='page-item'
+            // linkClass='page-link'
           })
-        })
+        })]
       });
     }
   }]);
@@ -16443,7 +16580,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html, body {\n    min-height: 100%;\n    padding: 0;\n    margin: 0;\n    font-family: Roboto, Arial, sans-serif;\n    font-size: 14px;\n    color: #666;\n    }\n    h1 {\n    margin: 0 0 20px;\n    font-weight: 400;\n    color: #1c87c9;\n    }\n    p {\n    margin: 0 0 5px;\n    }\n    .main-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    min-height: 70vh;\n\n    height : 470px;\n    width : 800px;\n    margin-top: 5%;\n    margin-left: 15%;\n    background: #16616b;\n    }\n    .formsignup {\n        width: 500px;\n    padding: 25px;\n    margin: 25px;\n    box-shadow: 0 2px 5px #f5f5f5;\n    background: #f5f5f5;\n    }\n\n    form {\n        width: 400px;\n        padding: 25px;\n        margin: 25px;\n        box-shadow: 0 2px 5px #f5f5f5;\n        background: #f5f5f5;\n        }\n        .formlogin {\n            width: 400px;\n            padding: 25px;\n            margin: 25px;\n            box-shadow: 0 2px 5px #f5f5f5;\n            background: #f5f5f5;\n            }\n    .fas {\n    margin: 25px 10px 0;\n    font-size: 72px;\n    color: #fff;\n    }\n    .fa-envelope {\n    transform: rotate(-20deg);\n    }\n    .fa-at , .fa-mail-bulk{\n    transform: rotate(10deg);\n    }\n    input, textarea {\n    width: calc(100% - 18px);\n    padding: 8px;\n    margin-bottom: 20px;\n    border: 1px solid #1c87c9;\n    outline: none;\n    }\n    input::-moz-placeholder {\n    color: #666;\n    }\n    input::placeholder {\n    color: #666;\n    }\n    /* button {\n    width: 100%;\n    padding: 10px;\n    border: none;\n    background: #1c87c9;\n    font-size: 16px;\n    font-weight: 400;\n    color: #fff;\n    } */\n    button:hover {\n    background: #2371a0;\n    }\n    @media (min-width: 568px) {\n    .main-block {\n    flex-direction: row;\n    }\n    .left-part, form {\n    width: 50%;\n    }\n    .fa-envelope {\n    margin-top: 0;\n    margin-left: 20%;\n    }\n    .fa-at {\n    margin-top: -10%;\n    margin-left: 65%;\n    }\n    .fa-mail-bulk {\n    margin-top: 2%;\n    margin-left: 28%;\n    }\n    }\n\n    .loginlink{\n        margin-left: 190px;\n    }\n\n    .signuplink{\n        margin-left : 225px;\n        font-size: 40px;\n        margin-bottom: 10px;\n    }\n\n    .all{\n        font-size: 20px;\n    }\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html, body {\r\n    min-height: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n    font-family: Roboto, Arial, sans-serif;\r\n    font-size: 14px;\r\n    color: #666;\r\n    }\r\n    h1 {\r\n    margin: 0 0 20px;\r\n    font-weight: 400;\r\n    color: #1c87c9;\r\n    }\r\n    p {\r\n    margin: 0 0 5px;\r\n    }\r\n    .main-block {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-height: 70vh;\r\n\r\n    height : 470px;\r\n    width : 800px;\r\n    margin-top: 5%;\r\n    margin-left: 15%;\r\n    background: #16616b;\r\n    }\r\n    .formsignup {\r\n        width: 500px;\r\n    padding: 25px;\r\n    margin: 25px;\r\n    box-shadow: 0 2px 5px #f5f5f5;\r\n    background: #f5f5f5;\r\n    }\r\n\r\n    form {\r\n        width: 400px;\r\n        padding: 25px;\r\n        margin: 25px;\r\n        box-shadow: 0 2px 5px #f5f5f5;\r\n        background: #f5f5f5;\r\n        }\r\n        .formlogin {\r\n            width: 400px;\r\n            padding: 25px;\r\n            margin: 25px;\r\n            box-shadow: 0 2px 5px #f5f5f5;\r\n            background: #f5f5f5;\r\n            }\r\n    .fas {\r\n    margin: 25px 10px 0;\r\n    font-size: 72px;\r\n    color: #fff;\r\n    }\r\n    .fa-envelope {\r\n    transform: rotate(-20deg);\r\n    }\r\n    .fa-at , .fa-mail-bulk{\r\n    transform: rotate(10deg);\r\n    }\r\n    input, textarea {\r\n    width: calc(100% - 18px);\r\n    padding: 8px;\r\n    margin-bottom: 20px;\r\n    border: 1px solid #1c87c9;\r\n    outline: none;\r\n    }\r\n    input::-moz-placeholder {\r\n    color: #666;\r\n    }\r\n    input::placeholder {\r\n    color: #666;\r\n    }\r\n    /* button {\r\n    width: 100%;\r\n    padding: 10px;\r\n    border: none;\r\n    background: #1c87c9;\r\n    font-size: 16px;\r\n    font-weight: 400;\r\n    color: #fff;\r\n    } */\r\n    button:hover {\r\n    background: #2371a0;\r\n    }\r\n    @media (min-width: 568px) {\r\n    .main-block {\r\n    flex-direction: row;\r\n    }\r\n    .left-part, form {\r\n    width: 50%;\r\n    }\r\n    .fa-envelope {\r\n    margin-top: 0;\r\n    margin-left: 20%;\r\n    }\r\n    .fa-at {\r\n    margin-top: -10%;\r\n    margin-left: 65%;\r\n    }\r\n    .fa-mail-bulk {\r\n    margin-top: 2%;\r\n    margin-left: 28%;\r\n    }\r\n    }\r\n\r\n    .loginlink{\r\n        margin-left: 190px;\r\n    }\r\n\r\n    .signuplink{\r\n        margin-left : 225px;\r\n        font-size: 40px;\r\n        margin-bottom: 10px;\r\n    }\r\n\r\n    .all{\r\n        font-size: 20px;\r\n    }\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
