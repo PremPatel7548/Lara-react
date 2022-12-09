@@ -6,7 +6,7 @@ import { get } from 'lodash';
 
 function Userhome(){
     const[zipchilds,setZipchilds] = useState([]);
-    const[search,setSearch] = useState();
+    const[search,setSearch] = useState("");
 
     useEffect(() => {
         axios.get("http://127.0.0.1:8000/zipchild")
@@ -15,16 +15,12 @@ function Userhome(){
         })
     },[]);
 
-    const SearchZip = () =>
-    {
-
-    }
     return(
         <div>
             <div className='col-md-4 mt-3'>
-                <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>setSearch(e.target.value)} value={search} placeholder="Search"></input>
+                <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>setSearch(e.target.value)} placeholder="Search"></input>
             </div>
-           <table className="table bg-dark text-white mt-4 text-center">
+           <table className="table bg-dark text-white mt-2 text-center">
                     <thead>
                         <tr>
                             <th>Zip</th>
@@ -40,7 +36,16 @@ function Userhome(){
                     </thead>
                     <tbody>
                         {
-                            zipchilds.filter(zipchild=>zipchild.City.toLowerCase().includes(search)||zipchild.State.toLowerCase().includes(search))
+                            zipchilds.filter(zipchild=>
+                                zipchild.Zip.toString().toLowerCase().includes(search)||
+                                zipchild.City.toLowerCase().includes(search)||
+                                zipchild.State.toLowerCase().includes(search)||
+                                zipchild.HomeSale.toString().toLowerCase().includes(search)||
+                                zipchild.HomeBaseValue.toString().toLowerCase().includes(search)||
+                                zipchild.HomeMaxValue.toString().toLowerCase().includes(search)||
+                                zipchild.MedianListPrice.toString().toLowerCase().includes(search)||
+                                zipchild.MedianSoldPrice.toString().toLowerCase().includes(search)||
+                                zipchild.Year.toString().toLowerCase().includes(search))
                             .map(zipchild=>{
                                 return (
                                     <tr key={zipchild.Zip}>

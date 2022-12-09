@@ -9128,7 +9128,7 @@ function Userhome() {
     _useState2 = _slicedToArray(_useState, 2),
     zipchilds = _useState2[0],
     setZipchilds = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState4 = _slicedToArray(_useState3, 2),
     search = _useState4[0],
     setSearch = _useState4[1];
@@ -9137,7 +9137,6 @@ function Userhome() {
       setZipchilds(response.data.data);
     });
   }, []);
-  var SearchZip = function SearchZip() {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "col-md-4 mt-3",
@@ -9148,11 +9147,10 @@ function Userhome() {
         onChange: function onChange(e) {
           return setSearch(e.target.value);
         },
-        value: search,
         placeholder: "Search"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
-      className: "table bg-dark text-white mt-4 text-center",
+      className: "table bg-dark text-white mt-2 text-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
@@ -9177,7 +9175,7 @@ function Userhome() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
         children: zipchilds.filter(function (zipchild) {
-          return zipchild.City.toLowerCase().includes(search) || zipchild.State.toLowerCase().includes(search);
+          return zipchild.Zip.toString().toLowerCase().includes(search) || zipchild.City.toLowerCase().includes(search) || zipchild.State.toLowerCase().includes(search) || zipchild.HomeSale.toString().toLowerCase().includes(search) || zipchild.HomeBaseValue.toString().toLowerCase().includes(search) || zipchild.HomeMaxValue.toString().toLowerCase().includes(search) || zipchild.MedianListPrice.toString().toLowerCase().includes(search) || zipchild.MedianSoldPrice.toString().toLowerCase().includes(search) || zipchild.Year.toString().toLowerCase().includes(search);
         }).map(function (zipchild) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
