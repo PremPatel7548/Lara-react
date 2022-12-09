@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Component } from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import "./style1.css";
 
 // class InsertForm extends Component {
 //     constructor(){
@@ -69,124 +70,205 @@ import {useNavigate} from 'react-router-dom';
 // }
 
 function InsertForm() {
-    const [zip,setZip] = useState('')
-    const [typemaster,setTypemaster] = useState('')
-    const [primary_city,setPrimary_city] = useState('')
-    const [state,setState] = useState('')
-    const [county,setCounty] = useState('')
-    const [timezone,setTimezone] = useState('')
-    const [area_code,setArea_code] = useState('')
-    const [latitude,setLatitude] = useState('')
-    const [longitude,setLongitude] = useState('')
-    const [irs_estimated_population,setIrs_estimated_population] = useState('')
+    const [zip, setZip] = useState('')
+    const [typemaster, setTypemaster] = useState('')
+    const [primary_city, setPrimary_city] = useState('')
+    const [state, setState] = useState('')
+    const [county, setCounty] = useState('')
+    const [timezone, setTimezone] = useState('')
+    const [area_code, setArea_code] = useState('')
+    const [latitude, setLatitude] = useState('')
+    const [longitude, setLongitude] = useState('')
+    const [irs_estimated_population, setIrs_estimated_population] = useState('')
 
     const navigate = useNavigate();
 
-    const HandleInsert = ()=>{
+    const HandleInsert = () => {
         const data = {
-            zip:zip,
-            typemaster:typemaster,
-            primary_city:primary_city,
-            state:state,
-            county:county,
-            timezone:timezone,
-            area_code:area_code,
-            latitude:latitude,
-            longitude:longitude,
-            irs_estimated_population:irs_estimated_population
+            zip: zip,
+            typemaster: typemaster,
+            primary_city: primary_city,
+            state: state,
+            county: county,
+            timezone: timezone,
+            area_code: area_code,
+            latitude: latitude,
+            longitude: longitude,
+            irs_estimated_population: irs_estimated_population
         }
 
-        axios.post('http://127.0.0.1:8000/insertmaster',data)
-        .then(navigate('/zipmaster'));
+        axios.post('http://127.0.0.1:8000/insertmaster', data)
+            .then(navigate('/zipmaster'));
     }
 
-    const changeZip = (e) =>{
+    const changeZip = (e) => {
         setZip(e.target.value);
     }
-    const changeTypemaster = (e) =>{
+    const changeTypemaster = (e) => {
         setTypemaster(e.target.value);
     }
-    const changePrimary_city = (e) =>{
+    const changePrimary_city = (e) => {
         setPrimary_city(e.target.value);
     }
-    const changeState = (e) =>{
+    const changeState = (e) => {
         setState(e.target.value);
     }
-    const changeCounty = (e) =>{
+    const changeCounty = (e) => {
         setCounty(e.target.value);
     }
-    const changeTimezone = (e) =>{
+    const changeTimezone = (e) => {
         setTimezone(e.target.value);
     }
-    const changeArea_code = (e) =>{
+    const changeArea_code = (e) => {
         setArea_code(e.target.value);
     }
-    const changeLatitude = (e) =>{
+    const changeLatitude = (e) => {
         setLatitude(e.target.value);
     }
-    const changeLongitude = (e) =>{
+    const changeLongitude = (e) => {
         setLongitude(e.target.value);
     }
-    const changeIrs_estimated_population = (e) =>{
+    const changeIrs_estimated_population = (e) => {
         setIrs_estimated_population(e.target.value);
     }
 
+    // return (
+    //     <div className="container">
+    //         <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+    //             <div className="form-group mx-5">
+    //                 <label>Zip </label>
+    //                 <input type="text" className="form-control" name="zip" placeholder='Zip' onChange={changeZip} value={zip}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>Type </label>
+    //                 <input type="text" className="form-control" name="typemaster" placeholder='Type' onChange={changeTypemaster} value={typemaster}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>Primary city </label>
+    //                 <input type="text" className="form-control" name="primary_city" placeholder='Primary City' onChange={changePrimary_city} value={primary_city}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>State </label>
+    //                 <input type="text" className="form-control" name="state" placeholder='State' onChange={changeState} value={state}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>County </label>
+    //                 <input type="text" className="form-control" name="county" placeholder='County' onChange={changeCounty} value={county}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>Timezone </label>
+    //                 <input type="text" className="form-control" name="timezone" placeholder='Timezone' onChange={changeTimezone} value={timezone}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>Area code </label>
+    //                 <input type="text" className="form-control" name="area_code" placeholder='Area Code' onChange={changeArea_code} value={area_code}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>Latitude </label>
+    //                 <input type="text" className="form-control" name="latitude" placeholder='Latitude' onChange={changeLatitude} value={latitude}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>Longitude </label>
+    //                 <input type="text" className="form-control" name="longitude" placeholder='Longitude' onChange={changeLongitude} value={longitude}/>
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>Irs estimated population </label>
+    //                 <input type="text" className="form-control" name="irs_estimated_population" placeholder='Irs Estimated Population' onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
+    //             </div>
+
+    //             <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Add</button>
+    //         </form>
+    //     </div>
+    // )
     return (
-        <div className="container">
-            <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
-                <div className="form-group mx-5">
-                    <label>Zip </label>
-                    <input type="text" className="form-control" name="zip" placeholder='Zip' onChange={changeZip} value={zip}/>
-                </div>
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black">
+                        <div class="card-body p-md-5 main">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <div className="form-group mx-5">
-                    <label>Type </label>
-                    <input type="text" className="form-control" name="typemaster" placeholder='Type' onChange={changeTypemaster} value={typemaster}/>
-                </div>
-                
-                <div className="form-group mx-5">
-                    <label>Primary city </label>
-                    <input type="text" className="form-control" name="primary_city" placeholder='Primary City' onChange={changePrimary_city} value={primary_city}/>
-                </div>
+                                    <div className="container">
+                                        <form action="" method="post" className="mx-1 mx-md-4 insert">
+                                            <div className="form-group mx-5">
+                                                <label>Zip </label>
+                                                <input type="text" className="form-control" name="zip" placeholder='Zip' onChange={changeZip} value={zip} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>State </label>
-                    <input type="text" className="form-control" name="state" placeholder='State' onChange={changeState} value={state}/>
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>Type </label>
+                                                <input type="text" className="form-control" name="typemaster" placeholder='Type' onChange={changeTypemaster} value={typemaster} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>County </label>
-                    <input type="text" className="form-control" name="county" placeholder='County' onChange={changeCounty} value={county}/>
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>Primary city </label>
+                                                <input type="text" className="form-control" name="primary_city" placeholder='Primary City' onChange={changePrimary_city} value={primary_city} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>Timezone </label>
-                    <input type="text" className="form-control" name="timezone" placeholder='Timezone' onChange={changeTimezone} value={timezone}/>
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>State </label>
+                                                <input type="text" className="form-control" name="state" placeholder='State' onChange={changeState} value={state} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>Area code </label>
-                    <input type="text" className="form-control" name="area_code" placeholder='Area Code' onChange={changeArea_code} value={area_code}/>
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>County </label>
+                                                <input type="text" className="form-control" name="county" placeholder='County' onChange={changeCounty} value={county} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>Latitude </label>
-                    <input type="text" className="form-control" name="latitude" placeholder='Latitude' onChange={changeLatitude} value={latitude}/>
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>Timezone </label>
+                                                <input type="text" className="form-control" name="timezone" placeholder='Timezone' onChange={changeTimezone} value={timezone} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>Longitude </label>
-                    <input type="text" className="form-control" name="longitude" placeholder='Longitude' onChange={changeLongitude} value={longitude}/>
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>Area code </label>
+                                                <input type="text" className="form-control" name="area_code" placeholder='Area Code' onChange={changeArea_code} value={area_code} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>Irs estimated population </label>
-                    <input type="text" className="form-control" name="irs_estimated_population" placeholder='Irs Estimated Population' onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>Latitude </label>
+                                                <input type="text" className="form-control" name="latitude" placeholder='Latitude' onChange={changeLatitude} value={latitude} />
+                                            </div>
 
-                <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Add</button>
-            </form>
+                                            <div className="form-group mx-5">
+                                                <label>Longitude </label>
+                                                <input type="text" className="form-control" name="longitude" placeholder='Longitude' onChange={changeLongitude} value={longitude} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>Irs estimated population </label>
+                                                <input type="text" className="form-control" name="irs_estimated_population" placeholder='Irs Estimated Population' onChange={changeIrs_estimated_population} value={irs_estimated_population} />
+                                            </div>
+
+                                            <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Add</button>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                        id='i1' alt="Sample image" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     )
 }
 

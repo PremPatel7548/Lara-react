@@ -1,6 +1,7 @@
-import React,{Component,useState,useEffect} from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import axios from 'axios';
-import {useParams,Link,useNavigate} from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import "./style1.css";
 
 // class Edit extends Component {
 //     constructor(props){
@@ -78,98 +79,97 @@ import {useParams,Link,useNavigate} from 'react-router-dom';
 //     }
 // }
 
-function Edit()
-{
+function Edit() {
     // const [data, setData] = useState([])
-    const [zip,setZip] = useState('')
-    const [typemaster,setTypemaster] = useState('')
-    const [primary_city,setPrimary_city] = useState('')
-    const [state,setState] = useState('')
-    const [county,setCounty] = useState('')
-    const [timezone,setTimezone] = useState('')
-    const [area_code,setArea_code] = useState('')
-    const [latitude,setLatitude] = useState('')
-    const [longitude,setLongitude] = useState('')
-    const [irs_estimated_population,setIrs_estimated_population] = useState('')
+    const [zip, setZip] = useState('')
+    const [typemaster, setTypemaster] = useState('')
+    const [primary_city, setPrimary_city] = useState('')
+    const [state, setState] = useState('')
+    const [county, setCounty] = useState('')
+    const [timezone, setTimezone] = useState('')
+    const [area_code, setArea_code] = useState('')
+    const [latitude, setLatitude] = useState('')
+    const [longitude, setLongitude] = useState('')
+    const [irs_estimated_population, setIrs_estimated_population] = useState('')
 
 
 
-    let listParam  = useParams();
+    let listParam = useParams();
 
-    const navigate =useNavigate();
+    const navigate = useNavigate();
 
 
     const handleUpdate = () => {
         const data = {
-            zip:zip,
-            typemaster:typemaster,
-            primary_city:primary_city,
-            state:state,
-            county:county,
-            timezone:timezone,
-            area_code:area_code,
-            latitude:latitude,
-            longitude:longitude,
-            irs_estimated_population:irs_estimated_population
+            zip: zip,
+            typemaster: typemaster,
+            primary_city: primary_city,
+            state: state,
+            county: county,
+            timezone: timezone,
+            area_code: area_code,
+            latitude: latitude,
+            longitude: longitude,
+            irs_estimated_population: irs_estimated_population
         }
-        axios.post('http://127.0.0.1:8000/edit/'+listParam.id,data)
-        .then(navigate('/zipmaster')
-            // setName(Response.data.name)
-            // setCity(Response.data.city)
-            // console.log(Response);
-            // setData({name:Response.data.custName,city:Response.data.City});
-        );
+        axios.post('http://127.0.0.1:8000/edit/' + listParam.id, data)
+            .then(navigate('/zipmaster')
+                // setName(Response.data.name)
+                // setCity(Response.data.city)
+                // console.log(Response);
+                // setData({name:Response.data.custName,city:Response.data.City});
+            );
     }
 
     // console.log(listParam.id);
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/edit/'+listParam.id)
-        .then(Response => {
-            setZip(Response.data.zip)
-            setTypemaster(Response.data.type)
-            setPrimary_city(Response.data.primary_city)
-            setState(Response.data.state)
-            setCounty(Response.data.county)
-            setTimezone(Response.data.timezone)
-            setArea_code(Response.data.area_code)
-            setLatitude(Response.data.latitude)
-            setLongitude(Response.data.longitude)
-            setIrs_estimated_population(Response.data.irs_estimated_population)
-            // console.log(Response);
-            // setData({name:Response.data.custName,city:Response.data.City});
-        });
-    },[])
+        axios.get('http://127.0.0.1:8000/edit/' + listParam.id)
+            .then(Response => {
+                setZip(Response.data.zip)
+                setTypemaster(Response.data.type)
+                setPrimary_city(Response.data.primary_city)
+                setState(Response.data.state)
+                setCounty(Response.data.county)
+                setTimezone(Response.data.timezone)
+                setArea_code(Response.data.area_code)
+                setLatitude(Response.data.latitude)
+                setLongitude(Response.data.longitude)
+                setIrs_estimated_population(Response.data.irs_estimated_population)
+                // console.log(Response);
+                // setData({name:Response.data.custName,city:Response.data.City});
+            });
+    }, [])
 
 
 
-    const changeZip = (e) =>{
+    const changeZip = (e) => {
         setZip(e.target.value);
     }
-    const changeTypemaster = (e) =>{
+    const changeTypemaster = (e) => {
         setTypemaster(e.target.value);
     }
-    const changePrimary_city = (e) =>{
+    const changePrimary_city = (e) => {
         setPrimary_city(e.target.value);
     }
-    const changeState = (e) =>{
+    const changeState = (e) => {
         setState(e.target.value);
     }
-    const changeCounty = (e) =>{
+    const changeCounty = (e) => {
         setCounty(e.target.value);
     }
-    const changeTimezone = (e) =>{
+    const changeTimezone = (e) => {
         setTimezone(e.target.value);
     }
-    const changeArea_code = (e) =>{
+    const changeArea_code = (e) => {
         setArea_code(e.target.value);
     }
-    const changeLatitude = (e) =>{
+    const changeLatitude = (e) => {
         setLatitude(e.target.value);
     }
-    const changeLongitude = (e) =>{
+    const changeLongitude = (e) => {
         setLongitude(e.target.value);
     }
-    const changeIrs_estimated_population = (e) =>{
+    const changeIrs_estimated_population = (e) => {
         setIrs_estimated_population(e.target.value);
     }
 
@@ -179,63 +179,145 @@ function Edit()
 
 
 
-        return (
-            <div className="container">
-                            <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
-                <div className="form-group mx-5">
-                    <label>Zip </label>
-                    <input type="text" className="form-control" name="zip" onChange={changeZip} value={zip}/>
-                </div>
+    // return (
+    //     <div className="container">
+    //                     <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+    //         <div className="form-group mx-5">
+    //             <label>Zip </label>
+    //             <input type="text" className="form-control" name="zip" onChange={changeZip} value={zip}/>
+    //         </div>
 
-                <div className="form-group mx-5">
-                    <label>Type </label>
-                    <input type="text" className="form-control" name="typemaster" onChange={changeTypemaster} value={typemaster}/>
-                </div>
-                
-                <div className="form-group mx-5">
-                    <label>Primary_city </label>
-                    <input type="text" className="form-control" name="primary_city" onChange={changePrimary_city} value={primary_city}/>
-                </div>
+    //         <div className="form-group mx-5">
+    //             <label>Type </label>
+    //             <input type="text" className="form-control" name="typemaster" onChange={changeTypemaster} value={typemaster}/>
+    //         </div>
 
-                <div className="form-group mx-5">
-                    <label>State </label>
-                    <input type="text" className="form-control" name="state" onChange={changeState} value={state}/>
-                </div>
+    //         <div className="form-group mx-5">
+    //             <label>Primary_city </label>
+    //             <input type="text" className="form-control" name="primary_city" onChange={changePrimary_city} value={primary_city}/>
+    //         </div>
 
-                <div className="form-group mx-5">
-                    <label>County </label>
-                    <input type="text" className="form-control" name="county" onChange={changeCounty} value={county}/>
-                </div>
+    //         <div className="form-group mx-5">
+    //             <label>State </label>
+    //             <input type="text" className="form-control" name="state" onChange={changeState} value={state}/>
+    //         </div>
 
-                <div className="form-group mx-5">
-                    <label>Timezone </label>
-                    <input type="text" className="form-control" name="timezone" onChange={changeTimezone} value={timezone}/>
-                </div>
+    //         <div className="form-group mx-5">
+    //             <label>County </label>
+    //             <input type="text" className="form-control" name="county" onChange={changeCounty} value={county}/>
+    //         </div>
 
-                <div className="form-group mx-5">
-                    <label>Area_code </label>
-                    <input type="text" className="form-control" name="area_code" onChange={changeArea_code} value={area_code}/>
-                </div>
+    //         <div className="form-group mx-5">
+    //             <label>Timezone </label>
+    //             <input type="text" className="form-control" name="timezone" onChange={changeTimezone} value={timezone}/>
+    //         </div>
 
-                <div className="form-group mx-5">
-                    <label>Latitude </label>
-                    <input type="text" className="form-control" name="latitude" onChange={changeLatitude} value={latitude}/>
-                </div>
+    //         <div className="form-group mx-5">
+    //             <label>Area_code </label>
+    //             <input type="text" className="form-control" name="area_code" onChange={changeArea_code} value={area_code}/>
+    //         </div>
 
-                <div className="form-group mx-5">
-                    <label>Longitude </label>
-                    <input type="text" className="form-control" name="longitude" onChange={changeLongitude} value={longitude}/>
-                </div>
+    //         <div className="form-group mx-5">
+    //             <label>Latitude </label>
+    //             <input type="text" className="form-control" name="latitude" onChange={changeLatitude} value={latitude}/>
+    //         </div>
 
-                <div className="form-group mx-5">
-                    <label>Irs_estimated_population </label>
-                    <input type="text" className="form-control" name="irs_estimated_population" onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
-                </div>
+    //         <div className="form-group mx-5">
+    //             <label>Longitude </label>
+    //             <input type="text" className="form-control" name="longitude" onChange={changeLongitude} value={longitude}/>
+    //         </div>
 
-                <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
-            </form>
+    //         <div className="form-group mx-5">
+    //             <label>Irs_estimated_population </label>
+    //             <input type="text" className="form-control" name="irs_estimated_population" onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
+    //         </div>
+
+    //         <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
+    //     </form>
+    //     </div>
+    // );
+
+    return (
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black">
+                        <div class="card-body p-md-5 main">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <div className="container">
+                                        <form action="" method="post" className="mx-1 mx-md-4 insert">
+                                            <div className="form-group mx-5">
+                                                <label>Zip </label>
+                                                <input type="text" className="form-control" name="zip" onChange={changeZip} value={zip} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>Type </label>
+                                                <input type="text" className="form-control" name="typemaster" onChange={changeTypemaster} value={typemaster} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>Primary_city </label>
+                                                <input type="text" className="form-control" name="primary_city" onChange={changePrimary_city} value={primary_city} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>State </label>
+                                                <input type="text" className="form-control" name="state" onChange={changeState} value={state} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>County </label>
+                                                <input type="text" className="form-control" name="county" onChange={changeCounty} value={county} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>Timezone </label>
+                                                <input type="text" className="form-control" name="timezone" onChange={changeTimezone} value={timezone} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>Area_code </label>
+                                                <input type="text" className="form-control" name="area_code" onChange={changeArea_code} value={area_code} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>Latitude </label>
+                                                <input type="text" className="form-control" name="latitude" onChange={changeLatitude} value={latitude} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>Longitude </label>
+                                                <input type="text" className="form-control" name="longitude" onChange={changeLongitude} value={longitude} />
+                                            </div>
+
+                                            <div className="form-group mx-5">
+                                                <label>Irs_estimated_population </label>
+                                                <input type="text" className="form-control" name="irs_estimated_population" onChange={changeIrs_estimated_population} value={irs_estimated_population} />
+                                            </div>
+
+                                            <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                        id='i1' alt="Sample image" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        );
+        </div>
+
+    )
 
 }
 

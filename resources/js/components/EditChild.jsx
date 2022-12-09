@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import "./style1.css";
 
 // class Edit extends Component {
 //     constructor(props){
@@ -172,58 +173,135 @@ function EditChild() {
 
 
 
+    // return (
+    //     <div className="container">
+    //         <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+    //             <div className="form-group mx-5">
+    //                 <label>Zip </label>
+    //                 <input type="text" className="form-control" name="Zip" onChange={changeZip} value={Zip} />
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>City </label>
+    //                 <input type="text" className="form-control" name="City" onChange={changeCity} value={City} />
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>State </label>
+    //                 <input type="text" className="form-control" name="State" onChange={changeState} value={State} />
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>HomeSale </label>
+    //                 <input type="text" className="form-control" name="HomeSale" onChange={changeHomeSale} value={HomeSale} />
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>HomeBaseValue </label>
+    //                 <input type="text" className="form-control" name="HomeBaseValue" onChange={changeHomeBaseValue} value={HomeBaseValue} />
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>HomeMaxValue </label>
+    //                 <input type="text" className="form-control" name="HomeMaxValue" onChange={changeHomeMaxValue} value={HomeMaxValue} />
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>MedianListPrice </label>
+    //                 <input type="text" className="form-control" name="MedianListPrice" onChange={changeMedianListPrice} value={MedianListPrice} />
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>MedianSoldPrice </label>
+    //                 <input type="text" className="form-control" name="MedianSoldPrice" onChange={changeMedianSoldPrice} value={MedianSoldPrice} />
+    //             </div>
+
+    //             <div className="form-group mx-5">
+    //                 <label>Year </label>
+    //                 <input type="text" className="form-control" name="Year" onChange={changeYear} value={Year} />
+    //             </div>
+
+    //             <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
+    //         </form>
+    //     </div>
+    // );
+
     return (
-        <div className="container">
-            <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
-                <div className="form-group mx-5">
-                    <label>Zip </label>
-                    <input type="text" className="form-control" name="Zip" onChange={changeZip} value={Zip} />
-                </div>
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black">
+                        <div class="card-body p-md-5 main">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <div className="form-group mx-5">
-                    <label>City </label>
-                    <input type="text" className="form-control" name="City" onChange={changeCity} value={City} />
-                </div>
+                                    <div className="container">
+                                        <form action="" method="post" className="mx-1 mx-md-4 insert">
+                                            <div className="form-group mx-5">
+                                                <label>Zip </label>
+                                                <input type="text" className="form-control" name="Zip" onChange={changeZip} value={Zip} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>State </label>
-                    <input type="text" className="form-control" name="State" onChange={changeState} value={State} />
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>City </label>
+                                                <input type="text" className="form-control" name="City" onChange={changeCity} value={City} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>HomeSale </label>
-                    <input type="text" className="form-control" name="HomeSale" onChange={changeHomeSale} value={HomeSale} />
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>State </label>
+                                                <input type="text" className="form-control" name="State" onChange={changeState} value={State} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>HomeBaseValue </label>
-                    <input type="text" className="form-control" name="HomeBaseValue" onChange={changeHomeBaseValue} value={HomeBaseValue} />
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>HomeSale </label>
+                                                <input type="text" className="form-control" name="HomeSale" onChange={changeHomeSale} value={HomeSale} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>HomeMaxValue </label>
-                    <input type="text" className="form-control" name="HomeMaxValue" onChange={changeHomeMaxValue} value={HomeMaxValue} />
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>HomeBaseValue </label>
+                                                <input type="text" className="form-control" name="HomeBaseValue" onChange={changeHomeBaseValue} value={HomeBaseValue} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>MedianListPrice </label>
-                    <input type="text" className="form-control" name="MedianListPrice" onChange={changeMedianListPrice} value={MedianListPrice} />
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>HomeMaxValue </label>
+                                                <input type="text" className="form-control" name="HomeMaxValue" onChange={changeHomeMaxValue} value={HomeMaxValue} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>MedianSoldPrice </label>
-                    <input type="text" className="form-control" name="MedianSoldPrice" onChange={changeMedianSoldPrice} value={MedianSoldPrice} />
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>MedianListPrice </label>
+                                                <input type="text" className="form-control" name="MedianListPrice" onChange={changeMedianListPrice} value={MedianListPrice} />
+                                            </div>
 
-                <div className="form-group mx-5">
-                    <label>Year </label>
-                    <input type="text" className="form-control" name="Year" onChange={changeYear} value={Year} />
-                </div>
+                                            <div className="form-group mx-5">
+                                                <label>MedianSoldPrice </label>
+                                                <input type="text" className="form-control" name="MedianSoldPrice" onChange={changeMedianSoldPrice} value={MedianSoldPrice} />
+                                            </div>
 
-                <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
-            </form>
+                                            <div className="form-group mx-5">
+                                                <label>Year </label>
+                                                <input type="text" className="form-control" name="Year" onChange={changeYear} value={Year} />
+                                            </div>
+
+                                            <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                        id='i1' alt="Sample image" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    );
+
+    )
 
 }
 

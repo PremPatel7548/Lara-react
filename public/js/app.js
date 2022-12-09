@@ -7139,14 +7139,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _style1_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style1.css */ "./resources/js/components/style1.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -7269,8 +7271,8 @@ function Edit() {
     _useState20 = _slicedToArray(_useState19, 2),
     irs_estimated_population = _useState20[0],
     setIrs_estimated_population = _useState20[1];
-  var listParam = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)();
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  var listParam = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
   var handleUpdate = function handleUpdate() {
     var data = {
       zip: zip,
@@ -7343,127 +7345,213 @@ function Edit() {
   // console.log(props);
   // console.log(this.props);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-      action: "",
-      method: "post",
-      className: "col-md-7 mt-4 bg-dark text-white row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Zip "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "zip",
-          onChange: changeZip,
-          value: zip
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Type "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "typemaster",
-          onChange: changeTypemaster,
-          value: typemaster
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Primary_city "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "primary_city",
-          onChange: changePrimary_city,
-          value: primary_city
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "State "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "state",
-          onChange: changeState,
-          value: state
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "County "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "county",
-          onChange: changeCounty,
-          value: county
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Timezone "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "timezone",
-          onChange: changeTimezone,
-          value: timezone
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Area_code "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "area_code",
-          onChange: changeArea_code,
-          value: area_code
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Latitude "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "latitude",
-          onChange: changeLatitude,
-          value: latitude
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Longitude "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "longitude",
-          onChange: changeLongitude,
-          value: longitude
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Irs_estimated_population "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "irs_estimated_population",
-          onChange: changeIrs_estimated_population,
-          value: irs_estimated_population
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-        className: "btn btn-outline-warning col-md-6 mx-5",
-        onClick: handleUpdate,
-        children: "Update"
-      })]
+  // return (
+  //     <div className="container">
+  //                     <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+  //         <div className="form-group mx-5">
+  //             <label>Zip </label>
+  //             <input type="text" className="form-control" name="zip" onChange={changeZip} value={zip}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>Type </label>
+  //             <input type="text" className="form-control" name="typemaster" onChange={changeTypemaster} value={typemaster}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>Primary_city </label>
+  //             <input type="text" className="form-control" name="primary_city" onChange={changePrimary_city} value={primary_city}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>State </label>
+  //             <input type="text" className="form-control" name="state" onChange={changeState} value={state}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>County </label>
+  //             <input type="text" className="form-control" name="county" onChange={changeCounty} value={county}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>Timezone </label>
+  //             <input type="text" className="form-control" name="timezone" onChange={changeTimezone} value={timezone}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>Area_code </label>
+  //             <input type="text" className="form-control" name="area_code" onChange={changeArea_code} value={area_code}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>Latitude </label>
+  //             <input type="text" className="form-control" name="latitude" onChange={changeLatitude} value={latitude}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>Longitude </label>
+  //             <input type="text" className="form-control" name="longitude" onChange={changeLongitude} value={longitude}/>
+  //         </div>
+
+  //         <div className="form-group mx-5">
+  //             <label>Irs_estimated_population </label>
+  //             <input type="text" className="form-control" name="irs_estimated_population" onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
+  //         </div>
+
+  //         <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
+  //     </form>
+  //     </div>
+  // );
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    "class": "container h-100",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      "class": "row d-flex justify-content-center align-items-center h-100",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        "class": "col-lg-12 col-xl-11",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "card text-black",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            "class": "card-body p-md-5 main",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              "class": "row justify-content-center",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                "class": "col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "container",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+                    action: "",
+                    method: "post",
+                    className: "mx-1 mx-md-4 insert",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Zip "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "zip",
+                        onChange: changeZip,
+                        value: zip
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Type "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "typemaster",
+                        onChange: changeTypemaster,
+                        value: typemaster
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Primary_city "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "primary_city",
+                        onChange: changePrimary_city,
+                        value: primary_city
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "State "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "state",
+                        onChange: changeState,
+                        value: state
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "County "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "county",
+                        onChange: changeCounty,
+                        value: county
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Timezone "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "timezone",
+                        onChange: changeTimezone,
+                        value: timezone
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Area_code "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "area_code",
+                        onChange: changeArea_code,
+                        value: area_code
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Latitude "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "latitude",
+                        onChange: changeLatitude,
+                        value: latitude
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Longitude "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "longitude",
+                        onChange: changeLongitude,
+                        value: longitude
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Irs_estimated_population "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "irs_estimated_population",
+                        onChange: changeIrs_estimated_population,
+                        value: irs_estimated_population
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                      className: "btn btn-outline-warning col-md-6 mx-5",
+                      onClick: handleUpdate,
+                      children: "Update"
+                    })]
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                "class": "col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp",
+                  id: "i1",
+                  alt: "Sample image"
+                })
+              })]
+            })
+          })
+        })
+      })
     })
   });
 }
@@ -7485,14 +7573,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _style1_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style1.css */ "./resources/js/components/style1.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -7611,8 +7701,8 @@ function EditChild() {
     _useState18 = _slicedToArray(_useState17, 2),
     Year = _useState18[0],
     setYear = _useState18[1];
-  var listParam = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)();
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  var listParam = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
   var handleUpdate = function handleUpdate() {
     var data = {
       Zip: Zip,
@@ -7680,116 +7770,197 @@ function EditChild() {
   // console.log(props);
   // console.log(this.props);
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-      action: "",
-      method: "post",
-      className: "col-md-7 mt-4 bg-dark text-white row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Zip "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "Zip",
-          onChange: changeZip,
-          value: Zip
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "City "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "City",
-          onChange: changeCity,
-          value: City
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "State "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "State",
-          onChange: changeState,
-          value: State
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "HomeSale "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "HomeSale",
-          onChange: changeHomeSale,
-          value: HomeSale
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "HomeBaseValue "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "HomeBaseValue",
-          onChange: changeHomeBaseValue,
-          value: HomeBaseValue
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "HomeMaxValue "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "HomeMaxValue",
-          onChange: changeHomeMaxValue,
-          value: HomeMaxValue
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "MedianListPrice "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "MedianListPrice",
-          onChange: changeMedianListPrice,
-          value: MedianListPrice
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "MedianSoldPrice "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "MedianSoldPrice",
-          onChange: changeMedianSoldPrice,
-          value: MedianSoldPrice
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Year "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "Year",
-          onChange: changeYear,
-          value: Year
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-        className: "btn btn-outline-warning col-md-6 mx-5",
-        onClick: handleUpdate,
-        children: "Update"
-      })]
+  // return (
+  //     <div className="container">
+  //         <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+  //             <div className="form-group mx-5">
+  //                 <label>Zip </label>
+  //                 <input type="text" className="form-control" name="Zip" onChange={changeZip} value={Zip} />
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>City </label>
+  //                 <input type="text" className="form-control" name="City" onChange={changeCity} value={City} />
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>State </label>
+  //                 <input type="text" className="form-control" name="State" onChange={changeState} value={State} />
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>HomeSale </label>
+  //                 <input type="text" className="form-control" name="HomeSale" onChange={changeHomeSale} value={HomeSale} />
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>HomeBaseValue </label>
+  //                 <input type="text" className="form-control" name="HomeBaseValue" onChange={changeHomeBaseValue} value={HomeBaseValue} />
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>HomeMaxValue </label>
+  //                 <input type="text" className="form-control" name="HomeMaxValue" onChange={changeHomeMaxValue} value={HomeMaxValue} />
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>MedianListPrice </label>
+  //                 <input type="text" className="form-control" name="MedianListPrice" onChange={changeMedianListPrice} value={MedianListPrice} />
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>MedianSoldPrice </label>
+  //                 <input type="text" className="form-control" name="MedianSoldPrice" onChange={changeMedianSoldPrice} value={MedianSoldPrice} />
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Year </label>
+  //                 <input type="text" className="form-control" name="Year" onChange={changeYear} value={Year} />
+  //             </div>
+
+  //             <button className="btn btn-outline-warning col-md-6 mx-5" onClick={handleUpdate}>Update</button>
+  //         </form>
+  //     </div>
+  // );
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    "class": "container h-100",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      "class": "row d-flex justify-content-center align-items-center h-100",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        "class": "col-lg-12 col-xl-11",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "card text-black",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            "class": "card-body p-md-5 main",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              "class": "row justify-content-center",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                "class": "col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "container",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+                    action: "",
+                    method: "post",
+                    className: "mx-1 mx-md-4 insert",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Zip "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "Zip",
+                        onChange: changeZip,
+                        value: Zip
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "City "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "City",
+                        onChange: changeCity,
+                        value: City
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "State "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "State",
+                        onChange: changeState,
+                        value: State
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "HomeSale "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "HomeSale",
+                        onChange: changeHomeSale,
+                        value: HomeSale
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "HomeBaseValue "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "HomeBaseValue",
+                        onChange: changeHomeBaseValue,
+                        value: HomeBaseValue
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "HomeMaxValue "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "HomeMaxValue",
+                        onChange: changeHomeMaxValue,
+                        value: HomeMaxValue
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "MedianListPrice "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "MedianListPrice",
+                        onChange: changeMedianListPrice,
+                        value: MedianListPrice
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "MedianSoldPrice "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "MedianSoldPrice",
+                        onChange: changeMedianSoldPrice,
+                        value: MedianSoldPrice
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Year "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "Year",
+                        onChange: changeYear,
+                        value: Year
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                      className: "btn btn-outline-warning col-md-6 mx-5",
+                      onClick: handleUpdate,
+                      children: "Update"
+                    })]
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                "class": "col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp",
+                  id: "i1",
+                  alt: "Sample image"
+                })
+              })]
+            })
+          })
+        })
+      })
     })
   });
 }
@@ -8137,14 +8308,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _style1_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style1.css */ "./resources/js/components/style1.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -8252,7 +8425,7 @@ function InsertChild() {
     _useState18 = _slicedToArray(_useState17, 2),
     Year = _useState18[0],
     setYear = _useState18[1];
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
   var HandleInsert = function HandleInsert() {
     var data = {
       Zip: Zip,
@@ -8294,125 +8467,207 @@ function InsertChild() {
   var changeYear = function changeYear(e) {
     setYear(e.target.value);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-      action: "",
-      method: "post",
-      className: "col-md-7 mt-4 bg-dark text-white row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Zip "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "Zip",
-          placeholder: "Zip",
-          onChange: changeZip,
-          value: Zip
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "City "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "City",
-          placeholder: "City",
-          onChange: changeCity,
-          value: City
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "State "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "State",
-          placeholder: "State",
-          onChange: changeState,
-          value: State
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "HomeSale "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "HomeSale",
-          placeholder: "Home Sale",
-          onChange: changeHomeSale,
-          value: HomeSale
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "HomeBaseValue "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "HomeBaseValue",
-          placeholder: "Home Base Value",
-          onChange: changeHomeBaseValue,
-          value: HomeBaseValue
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "HomeMaxValue "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "HomeMaxValue",
-          placeholder: "Home Max Value",
-          onChange: changeHomeMaxValue,
-          value: HomeMaxValue
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "MedianListPrice "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "MedianListPrice",
-          placeholder: "Median List Price",
-          onChange: changeMedianListPrice,
-          value: MedianListPrice
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "MedianSoldPrice "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "MedianSoldPrice",
-          placeholder: "Median Sold Price",
-          onChange: changeMedianSoldPrice,
-          value: MedianSoldPrice
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Year "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "Year",
-          placeholder: "YYYY",
-          onChange: changeYear,
-          value: Year
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-        className: "btn btn-outline-primary col-md-6 mx-5",
-        onClick: HandleInsert,
-        children: "Add"
-      })]
+
+  // return (
+  //     <div className="container">
+  //         <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+  //             <div className="form-group mx-5">
+  //                 <label>Zip </label>
+  //                 <input type="text" className="form-control" name="Zip" placeholder='Zip' onChange={changeZip} value={Zip}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>City </label>
+  //                 <input type="text" className="form-control" name="City" placeholder='City' onChange={changeCity} value={City}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>State </label>
+  //                 <input type="text" className="form-control" name="State" placeholder='State' onChange={changeState} value={State}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>HomeSale </label>
+  //                 <input type="text" className="form-control" name="HomeSale" placeholder='Home Sale' onChange={changeHomeSale} value={HomeSale}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>HomeBaseValue </label>
+  //                 <input type="text" className="form-control" name="HomeBaseValue" placeholder='Home Base Value' onChange={changeHomeBaseValue} value={HomeBaseValue}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>HomeMaxValue </label>
+  //                 <input type="text" className="form-control" name="HomeMaxValue" placeholder='Home Max Value' onChange={changeHomeMaxValue} value={HomeMaxValue}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>MedianListPrice </label>
+  //                 <input type="text" className="form-control" name="MedianListPrice" placeholder='Median List Price' onChange={changeMedianListPrice} value={MedianListPrice}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>MedianSoldPrice </label>
+  //                 <input type="text" className="form-control" name="MedianSoldPrice" placeholder='Median Sold Price' onChange={changeMedianSoldPrice} value={MedianSoldPrice}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Year </label>
+  //                 <input type="text" className="form-control" name="Year" placeholder='YYYY' onChange={changeYear} value={Year}/>
+  //             </div>
+
+  //             <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Add</button>
+  //         </form>
+  //     </div>
+  // )
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    "class": "container h-100",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      "class": "row d-flex justify-content-center align-items-center h-100",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        "class": "col-lg-12 col-xl-11",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "card text-black",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            "class": "card-body p-md-5 main",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              "class": "row justify-content-center",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                "class": "col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "container",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+                    action: "",
+                    method: "post",
+                    className: "mx-1 mx-md-4 insert",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Zip "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "Zip",
+                        placeholder: "Zip",
+                        onChange: changeZip,
+                        value: Zip
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "City "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "City",
+                        placeholder: "City",
+                        onChange: changeCity,
+                        value: City
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "State "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "State",
+                        placeholder: "State",
+                        onChange: changeState,
+                        value: State
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "HomeSale "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "HomeSale",
+                        placeholder: "Home Sale",
+                        onChange: changeHomeSale,
+                        value: HomeSale
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "HomeBaseValue "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "HomeBaseValue",
+                        placeholder: "Home Base Value",
+                        onChange: changeHomeBaseValue,
+                        value: HomeBaseValue
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "HomeMaxValue "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "HomeMaxValue",
+                        placeholder: "Home Max Value",
+                        onChange: changeHomeMaxValue,
+                        value: HomeMaxValue
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "MedianListPrice "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "MedianListPrice",
+                        placeholder: "Median List Price",
+                        onChange: changeMedianListPrice,
+                        value: MedianListPrice
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "MedianSoldPrice "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "MedianSoldPrice",
+                        placeholder: "Median Sold Price",
+                        onChange: changeMedianSoldPrice,
+                        value: MedianSoldPrice
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Year "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "Year",
+                        placeholder: "YYYY",
+                        onChange: changeYear,
+                        value: Year
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                      className: "btn btn-outline-primary col-md-6 mx-5",
+                      onClick: HandleInsert,
+                      children: "Add"
+                    })]
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                "class": "col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp",
+                  id: "i1",
+                  alt: "Sample image"
+                })
+              })]
+            })
+          })
+        })
+      })
     })
   });
 }
@@ -8434,14 +8689,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _style1_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style1.css */ "./resources/js/components/style1.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -8553,7 +8810,7 @@ function InsertForm() {
     _useState20 = _slicedToArray(_useState19, 2),
     irs_estimated_population = _useState20[0],
     setIrs_estimated_population = _useState20[1];
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
   var HandleInsert = function HandleInsert() {
     var data = {
       zip: zip,
@@ -8599,137 +8856,223 @@ function InsertForm() {
   var changeIrs_estimated_population = function changeIrs_estimated_population(e) {
     setIrs_estimated_population(e.target.value);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-      action: "",
-      method: "post",
-      className: "col-md-7 mt-4 bg-dark text-white row",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Zip "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "zip",
-          placeholder: "Zip",
-          onChange: changeZip,
-          value: zip
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Type "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "typemaster",
-          placeholder: "Type",
-          onChange: changeTypemaster,
-          value: typemaster
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Primary city "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "primary_city",
-          placeholder: "Primary City",
-          onChange: changePrimary_city,
-          value: primary_city
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "State "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "state",
-          placeholder: "State",
-          onChange: changeState,
-          value: state
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "County "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "county",
-          placeholder: "County",
-          onChange: changeCounty,
-          value: county
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Timezone "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "timezone",
-          placeholder: "Timezone",
-          onChange: changeTimezone,
-          value: timezone
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Area code "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "area_code",
-          placeholder: "Area Code",
-          onChange: changeArea_code,
-          value: area_code
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Latitude "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "latitude",
-          placeholder: "Latitude",
-          onChange: changeLatitude,
-          value: latitude
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Longitude "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "longitude",
-          placeholder: "Longitude",
-          onChange: changeLongitude,
-          value: longitude
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "form-group mx-5",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Irs estimated population "
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          type: "text",
-          className: "form-control",
-          name: "irs_estimated_population",
-          placeholder: "Irs Estimated Population",
-          onChange: changeIrs_estimated_population,
-          value: irs_estimated_population
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-        className: "btn btn-outline-primary col-md-6 mx-5",
-        onClick: HandleInsert,
-        children: "Add"
-      })]
+
+  // return (
+  //     <div className="container">
+  //         <form action="" method="post" className="col-md-7 mt-4 bg-dark text-white row">
+  //             <div className="form-group mx-5">
+  //                 <label>Zip </label>
+  //                 <input type="text" className="form-control" name="zip" placeholder='Zip' onChange={changeZip} value={zip}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Type </label>
+  //                 <input type="text" className="form-control" name="typemaster" placeholder='Type' onChange={changeTypemaster} value={typemaster}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Primary city </label>
+  //                 <input type="text" className="form-control" name="primary_city" placeholder='Primary City' onChange={changePrimary_city} value={primary_city}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>State </label>
+  //                 <input type="text" className="form-control" name="state" placeholder='State' onChange={changeState} value={state}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>County </label>
+  //                 <input type="text" className="form-control" name="county" placeholder='County' onChange={changeCounty} value={county}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Timezone </label>
+  //                 <input type="text" className="form-control" name="timezone" placeholder='Timezone' onChange={changeTimezone} value={timezone}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Area code </label>
+  //                 <input type="text" className="form-control" name="area_code" placeholder='Area Code' onChange={changeArea_code} value={area_code}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Latitude </label>
+  //                 <input type="text" className="form-control" name="latitude" placeholder='Latitude' onChange={changeLatitude} value={latitude}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Longitude </label>
+  //                 <input type="text" className="form-control" name="longitude" placeholder='Longitude' onChange={changeLongitude} value={longitude}/>
+  //             </div>
+
+  //             <div className="form-group mx-5">
+  //                 <label>Irs estimated population </label>
+  //                 <input type="text" className="form-control" name="irs_estimated_population" placeholder='Irs Estimated Population' onChange={changeIrs_estimated_population} value={irs_estimated_population}/>
+  //             </div>
+
+  //             <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Add</button>
+  //         </form>
+  //     </div>
+  // )
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    "class": "container h-100",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      "class": "row d-flex justify-content-center align-items-center h-100",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        "class": "col-lg-12 col-xl-11",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "card text-black",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            "class": "card-body p-md-5 main",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              "class": "row justify-content-center",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                "class": "col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "container",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+                    action: "",
+                    method: "post",
+                    className: "mx-1 mx-md-4 insert",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Zip "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "zip",
+                        placeholder: "Zip",
+                        onChange: changeZip,
+                        value: zip
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Type "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "typemaster",
+                        placeholder: "Type",
+                        onChange: changeTypemaster,
+                        value: typemaster
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Primary city "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "primary_city",
+                        placeholder: "Primary City",
+                        onChange: changePrimary_city,
+                        value: primary_city
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "State "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "state",
+                        placeholder: "State",
+                        onChange: changeState,
+                        value: state
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "County "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "county",
+                        placeholder: "County",
+                        onChange: changeCounty,
+                        value: county
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Timezone "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "timezone",
+                        placeholder: "Timezone",
+                        onChange: changeTimezone,
+                        value: timezone
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Area code "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "area_code",
+                        placeholder: "Area Code",
+                        onChange: changeArea_code,
+                        value: area_code
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Latitude "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "latitude",
+                        placeholder: "Latitude",
+                        onChange: changeLatitude,
+                        value: latitude
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Longitude "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "longitude",
+                        placeholder: "Longitude",
+                        onChange: changeLongitude,
+                        value: longitude
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "form-group mx-5",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                        children: "Irs estimated population "
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                        type: "text",
+                        className: "form-control",
+                        name: "irs_estimated_population",
+                        placeholder: "Irs Estimated Population",
+                        onChange: changeIrs_estimated_population,
+                        value: irs_estimated_population
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                      className: "btn btn-outline-primary col-md-6 mx-5",
+                      onClick: HandleInsert,
+                      children: "Add"
+                    })]
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                "class": "col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  src: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp",
+                  id: "i1",
+                  alt: "Sample image"
+                })
+              })]
+            })
+          })
+        })
+      })
     })
   });
 }
@@ -16494,6 +16837,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "html, body {\r\n    min-height: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n    font-family: Roboto, Arial, sans-serif;\r\n    font-size: 14px;\r\n    color: #666;\r\n    }\r\n    h1 {\r\n    margin: 0 0 20px;\r\n    font-weight: 400;\r\n    color: #1c87c9;\r\n    }\r\n    p {\r\n    margin: 0 0 5px;\r\n    }\r\n    .main-block {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-height: 70vh;\r\n\r\n    height : 470px;\r\n    width : 800px;\r\n    margin-top: 5%;\r\n    margin-left: 15%;\r\n    background: #16616b;\r\n    }\r\n    .formsignup {\r\n        width: 500px;\r\n    padding: 25px;\r\n    margin: 25px;\r\n    box-shadow: 0 2px 5px #f5f5f5;\r\n    background: #f5f5f5;\r\n    }\r\n\r\n    form {\r\n        width: 400px;\r\n        padding: 25px;\r\n        margin: 25px;\r\n        box-shadow: 0 2px 5px #f5f5f5;\r\n        background: #f5f5f5;\r\n        }\r\n        .formlogin {\r\n            width: 400px;\r\n            padding: 25px;\r\n            margin: 25px;\r\n            box-shadow: 0 2px 5px #f5f5f5;\r\n            background: #f5f5f5;\r\n            }\r\n    .fas {\r\n    margin: 25px 10px 0;\r\n    font-size: 72px;\r\n    color: #fff;\r\n    }\r\n    .fa-envelope {\r\n    transform: rotate(-20deg);\r\n    }\r\n    .fa-at , .fa-mail-bulk{\r\n    transform: rotate(10deg);\r\n    }\r\n    input, textarea {\r\n    width: calc(100% - 18px);\r\n    padding: 8px;\r\n    margin-bottom: 20px;\r\n    border: 1px solid #1c87c9;\r\n    outline: none;\r\n    }\r\n    input::-moz-placeholder {\r\n    color: #666;\r\n    }\r\n    input::placeholder {\r\n    color: #666;\r\n    }\r\n    /* button {\r\n    width: 100%;\r\n    padding: 10px;\r\n    border: none;\r\n    background: #1c87c9;\r\n    font-size: 16px;\r\n    font-weight: 400;\r\n    color: #fff;\r\n    } */\r\n    button:hover {\r\n    background: #2371a0;\r\n    }\r\n    @media (min-width: 568px) {\r\n    .main-block {\r\n    flex-direction: row;\r\n    }\r\n    .left-part, form {\r\n    width: 50%;\r\n    }\r\n    .fa-envelope {\r\n    margin-top: 0;\r\n    margin-left: 20%;\r\n    }\r\n    .fa-at {\r\n    margin-top: -10%;\r\n    margin-left: 65%;\r\n    }\r\n    .fa-mail-bulk {\r\n    margin-top: 2%;\r\n    margin-left: 28%;\r\n    }\r\n    }\r\n\r\n    .loginlink{\r\n        margin-left: 190px;\r\n    }\r\n\r\n    .signuplink{\r\n        margin-left : 225px;\r\n        font-size: 40px;\r\n        margin-bottom: 10px;\r\n    }\r\n\r\n    .all{\r\n        font-size: 20px;\r\n    }\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/style1.css":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/style1.css ***!
+  \******************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".insert{\r\n   width: 475px;\r\n   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);\r\n   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);\r\n}\r\n#i1{\r\n    width: 300px;\r\n    height: 500px;\r\n    margin-left: 200px;\r\n}\r\n.main{\r\n    background-image: linear-gradient(-225deg, #e8fcc4 0%, #f6feca 100%);\r\n   background-image: linear-gradient(to top, #eaf9c0 0%, #f8fec6 100%);\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -74763,6 +75130,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/style1.css":
+/*!********************************************!*\
+  !*** ./resources/js/components/style1.css ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style1_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./style1.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/style1.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style1_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style1_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
