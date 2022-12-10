@@ -57,6 +57,7 @@ function ZipChildSearch(){
                                         <td>{zipchild.MedianListPrice}</td>
                                         <td>{zipchild.MedianSoldPrice}</td>
                                         <td>{zipchild.Year}</td>
+                                        <td><Link class="btn btn-warning" to={`/showchild/${zipchild.Zip}`}>Show</Link></td>
                                     </tr>
                                 )
                             })

@@ -12,6 +12,8 @@ import AdminZipmaster from './Adminzipmaster';
 import AdminzipChild from './Adminzipchild';
 import ZipChildSearch from './zipChildSearch';
 import ZipMasterSearch from './zipMasterSearch';
+import Showchild from './Showchild';
+import Showmaster from './Showmaster';
 
 function Header() {
     const [loggedin,setloggedin] = useState(false);
@@ -96,6 +98,9 @@ function Header() {
                     <Route exact path="/insertchild" element={<InsertChild />} />
                     <Route exact path="/signup" element={<Signup />}/>
                     <Route exact path="/login" element={<Login />}/>
+
+                    <Route exact path="/showchild/:id" element={<Showchild />} />
+                    <Route exact path="/showmaster/:id" element={<Showmaster />} />
                     {/* <Route exact path="/edit/:id" element={(matchProps)=> <Edit {...matchProps}{...this.props} /> }/> */}
                 </Routes>
                 </div>

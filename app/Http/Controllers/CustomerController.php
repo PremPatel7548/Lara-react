@@ -146,4 +146,16 @@ class CustomerController extends Controller
             return $display;
         }
     }
+
+    public function showchild($id)
+    {
+        $customer = realtorScrapedDump::find($id);
+        return $customer;
+    }
+
+    public function showmaster($id)
+    {
+        $customer = zipcodesearch::find($id);
+        return $customer;
+    }
 }

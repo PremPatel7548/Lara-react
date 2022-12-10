@@ -60,6 +60,7 @@ function ZipMasterSearch(){
                                         <td>{zipmaster.latitude}</td>
                                         <td>{zipmaster.longitude}</td>
                                         <td>{zipmaster.irs_estimated_population}</td>
+                                        <td><Link class="btn btn-warning" to={`/showmaster/${zipmaster.zip}`}>Show</Link></td>
                                     </tr>
                                 )
                             })

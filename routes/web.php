@@ -40,6 +40,9 @@ route::post('/edit/{id}',[CustomerController::class,'update']);
 route::get('/editchild/{id}',[CustomerController::class,'editchild']);
 route::post('/editchild/{id}',[CustomerController::class,'updatechild']);
 
+route::get('/showchild/{id}',[CustomerController::class,'showchild']);
+route::get('/showmaster/{id}',[CustomerController::class,'showmaster']);
+
 route::post('/signup',[usercontroller::class,'signup']);
 
 
