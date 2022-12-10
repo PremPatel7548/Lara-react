@@ -11,6 +11,7 @@ import Login from './Login';
 import AdminZipmaster from './Adminzipmaster';
 import AdminzipChild from './Adminzipchild';
 import ZipChildSearch from './zipChildSearch';
+import ZipMasterSearch from './zipMasterSearch';
 
 function Header() {
     const [loggedin,setloggedin] = useState(false);
@@ -62,6 +63,7 @@ function Header() {
                                 <li className="nav-item active row">
                                     <Link className="nav-link text-white ml-2" to="/userhome"> User Home <span className="sr-only">(current)</span></Link>
                                     <Link className="nav-link text-white" to="/zipchildsearch"> Zipchild <span className="sr-only">(current)</span></Link>
+                                    <Link className="nav-link text-white" to="/zipmastersearch"> ZipMaster <span className="sr-only">(current)</span></Link>
                                 </li>
                                 </div>
                                 }
@@ -86,6 +88,7 @@ function Header() {
                     <Route exact path="/Adminzipmaster" element={<AdminZipmaster />} />
                     <Route exact path="/Adminzipchild" element={<AdminzipChild />} />
                     <Route exact path="/zipchildsearch" element={<ZipChildSearch />} />
+                    <Route exact path="/zipmastersearch" element={<ZipMasterSearch />} />
 
                     <Route exact path="/edit/:id" element={<Edit />} />
                     <Route exact path="/editchild/:id" element={<EditChild />} />
