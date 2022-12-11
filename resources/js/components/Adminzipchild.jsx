@@ -8,6 +8,7 @@ class AdminzipChild extends Component {
         super();
         this.state = {
             zipchilds: [],
+            search : "",
             activePage: 1,
             itemsCountPerPage: 1,
             totalItemsCount: 1,
@@ -34,9 +35,9 @@ class AdminzipChild extends Component {
         {
             axios.delete('http://127.0.0.1:8000/deletechild/' + customer_id)
                 .then(response => {
-    
+
                     var zipchilds = this.state.zipchilds;
-    
+
                     for (var i = 0; i < zipchilds.length; i++) {
                         if (zipchilds[i].Zip == customer_id) {
                             zipchilds.splice(i, 1);
@@ -64,7 +65,9 @@ class AdminzipChild extends Component {
     render() {
         return (
             <div>
-
+                 <div className='col-md-4 mt-3'>
+                <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>this.setState({search : e.target.value})} placeholder="Search"></input>
+                 </div>
                 <table className="table bg-dark text-white mt-4 text-center">
                     <thead>
                         <tr>
@@ -86,7 +89,17 @@ class AdminzipChild extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.zipchilds.map(zipchild => {
+                            this.state.zipchilds.filter(zipchild=>
+                                zipchild.Zip.toString().toLowerCase().includes(this.state.search)||
+                                zipchild.City.toLowerCase().includes(this.state.search)||
+                                zipchild.State.toLowerCase().includes(this.state.search)||
+                                zipchild.HomeSale.toString().toLowerCase().includes(this.state.search)||
+                                zipchild.HomeBaseValue.toString().toLowerCase().includes(this.state.search)||
+                                zipchild.HomeMaxValue.toString().toLowerCase().includes(this.state.search)||
+                                zipchild.MedianListPrice.toString().toLowerCase().includes(this.state.search)||
+                                zipchild.MedianSoldPrice.toString().toLowerCase().includes(this.state.search)||
+                                zipchild.Year.toString().toLowerCase().includes(this.state.search)
+                                ).map(zipchild => {
                                 return (
                                     <tr>
                                         <td>{zipchild.Zip}</td>

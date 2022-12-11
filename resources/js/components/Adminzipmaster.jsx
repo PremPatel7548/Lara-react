@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
+import { zip } from 'lodash';
 
 class AdminZipmaster extends Component {
     constructor() {
         super();
         this.state = {
             zipmasters: [],
+            search : "",
             activePage: 1,
             itemsCountPerPage: 1,
             totalItemsCount: 1,
@@ -68,8 +70,10 @@ class AdminZipmaster extends Component {
     render() {
         return (
             <div>
-
-                <table className="table bg-dark text-white mt-4 text-center">
+                 <div className='col-md-4 mt-3'>
+                <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>this.setState({search : e.target.value})} placeholder="Search"></input>
+            </div>
+                <table className="table bg-dark text-white mt-2 text-center">
                     <thead>
                         <tr>
                             <th>
@@ -92,9 +96,20 @@ class AdminZipmaster extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.zipmasters.map(zipmaster => {
+                            this.state.zipmasters.filter(zipmaster=>
+                                zipmaster.zip.toString().toLowerCase().includes(this.state.search)||
+                                zipmaster.type.toLowerCase().includes(this.state.search)||
+                                zipmaster.primary_city.toLowerCase().includes(this.state.search)||
+                                zipmaster.state.toLowerCase().includes(this.state.search)||
+                                zipmaster.county.toLowerCase().includes(this.state.search)||
+                                zipmaster.timezone.toString().toLowerCase().includes(this.state.search)||
+                                zipmaster.area_code.toString().toLowerCase().includes(this.state.search)||
+                                zipmaster.latitude.toString().toLowerCase().includes(this.state.search)||
+                                zipmaster.longitude.toString().toLowerCase().includes(this.state.search)||
+                                zipmaster.irs_estimated_population.toString().toLowerCase().includes(this.state.search)
+                                ).map(zipmaster => {
                                 return (
-                                    <tr>
+                                    <tr key={zipmaster.zip}>
                                         <td>{zipmaster.zip}</td>
                                         <td>{zipmaster.type}</td>
                                         <td>{zipmaster.primary_city}</td>
