@@ -10054,104 +10054,251 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_js_pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-js-pagination */ "./node_modules/react-js-pagination/dist/Pagination.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
 
 
+// function ZipChildSearch(){
+//     const[zipchilds,setZipchilds] = useState([]);
+//     const[search,setSearch] = useState("");
 
-function ZipChildSearch() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-    _useState2 = _slicedToArray(_useState, 2),
-    zipchilds = _useState2[0],
-    setZipchilds = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
-    _useState4 = _slicedToArray(_useState3, 2),
-    search = _useState4[0],
-    setSearch = _useState4[1];
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipchild").then(function (response) {
-      setZipchilds(response.data.data);
-    });
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "col-md-4 mt-3",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-        type: "text",
-        className: "bg-dark text-white",
-        name: "search",
-        onChange: function onChange(e) {
-          return setSearch(e.target.value);
-        },
-        placeholder: "Search"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
-      className: "table bg-dark text-white mt-2 text-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "Zip"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "City"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "State"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "HomeSale"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "HomeBaseValue"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "HomeMaxValue"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "MedianListPrice"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "MedianSoldPrice"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "Year"
+//     useEffect(() => {
+//         axios.get("http://127.0.0.1:8000/zipchild")
+//         .then(response=>{
+//             setZipchilds(response.data.data);
+//         })
+//     },[]);
+
+//     return(
+//         <div>
+//             <div className='col-md-4 mt-3'>
+//                 <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>setSearch(e.target.value)} placeholder="Search"></input>
+//             </div>
+//            <table className="table bg-dark text-white mt-2 text-center">
+//                     <thead>
+//                         <tr>
+//                             <th>Zip</th>
+//                             <th>City</th>
+//                             <th>State</th>
+//                             <th>HomeSale</th>
+//                             <th>HomeBaseValue</th>
+//                             <th>HomeMaxValue</th>
+//                             <th>MedianListPrice</th>
+//                             <th>MedianSoldPrice</th>
+//                             <th>Year</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         {
+//                             zipchilds.filter(zipchild=>
+//                                 zipchild.Zip.toString().toLowerCase().includes(search)||
+//                                 zipchild.City.toLowerCase().includes(search)||
+//                                 zipchild.State.toLowerCase().includes(search)||
+//                                 zipchild.HomeSale.toString().toLowerCase().includes(search)||
+//                                 zipchild.HomeBaseValue.toString().toLowerCase().includes(search)||
+//                                 zipchild.HomeMaxValue.toString().toLowerCase().includes(search)||
+//                                 zipchild.MedianListPrice.toString().toLowerCase().includes(search)||
+//                                 zipchild.MedianSoldPrice.toString().toLowerCase().includes(search)||
+//                                 zipchild.Year.toString().toLowerCase().includes(search))
+//                             .map(zipchild=>{
+//                                 return (
+//                                     <tr key={zipchild.Zip}>
+//                                         <td>{zipchild.Zip}</td>
+//                                         <td>{zipchild.City}</td>
+//                                         <td>{zipchild.State}</td>
+//                                         <td>{zipchild.HomeSale}</td>
+//                                         <td>{zipchild.HomeBaseValue}</td>
+//                                         <td>{zipchild.HomeMaxValue}</td>
+//                                         <td>{zipchild.MedianListPrice}</td>
+//                                         <td>{zipchild.MedianSoldPrice}</td>
+//                                         <td>{zipchild.Year}</td>
+//                                         <td><Link class="btn btn-warning" to={`/showchild/${zipchild.Zip}`}>Show</Link></td>
+//                                     </tr>
+//                                 )
+//                             })
+//                         }
+//                     </tbody>
+//                     </table>
+//         </div>
+//     );
+// }
+
+
+var ZipChildSearch = /*#__PURE__*/function (_Component) {
+  _inherits(ZipChildSearch, _Component);
+  var _super = _createSuper(ZipChildSearch);
+  function ZipChildSearch() {
+    var _this;
+    _classCallCheck(this, ZipChildSearch);
+    _this = _super.call(this);
+    _this.state = {
+      zipchilds: [],
+      search: "",
+      activePage: 1,
+      itemsCountPerPage: 1,
+      totalItemsCount: 1,
+      pageRangeDisplayed: 5
+    };
+    _this.handlePageChange = _this.handlePageChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+  _createClass(ZipChildSearch, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipchild").then(function (response) {
+        _this2.setState({
+          zipchilds: response.data.data,
+          itemsCountPerPage: response.data.per_page,
+          totalItemsCount: response.data.total,
+          activePage: response.data.current_page
+        });
+      });
+    }
+  }, {
+    key: "onDelete",
+    value: function onDelete(customer_id) {
+      var _this3 = this;
+      var d = confirm("Are You Sure Delete This Record");
+      if (d == true) {
+        axios__WEBPACK_IMPORTED_MODULE_1__["default"]["delete"]('http://127.0.0.1:8000/deletechild/' + customer_id).then(function (response) {
+          var zipchilds = _this3.state.zipchilds;
+          for (var i = 0; i < zipchilds.length; i++) {
+            if (zipchilds[i].Zip == customer_id) {
+              zipchilds.splice(i, 1);
+              _this3.setState({
+                zipchilds: zipchilds
+              });
+            }
+          }
+        });
+      }
+    }
+  }, {
+    key: "handlePageChange",
+    value: function handlePageChange(pageNumber) {
+      var _this4 = this;
+      console.log('active page is ${pageNumber}');
+      // this.setState({ activePage: pageNumber });
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipchild?page=" + pageNumber).then(function (response) {
+        _this4.setState({
+          zipchilds: response.data.data,
+          itemsCountPerPage: response.data.per_page,
+          totalItemsCount: response.data.total,
+          activePage: response.data.current_page
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "col-md-4 mt-3",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            type: "text",
+            className: "bg-dark text-white",
+            name: "search",
+            onChange: function onChange(e) {
+              return _this5.setState({
+                search: e.target.value
+              });
+            },
+            placeholder: "Search"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+          className: "table bg-dark text-white mt-1 text-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Zip"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "City"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "State"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "HomeSale"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "HomeBaseValue"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "HomeMaxValue"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "MedianListPrice"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "MedianSoldPrice"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Year"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
+            children: this.state.zipchilds.filter(function (zipchild) {
+              return zipchild.Zip.toString().toLowerCase().includes(_this5.state.search) || zipchild.City.toLowerCase().includes(_this5.state.search) || zipchild.State.toLowerCase().includes(_this5.state.search) || zipchild.HomeSale.toString().toLowerCase().includes(_this5.state.search) || zipchild.HomeBaseValue.toString().toLowerCase().includes(_this5.state.search) || zipchild.HomeMaxValue.toString().toLowerCase().includes(_this5.state.search) || zipchild.MedianListPrice.toString().toLowerCase().includes(_this5.state.search) || zipchild.MedianSoldPrice.toString().toLowerCase().includes(_this5.state.search) || zipchild.Year.toString().toLowerCase().includes(_this5.state.search);
+            }).map(function (zipchild) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.Zip
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.City
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.State
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.HomeSale
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.HomeBaseValue
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.HomeMaxValue
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.MedianListPrice
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.MedianSoldPrice
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipchild.Year
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                    "class": "btn btn-warning",
+                    to: "/showchild/".concat(zipchild.Zip),
+                    children: "Show"
+                  })
+                })]
+              });
+            })
           })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
-        children: zipchilds.filter(function (zipchild) {
-          return zipchild.Zip.toString().toLowerCase().includes(search) || zipchild.City.toLowerCase().includes(search) || zipchild.State.toLowerCase().includes(search) || zipchild.HomeSale.toString().toLowerCase().includes(search) || zipchild.HomeBaseValue.toString().toLowerCase().includes(search) || zipchild.HomeMaxValue.toString().toLowerCase().includes(search) || zipchild.MedianListPrice.toString().toLowerCase().includes(search) || zipchild.MedianSoldPrice.toString().toLowerCase().includes(search) || zipchild.Year.toString().toLowerCase().includes(search);
-        }).map(function (zipchild) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.Zip
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.City
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.State
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.HomeSale
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.HomeBaseValue
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.HomeMaxValue
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.MedianListPrice
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.MedianSoldPrice
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipchild.Year
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                "class": "btn btn-warning",
-                to: "/showchild/".concat(zipchild.Zip),
-                children: "Show"
-              })
-            })]
-          }, zipchild.Zip);
-        })
-      })]
-    })]
-  });
-}
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "d-flex justify-content-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            activePage: this.state.activePage,
+            itemsCountPerPage: this.state.itemsCountPerPage,
+            totalItemsCount: this.state.totalItemsCount,
+            pageRangeDisplayed: this.state.pageRangeDisplayed,
+            onChange: this.handlePageChange,
+            itemClass: "page-item",
+            linkClass: "page-link"
+            // itemsCountPerPage={20}
+            // totalItemsCount={10000}
+            // pageRangeDisplayed={5}
+            // onChange={this.handlePageChange}
+            // itemClass='page-item'
+            // linkClass='page-link'
+          })
+        })]
+      });
+    }
+  }]);
+  return ZipChildSearch;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ZipChildSearch);
 
 /***/ }),
@@ -10173,108 +10320,262 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_js_pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-js-pagination */ "./node_modules/react-js-pagination/dist/Pagination.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
 
 
+// function ZipMasterSearch(){
+//     const[zipmasters,setZipmasters] = useState([]);
+//     const[search,setSearch] = useState("");
 
-function ZipMasterSearch() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
-    _useState2 = _slicedToArray(_useState, 2),
-    zipmasters = _useState2[0],
-    setZipmasters = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
-    _useState4 = _slicedToArray(_useState3, 2),
-    search = _useState4[0],
-    setSearch = _useState4[1];
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipmaster").then(function (response) {
-      setZipmasters(response.data.data);
-    });
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "col-md-4 mt-3",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-        type: "text",
-        className: "bg-dark text-white",
-        name: "search",
-        onChange: function onChange(e) {
-          return setSearch(e.target.value);
-        },
-        placeholder: "Search"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
-      className: "table bg-dark text-white mt-2 text-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "Zip"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "Type"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "PrimaryCity"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "State"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "County"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "Timezone"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "AreaCode"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "Latitude"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "Longitude"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
-            children: "Irs_Estimated_Population"
+//     useEffect(() => {
+//         axios.get("http://127.0.0.1:8000/zipmaster")
+//         .then(response=>{
+//             setZipmasters(response.data.data);
+//         })
+//     },[]);
+
+//     return(
+//         <div>
+//             <div className='col-md-4 mt-3'>
+//                 <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>setSearch(e.target.value)} placeholder="Search"></input>
+//             </div>
+//            <table className="table bg-dark text-white mt-2 text-center">
+//                     <thead>
+//                         <tr>
+//                         <th>Zip</th>
+//                             <th>Type</th>
+//                             <th>PrimaryCity</th>
+//                             <th>State</th>
+//                             <th>County</th>
+//                             <th>Timezone</th>
+//                             <th>AreaCode</th>
+//                             <th>Latitude</th>
+//                             <th>Longitude</th>
+//                             <th>Irs_Estimated_Population</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         {
+//                             zipmasters.filter(zipmaster=>
+//                                 zipmaster.zip.toString().toLowerCase().includes(search)||
+//                                 zipmaster.type.toLowerCase().includes(search)||
+//                                 zipmaster.primary_city.toLowerCase().includes(search)||
+//                                 zipmaster.state.toLowerCase().includes(search)||
+//                                 zipmaster.county.toLowerCase().includes(search)||
+//                                 zipmaster.timezone.toLowerCase().includes(search)||
+//                                 zipmaster.area_code.toString().toLowerCase().includes(search)||
+//                                 zipmaster.latitude.toString().toLowerCase().includes(search)||
+//                                 zipmaster.longitude.toString().toLowerCase().includes(search)||
+//                                 zipmaster.irs_estimated_population.toString().toLowerCase().includes(search))
+//                             .map(zipmaster=>{
+//                                 return (
+//                                     <tr key={zipmaster.zip}>
+//                                         <td>{zipmaster.zip}</td>
+//                                         <td>{zipmaster.type}</td>
+//                                         <td>{zipmaster.primary_city}</td>
+//                                         <td>{zipmaster.state}</td>
+//                                         <td>{zipmaster.county}</td>
+//                                         <td>{zipmaster.timezone}</td>
+//                                         <td>{zipmaster.area_code}</td>
+//                                         <td>{zipmaster.latitude}</td>
+//                                         <td>{zipmaster.longitude}</td>
+//                                         <td>{zipmaster.irs_estimated_population}</td>
+//                                         <td><Link class="btn btn-warning" to={`/showmaster/${zipmaster.zip}`}>Show</Link></td>
+//                                     </tr>
+//                                 )
+//                             })
+//                         }
+//                     </tbody>
+//                     </table>
+//         </div>
+//     );
+// }
+
+
+var ZipMasterSearch = /*#__PURE__*/function (_Component) {
+  _inherits(ZipMasterSearch, _Component);
+  var _super = _createSuper(ZipMasterSearch);
+  function ZipMasterSearch() {
+    var _this;
+    _classCallCheck(this, ZipMasterSearch);
+    _this = _super.call(this);
+    _this.state = {
+      zipmasters: [],
+      search: "",
+      activePage: 1,
+      itemsCountPerPage: 1,
+      totalItemsCount: 1,
+      pageRangeDisplayed: 5
+    };
+    _this.handlePageChange = _this.handlePageChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+  _createClass(ZipMasterSearch, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipmaster").then(function (response) {
+        _this2.setState({
+          zipmasters: response.data.data,
+          itemsCountPerPage: response.data.per_page,
+          totalItemsCount: response.data.total,
+          activePage: response.data.current_page
+        });
+      });
+    }
+  }, {
+    key: "onDelete",
+    value: function onDelete(customer_id) {
+      var _this3 = this;
+      var d = confirm("Are You Sure Delete This Record");
+      if (d == true) {
+        axios__WEBPACK_IMPORTED_MODULE_1__["default"]["delete"]('http://127.0.0.1:8000/delete/' + customer_id).then(function (response) {
+          var zipmasters = _this3.state.zipmasters;
+          for (var i = 0; i < zipmasters.length; i++) {
+            if (zipmasters[i].zip == customer_id) {
+              zipmasters.splice(i, 1);
+              _this3.setState({
+                zipmasters: zipmasters
+              });
+            }
+          }
+        });
+      }
+    }
+
+    // "per_page" = 20;
+    // "total" = 20000;
+    // "current_page" = 1;
+  }, {
+    key: "handlePageChange",
+    value: function handlePageChange(pageNumber) {
+      var _this4 = this;
+      console.log('active page is ${pageNumber}');
+      // this.setState({ activePage: pageNumber });
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipmaster?page=" + pageNumber).then(function (response) {
+        _this4.setState({
+          zipmasters: response.data.data,
+          itemsCountPerPage: response.data.per_page,
+          totalItemsCount: response.data.total,
+          activePage: response.data.current_page
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "col-md-4 mt-3",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+            type: "text",
+            className: "bg-dark text-white",
+            name: "search",
+            onChange: function onChange(e) {
+              return _this5.setState({
+                search: e.target.value
+              });
+            },
+            placeholder: "Search"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+          className: "table bg-dark text-white mt-1 text-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Zip"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Type"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "PrimaryCity"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "State"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "County"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Timezone"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "AreaCode"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Latitude"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Longitude"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                children: "Irs_Estimated_Population"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
+            children: this.state.zipmasters.filter(function (zipmaster) {
+              return zipmaster.zip.toString().toLowerCase().includes(_this5.state.search) || zipmaster.type.toLowerCase().includes(_this5.state.search) || zipmaster.primary_city.toLowerCase().includes(_this5.state.search) || zipmaster.state.toLowerCase().includes(_this5.state.search) || zipmaster.county.toLowerCase().includes(_this5.state.search) || zipmaster.timezone.toString().toLowerCase().includes(_this5.state.search) || zipmaster.area_code.toString().toLowerCase().includes(_this5.state.search) || zipmaster.latitude.toString().toLowerCase().includes(_this5.state.search) || zipmaster.longitude.toString().toLowerCase().includes(_this5.state.search) || zipmaster.irs_estimated_population.toString().toLowerCase().includes(_this5.state.search);
+            }).map(function (zipmaster) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.zip
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.type
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.primary_city
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.state
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.county
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.timezone
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.area_code
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.latitude
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.longitude
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: zipmaster.irs_estimated_population
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                    "class": "btn btn-warning",
+                    to: "/showmaster/".concat(zipmaster.zip),
+                    children: "Show"
+                  })
+                })]
+              }, zipmaster.zip);
+            })
           })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
-        children: zipmasters.filter(function (zipmaster) {
-          return zipmaster.zip.toString().toLowerCase().includes(search) || zipmaster.type.toLowerCase().includes(search) || zipmaster.primary_city.toLowerCase().includes(search) || zipmaster.state.toLowerCase().includes(search) || zipmaster.county.toLowerCase().includes(search) || zipmaster.timezone.toLowerCase().includes(search) || zipmaster.area_code.toString().toLowerCase().includes(search) || zipmaster.latitude.toString().toLowerCase().includes(search) || zipmaster.longitude.toString().toLowerCase().includes(search) || zipmaster.irs_estimated_population.toString().toLowerCase().includes(search);
-        }).map(function (zipmaster) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.zip
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.type
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.primary_city
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.state
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.county
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.timezone
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.area_code
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.latitude
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.longitude
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: zipmaster.irs_estimated_population
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                "class": "btn btn-warning",
-                to: "/showmaster/".concat(zipmaster.zip),
-                children: "Show"
-              })
-            })]
-          }, zipmaster.zip);
-        })
-      })]
-    })]
-  });
-}
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          "class": "d-flex justify-content-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            activePage: this.state.activePage,
+            itemsCountPerPage: this.state.itemsCountPerPage,
+            totalItemsCount: this.state.totalItemsCount,
+            pageRangeDisplayed: this.state.pageRangeDisplayed,
+            onChange: this.handlePageChange,
+            itemClass: "page-item",
+            linkClass: "page-link"
+            // itemsCountPerPage={20}
+            // totalItemsCount={10000}
+            // pageRangeDisplayed={5}
+            // onChange={this.handlePageChange}
+            // itemClass='page-item'
+            // linkClass='page-link'
+          })
+        })]
+      });
+    }
+  }]);
+  return ZipMasterSearch;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ZipMasterSearch);
 
 /***/ }),
