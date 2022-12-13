@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import AddIcon from '@mui/icons-material/Add';
 
 class AdminzipChild extends Component {
     constructor() {
@@ -74,7 +75,7 @@ class AdminzipChild extends Component {
                     <thead>
                         <tr>
                             <th>
-                                <Link className="btn btn-outline-primary" to="/insertchild">Add</Link>
+                                <Link className="btn btn-outline-primary" to="/insertchild"><AddIcon /></Link>
                             </th>
                         </tr>
                         <tr>

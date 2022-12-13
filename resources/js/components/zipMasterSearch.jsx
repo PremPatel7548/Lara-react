@@ -2,6 +2,7 @@ import React, { useState,useEffect,Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 // function ZipMasterSearch(){
 //     const[zipmasters,setZipmasters] = useState([]);
@@ -182,7 +183,7 @@ class ZipMasterSearch extends Component {
                                         <td>{zipmaster.latitude}</td>
                                         <td>{zipmaster.longitude}</td>
                                         <td>{zipmaster.irs_estimated_population}</td>
-                                        <td><Link class="btn btn-warning" to={`/showmaster/${zipmaster.zip}`}>Show</Link></td>
+                                        <td><Link class="btn btn-outline-warning" to={`/showmaster/${zipmaster.zip}`}><VisibilityIcon /></Link></td>
                                     </tr>
                                 )
                             })

@@ -2,6 +2,7 @@ import React, { useState,useEffect,Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 // function ZipChildSearch(){
 //     const[zipchilds,setZipchilds] = useState([]);
@@ -171,7 +172,7 @@ class ZipChildSearch extends Component {
                                         <td>{zipchild.MedianListPrice}</td>
                                         <td>{zipchild.MedianSoldPrice}</td>
                                         <td>{zipchild.Year}</td>
-                                        <td><Link class="btn btn-warning" to={`/showchild/${zipchild.Zip}`}>Show</Link></td>
+                                        <td><Link class="btn btn-outline-warning" to={`/showchild/${zipchild.Zip}`}><VisibilityIcon /></Link></td>
                                     </tr>
                                 )
                             })

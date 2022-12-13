@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
 import { zip } from 'lodash';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import AddIcon from '@mui/icons-material/Add';
 
 class AdminZipmaster extends Component {
     constructor() {
@@ -77,7 +80,7 @@ class AdminZipmaster extends Component {
                     <thead>
                         <tr>
                             <th>
-                                <Link className="btn btn-outline-primary" to="/insertmaster">Add</Link>
+                                <Link className="btn btn-outline-primary" to="/insertmaster"><AddIcon /></Link>
                             </th>
                         </tr>
                         <tr>
@@ -90,7 +93,7 @@ class AdminZipmaster extends Component {
                             <th>AreaCode</th>
                             <th>Latitude</th>
                             <th>Longitude</th>
-                            <th>Irs_Estimated_Population</th>
+                            <th>I.E.P</th>
 
                         </tr>
                     </thead>
@@ -119,9 +122,9 @@ class AdminZipmaster extends Component {
                                         <td>{zipmaster.area_code}</td>
                                         <td>{zipmaster.latitude}</td>
                                         <td>{zipmaster.longitude}</td>
-                                        <td >{zipmaster.irs_estimated_population}</td>
-                                        <td><Link class="btn btn-outline-warning" to={`/edit/${zipmaster.zip}`}>Edit</Link>
-                                            <a href="#" onClick={this.onDelete.bind(this, zipmaster.zip)}><button className="btn btn-outline-danger my-1 mx-1">Delete</button></a></td>
+                                        <td>{zipmaster.irs_estimated_population}</td>
+                                        <td><Link class="btn btn-outline-warning" to={`/edit/${zipmaster.zip}`}><EditIcon /></Link>
+                                            <a href="#" onClick={this.onDelete.bind(this, zipmaster.zip)}><button className="btn btn-outline-danger my-1 mx-1"><DeleteIcon /></button></a></td>
                                     </tr>
                                 )
                             })
