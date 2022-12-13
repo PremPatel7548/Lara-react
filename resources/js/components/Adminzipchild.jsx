@@ -96,6 +96,8 @@ class AdminzipChild extends Component {
                                 zipchild.Zip.toString().toLowerCase().includes(this.state.search)||
                                 zipchild.City.toLowerCase().includes(this.state.search)||
                                 zipchild.State.toLowerCase().includes(this.state.search)||
+                                zipchild.City.includes(this.state.search)||
+                                zipchild.State.includes(this.state.search)||
                                 zipchild.HomeSale.toString().toLowerCase().includes(this.state.search)||
                                 zipchild.HomeBaseValue.toString().toLowerCase().includes(this.state.search)||
                                 zipchild.HomeMaxValue.toString().toLowerCase().includes(this.state.search)||

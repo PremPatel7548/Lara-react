@@ -12,3 +12,11 @@
     background-image: linear-gradient(-225deg, #e8fcc4 0%, #f6feca 100%);
    background-image: linear-gradient(to top, #eaf9c0 0%, #f8fec6 100%);
 }
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.hoverclass:hover{
+    background-color: #a8edea;
+}

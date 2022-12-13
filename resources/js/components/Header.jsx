@@ -14,6 +14,7 @@ import ZipChildSearch from './zipChildSearch';
 import ZipMasterSearch from './zipMasterSearch';
 import Showchild from './Showchild';
 import Showmaster from './Showmaster';
+import Dropdown from './Dropdown';
 
 function Header() {
     const [loggedin,setloggedin] = useState(false);
@@ -78,7 +79,10 @@ function Header() {
                                     <Link class="btn btn-outline-success my-2 my-sm-0 ml-2 mr-2 text-white" to={'/login'}>Login</Link>
                                     <Link class="btn btn-outline-success my-2 my-sm-0 text-white" to={'/signup'}>SignUp</Link>
                                     </div>:
-                                    <button class="btn btn-outline-success my-2 my-sm-0 text-white" onClick={logout}>Logout</button>
+                                    <div>
+                                        <Dropdown />
+                                        </div>
+                                    // <button class="btn btn-outline-success my-2 my-sm-0 text-white" onClick={logout}>Logout</button>
 
                                 }
                             </div>

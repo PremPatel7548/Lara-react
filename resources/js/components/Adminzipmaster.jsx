@@ -105,6 +105,10 @@ class AdminZipmaster extends Component {
                                 zipmaster.primary_city.toLowerCase().includes(this.state.search)||
                                 zipmaster.state.toLowerCase().includes(this.state.search)||
                                 zipmaster.county.toLowerCase().includes(this.state.search)||
+                                zipmaster.type.includes(this.state.search)||
+                                zipmaster.primary_city.includes(this.state.search)||
+                                zipmaster.state.includes(this.state.search)||
+                                zipmaster.county.includes(this.state.search)||
                                 zipmaster.timezone.toString().toLowerCase().includes(this.state.search)||
                                 zipmaster.area_code.toString().toLowerCase().includes(this.state.search)||
                                 zipmaster.latitude.toString().toLowerCase().includes(this.state.search)||
