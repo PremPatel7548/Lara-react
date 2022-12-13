@@ -96,6 +96,7 @@ function Login() {
           {/* <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/> */}
         </div>
 
+        <Link className="text-primary mx-2" id='l1' to={'/change'}>Change Password</Link>
          <div className='signuplink'>
             <Link className="text-primary mx-2" id='l1' to={'/signup'}>New Account</Link>
          </div>

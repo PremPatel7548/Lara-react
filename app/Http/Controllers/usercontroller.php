@@ -31,4 +31,20 @@ class usercontroller extends Controller
             return  $user;
         }
     }
+    public function change(Request $req)
+    {
+        $email=$req['email'];
+        $user=UserModel::where('email','=',$email)->first();
+
+        if(!$user)
+        {
+            return NULL;
+        }
+        else
+        {
+            $user->email=$req['email'];
+            $user->password=Hash::make($req['password']);
+            $user->save();
+        }
+    }
 }
