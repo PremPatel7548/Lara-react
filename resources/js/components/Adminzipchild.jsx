@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-js-pagination';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 class AdminzipChild extends Component {
     constructor() {
@@ -111,8 +113,8 @@ class AdminzipChild extends Component {
                                         <td>{zipchild.MedianListPrice}</td>
                                         <td>{zipchild.MedianSoldPrice}</td>
                                         <td>{zipchild.Year}</td>
-                                        <td><Link class="btn btn-outline-warning" to={`/editchild/${zipchild.Zip}`}>Edit</Link>
-                                            <a href="#" onClick={this.onDelete.bind(this, zipchild.Zip)}><button className="btn btn-outline-danger my-1 mx-1">Delete</button></a></td>
+                                        <td><Link class="btn btn-outline-warning" to={`/editchild/${zipchild.Zip}`}><EditIcon /></Link>
+                                            <a href="#" onClick={this.onDelete.bind(this, zipchild.Zip)}><button className="btn btn-outline-danger my-1 mx-1"><DeleteIcon /></button></a></td>
                                     </tr>
                                 )
                             })
