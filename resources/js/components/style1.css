@@ -13,10 +13,27 @@
    background-image: linear-gradient(to top, #eaf9c0 0%, #f8fec6 100%);
 }
 
+/* Dropdown */
+.dropdown{
+    margin-top: 185px;
+    width : 150px;
+    text-align: center;
+}
+
 .cursor-pointer{
     cursor: pointer;
 }
 
 .hoverclass:hover{
     background-color: #a8edea;
+}
+
+.profile{
+    background-color :#E3FDF5;
+}
+
+/* header */
+.navbar{
+    max-height:55px;
+    margin: auto;
 }
