@@ -46,13 +46,13 @@ function Login() {
         }
 
         axios.post('http://127.0.0.1:8000/logindata',data)
-        .then(Response => Response.data == "" ? setMsg("Invalid Email Or Password") : checkuser(Response.data.name))
+        .then(Response => Response.data == "" ? setMsg("Invalid Email Or Password") : checkuser(Response.data))
 
     }
 
     const checkuser = (e) => {
-        sessionStorage.setItem('user',e);
-
+        sessionStorage.setItem('user',e.name);
+        sessionStorage.setItem('email',e.email);
         if(sessionStorage.getItem('user') == "Admin")
         {
             navigate('/home');
@@ -78,8 +78,8 @@ function Login() {
     //     setcpassword(e.target.value);
     // }
 
-    return(
 
+    return(
 <div class="main-block">
       <div className="left-part">
         <i className="fas fa-envelope"></i>
@@ -96,7 +96,7 @@ function Login() {
           {/* <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/> */}
         </div>
 
-        <Link className="text-primary mx-2" id='l1' to={'/change'}>Change Password</Link>
+        {/* <Link className="text-primary mx-2" id='l1' to={'/change'}>Change Password</Link> */}
          <div className='signuplink'>
             <Link className="text-primary mx-2" id='l1' to={'/signup'}>New Account</Link>
          </div>

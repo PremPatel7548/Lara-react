@@ -5,6 +5,7 @@ import "./style1.css";
 import SettingsIcon from '@mui/icons-material/Settings';
 import Person2Icon from '@mui/icons-material/Person2';
 import LogoutIcon from '@mui/icons-material/Logout';
+import LockResetIcon from '@mui/icons-material/LockReset';
 
 function Dropdown() {
     const Menus = ['Profile', 'Setting', 'Logout'];
@@ -36,6 +37,11 @@ function Dropdown() {
 
           }
     }
+
+    const changePassword = () =>
+    {
+        navigate('/resetpassword');
+    }
     return (
         <div>
             <div className='relative'>
@@ -64,7 +70,12 @@ function Dropdown() {
                             </li>
                             <li
                                 onClick={() => setOpen(false)}
-                                className='p-2 text-lg cursor-pointer profile rounded hoverclass mt-2' onClick={logout}>
+                                className='p-2 text-lg cursor-pointer profile rounded hoverclass mt-2' onClickCapture={changePassword}>
+                               <LockResetIcon /> Reset Password
+                            </li>
+                            <li
+                                onClick={() => setOpen(false)}
+                                className='p-2 text-lg cursor-pointer profile rounded hoverclass mt-2' onClickCapture={logout}>
                                 <LogoutIcon /> Logout
                             </li>
                         </ul>

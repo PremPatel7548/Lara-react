@@ -28,23 +28,24 @@ class usercontroller extends Controller
         }
         else
         {
+            session()->put("email",$user->password);
             return  $user;
         }
     }
     public function change(Request $req)
     {
-        $email=$req['email'];
+        $email=$req->email;
         $user=UserModel::where('email','=',$email)->first();
 
-        if(!$user)
+        if(!Hash::check($req->oldPassword,$user->password))
         {
-            return NULL;
+            return false;
         }
         else
         {
-            $user->email=$req['email'];
-            $user->password=Hash::make($req['password']);
+            $user->password=Hash::make($req['newPassword']);
             $user->save();
+            return true;
         }
     }
 }

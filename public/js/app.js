@@ -2470,6 +2470,29 @@ exports["default"] = _default;
 
 /***/ }),
 
+/***/ "./node_modules/@mui/icons-material/LockReset.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@mui/icons-material/LockReset.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
+var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
+  d: "M13 3c-4.97 0-9 4.03-9 9H1l4 4 4-4H6c0-3.86 3.14-7 7-7s7 3.14 7 7-3.14 7-7 7c-1.9 0-3.62-.76-4.88-1.99L6.7 18.42C8.32 20.01 10.55 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm2 8v-1c0-1.1-.9-2-2-2s-2 .9-2 2v1c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1zm-1 0h-2v-1c0-.55.45-1 1-1s1 .45 1 1v1z"
+}), 'LockReset');
+exports["default"] = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@mui/icons-material/Logout.js":
 /*!****************************************************!*\
   !*** ./node_modules/@mui/icons-material/Logout.js ***!
@@ -15024,9 +15047,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style1_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style1.css */ "./resources/js/components/style1.css");
 /* harmony import */ var _mui_icons_material_Settings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/icons-material/Settings */ "./node_modules/@mui/icons-material/Settings.js");
 /* harmony import */ var _mui_icons_material_Person2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/icons-material/Person2 */ "./node_modules/@mui/icons-material/Person2.js");
-/* harmony import */ var _mui_icons_material_Logout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/icons-material/Logout */ "./node_modules/@mui/icons-material/Logout.js");
+/* harmony import */ var _mui_icons_material_Logout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/icons-material/Logout */ "./node_modules/@mui/icons-material/Logout.js");
+/* harmony import */ var _mui_icons_material_LockReset__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/icons-material/LockReset */ "./node_modules/@mui/icons-material/LockReset.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -15042,8 +15065,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Dropdown() {
-  var _jsxs2;
   var Menus = ['Profile', 'Setting', 'Logout'];
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState2 = _slicedToArray(_useState, 2),
@@ -15069,6 +15092,9 @@ function Dropdown() {
         navigate('/userhome');
       }
     }
+  };
+  var changePassword = function changePassword() {
+    navigate('/resetpassword');
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -15099,12 +15125,21 @@ function Dropdown() {
             },
             className: "p-2 text-lg cursor-pointer profile rounded hoverclass mt-2",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_icons_material_Settings__WEBPACK_IMPORTED_MODULE_6__["default"], {}), " Setting"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", (_jsxs2 = {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
             onClick: function onClick() {
               return setOpen(false);
             },
-            className: "p-2 text-lg cursor-pointer profile rounded hoverclass mt-2"
-          }, _defineProperty(_jsxs2, "onClick", logout), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_icons_material_Logout__WEBPACK_IMPORTED_MODULE_7__["default"], {}), " Logout"]), _jsxs2))]
+            className: "p-2 text-lg cursor-pointer profile rounded hoverclass mt-2",
+            onClickCapture: changePassword,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_icons_material_LockReset__WEBPACK_IMPORTED_MODULE_7__["default"], {}), " Reset Password"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+            onClick: function onClick() {
+              return setOpen(false);
+            },
+            className: "p-2 text-lg cursor-pointer profile rounded hoverclass mt-2",
+            onClickCapture: logout,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_icons_material_Logout__WEBPACK_IMPORTED_MODULE_8__["default"], {}), " Logout"]
+          })]
         })
       })]
     })
@@ -16023,7 +16058,6 @@ function Header() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_18__.useNavigate)();
   var logout = function logout() {
     var user = sessionStorage.getItem('user');
-    console.log(user);
     if (user) {
       var r = confirm("Sure You want to Logout");
       if (r == true) {
@@ -16179,7 +16213,7 @@ function Header() {
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_8__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
         exact: true,
-        path: "/change",
+        path: "/resetpassword",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(_Passwordchange__WEBPACK_IMPORTED_MODULE_16__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
         exact: true,
@@ -17194,11 +17228,12 @@ function Login() {
       password: password
     };
     axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/logindata', data).then(function (Response) {
-      return Response.data == "" ? setMsg("Invalid Email Or Password") : checkuser(Response.data.name);
+      return Response.data == "" ? setMsg("Invalid Email Or Password") : checkuser(Response.data);
     });
   };
   var checkuser = function checkuser(e) {
-    sessionStorage.setItem('user', e);
+    sessionStorage.setItem('user', e.name);
+    sessionStorage.setItem('email', e.email);
     if (sessionStorage.getItem('user') == "Admin") {
       navigate('/home');
     } else {
@@ -17255,11 +17290,6 @@ function Login() {
           onChange: changePassword,
           value: password
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-        className: "text-primary mx-2",
-        id: "l1",
-        to: '/change',
-        children: "Change Password"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "signuplink",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
@@ -17295,9 +17325,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _style1_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style1.css */ "./resources/js/components/style1.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -17310,53 +17342,46 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Passwordchange() {
   //const [name, setName] = useState('')
+  // const [email, setEmail] = useState('')
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
-    email = _useState2[0],
-    setEmail = _useState2[1];
+    oldPassword = _useState2[0],
+    setOldpassword = _useState2[1];
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState4 = _slicedToArray(_useState3, 2),
-    password = _useState4[0],
-    setpassword = _useState4[1];
+    newPassword = _useState4[0],
+    setNewpassword = _useState4[1];
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState6 = _slicedToArray(_useState5, 2),
-    cpassword = _useState6[0],
-    setcpassword = _useState6[1];
+    errorPassword = _useState6[0],
+    passwordMsg = _useState6[1];
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState8 = _slicedToArray(_useState7, 2),
-    errorPassword = _useState8[0],
-    passwordMsg = _useState8[1];
+    errorCpassword = _useState8[0],
+    cpasswordMsg = _useState8[1];
+  // const [error,Msg] = useState('');
   var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState10 = _slicedToArray(_useState9, 2),
-    errorCpassword = _useState10[0],
-    cpasswordMsg = _useState10[1];
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-    _useState12 = _slicedToArray(_useState11, 2),
-    errorEmail = _useState12[0],
-    emailMsg = _useState12[1];
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-    _useState14 = _slicedToArray(_useState13, 2),
-    errorAll = _useState14[0],
-    AllMsg = _useState14[1];
+    errorAll = _useState10[0],
+    AllMsg = _useState10[1];
   // const [msg, setMsg] = useState('');
 
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
   var validate = function validate() {
-    if (email == '' || password == '' || cpassword == '') {
+    if (oldPassword == '' || newPassword == '') {
       AllMsg('Please Fill All Field');
-    } else if (!email.includes('@') && email.length < 12) {
-      emailMsg('please Enter Valid Email');
-    } else if (password.length < 7) {
+    } else if (newPassword.length < 7) {
       passwordMsg('Password Atleast 8 Character');
-    } else if (password != cpassword) {
-      cpasswordMsg('Passwords Do not Same');
+    } else if (oldPassword == newPassword) {
+      cpasswordMsg('Please Enter New Password');
     } else {
       return true;
     }
   };
-  var HandleInsert = function HandleInsert() {
+  var HandleChangePassword = function HandleChangePassword() {
     passwordMsg("");
     cpasswordMsg("");
     AllMsg("");
@@ -17364,115 +17389,145 @@ function Passwordchange() {
 
     if (validate()) {
       var data = {
-        email: email,
-        password: password,
-        cpassword: cpassword
+        email: sessionStorage.getItem('email'),
+        oldPassword: oldPassword,
+        newPassword: newPassword
       };
-      axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/change', data).then(navigate('/login'));
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/change', data).then(function (response) {
+        return response.data == false ? AllMsg("Old Password is Not Correct") : navigate('/login');
+      });
     }
   };
+
+  // const changePassword = () =>
+  // {
+  //     if(sessionStorage.getItem('user') == "Admin")
+  //     {
+  //         navigate('/home');
+  //     }
+  //     else
+  //     {
+  //         navigate('/userhome');
+  //     }
+  // }
 
   // const changeName = (e) => {
   //     setName(e.target.value);
   // }
-  var changeEmail = function changeEmail(e) {
-    setEmail(e.target.value);
+  // const changeEmail = (e) => {
+  //     setEmail(e.target.value);
+  // }
+  var changeOldPassword = function changeOldPassword(e) {
+    setOldpassword(e.target.value);
   };
-  var changePassword = function changePassword(e) {
-    setpassword(e.target.value);
+  var changeNewpassword = function changeNewpassword(e) {
+    setNewpassword(e.target.value);
   };
-  var changeCpassword = function changeCpassword(e) {
-    setcpassword(e.target.value);
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    "class": "container h-100",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      "class": "row d-flex justify-content-center align-items-center h-100",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        "class": "col-lg-12 col-xl-11",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          "class": "card text-black",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            "class": "card-body p-md-5 main",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              "class": "row justify-content-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                "class": "col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                  className: "container",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    className: "mx-1 mx-md-4 insert",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-                      className: "text-success ml-5",
-                      children: "Change Password"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-                      className: "text-danger all",
-                      children: errorAll
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                      className: "form-group mx-5",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                        children: "Email "
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-                        type: "text",
-                        className: "form-control",
-                        name: "email",
-                        placeholder: "Email",
-                        onChange: changeEmail,
-                        value: email
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-                        className: "text-danger",
-                        children: errorEmail
-                      })]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                      className: "form-group mx-5",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                        children: "New Password "
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-                        type: "password",
-                        className: "form-control",
-                        name: "password",
-                        placeholder: "New Password",
-                        onChange: changePassword,
-                        value: password
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-                        className: "text-danger",
-                        children: errorPassword
-                      })]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                      className: "form-group mx-5",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                        children: "Confirm New Password "
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-                        type: "password",
-                        className: "form-control",
-                        name: "cpassword",
-                        placeholder: "Confirm New Password",
-                        onChange: changeCpassword,
-                        value: cpassword
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-                        className: "text-danger",
-                        children: errorCpassword
-                      })]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-                      className: "btn btn-outline-primary col-md-6 mx-5",
-                      onClick: HandleInsert,
-                      children: "Submit"
-                    })]
-                  })
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                "class": "col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-                  src: "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp",
-                  id: "i1",
-                  alt: "Sample image"
-                })
-              })]
-            })
-          })
-        })
-      })
-    })
+
+  // return (
+  //     <div class="container h-100">
+  //         <div class="row d-flex justify-content-center align-items-center h-100">
+  //             <div class="col-lg-12 col-xl-11">
+  //                 <div class="card text-black">
+  //                     <div class="card-body p-md-5 main">
+  //                         <div class="row justify-content-center">
+  //                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+  //                                 <div className="container">
+  //                                     <div className="mx-1 mx-md-4 insert">
+  //                                     <h2 className='text-success ml-5'>Change Password</h2><br/>
+  //                                         <p className='text-danger all'>{errorAll}</p>
+  //                                         {/* <p className='text-danger all'>{msg}</p> */}
+  //                                         {/* <div className="form-group mx-5">
+  //                                             <label>Name </label>
+  //                                             <input type="text" className="form-control" name="name" placeholder='name' onChange={changeName} value={name} />
+  //                                         </div> */}
+  //                                         <div className="form-group mx-5">
+  //                                             <label>Email </label>
+  //                                             <input type="text" className="form-control" name="email" placeholder='Email' onChange={changeEmail} value={email} />
+  //                                             <p className='text-danger'>{errorEmail}</p>
+  //                                         </div>
+
+  //                                         <div className="form-group mx-5">
+  //                                             <label>New Password </label>
+  //                                             <input type="password" className="form-control" name="password" placeholder='New Password' onChange={changePassword} value={password} />
+  //                                             <p className='text-danger'>{errorPassword}</p>
+  //                                         </div>
+
+  //                                         <div className="form-group mx-5">
+  //                                             <label>Confirm New Password </label>
+  //                                             <input type="password" className="form-control" name="cpassword" placeholder='Confirm New Password' onChange={changeCpassword} value={cpassword} />
+  //                                             <p className='text-danger'>{errorCpassword}</p>
+  //                                         </div>
+
+  //                                         <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Submit</button>
+  //                                     </div>
+  //                                 </div>
+
+  //                             </div>
+  //                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+  //                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+  //                                     id='i1' alt="Sample image" />
+
+  //                             </div>
+  //                         </div>
+  //                     </div>
+  //                 </div>
+  //             </div>
+  //         </div>
+  //     </div>
+
+  // )
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    "class": "main-block",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "left-part",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
+        className: "fas fa-envelope"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
+        className: "fas fa-at"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
+        className: "fas fa-mail-bulk"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "formlogin",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+        children: "Reset Password"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
+        className: "text-danger",
+        children: errorAll
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "info",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          type: "password",
+          name: "oldPassword",
+          placeholder: "Old Password",
+          className: "text-dark",
+          onChange: changeOldPassword,
+          value: oldPassword
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "text-danger",
+          children: errorPassword
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          type: "password",
+          name: "newPassword",
+          placeholder: "New Password",
+          className: "text-dark",
+          onChange: changeNewpassword,
+          value: newPassword
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "text-danger",
+          children: errorCpassword
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        type: "submit",
+        className: "btn btn-danger col-md-11 mx-2",
+        onClick: HandleChangePassword,
+        children: "Reset"
+      })]
+    })]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Passwordchange);
@@ -26074,7 +26129,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".insert{\n   width: 475px;\n   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);\n   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);\n}\n#i1{\n    width: 300px;\n    height: 500px;\n    margin-left: 200px;\n}\n.main{\n    background-image: linear-gradient(-225deg, #e8fcc4 0%, #f6feca 100%);\n   background-image: linear-gradient(to top, #eaf9c0 0%, #f8fec6 100%);\n}\n\n/* Dropdown */\n.dropdown{\n    margin-top: 185px;\n    width : 150px;\n    text-align: center;\n}\n\n.cursor-pointer{\n    cursor: pointer;\n}\n\n.hoverclass:hover{\n    background-color: #a8edea;\n}\n\n.profile{\n    background-color :#E3FDF5;\n}\n\n/* header */\n.navbar{\n    max-height:55px;\n    margin: auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".insert{\n   width: 475px;\n   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);\n   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);\n}\n#i1{\n    width: 300px;\n    height: 500px;\n    margin-left: 200px;\n}\n.main{\n    background-image: linear-gradient(-225deg, #e8fcc4 0%, #f6feca 100%);\n   background-image: linear-gradient(to top, #eaf9c0 0%, #f8fec6 100%);\n}\n\n/* Dropdown */\n.dropdown{\n    margin-top: 245px;\n    width : 150px;\n    text-align: center;\n}\n\n.cursor-pointer{\n    cursor: pointer;\n}\n\n.hoverclass:hover{\n    background-color: #a8edea;\n}\n\n.profile{\n    background-color :#E3FDF5;\n}\n\n/* header */\n.navbar{\n    max-height:55px;\n    margin: auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

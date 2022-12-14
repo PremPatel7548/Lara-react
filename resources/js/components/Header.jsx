@@ -25,7 +25,6 @@ function Header() {
     const logout = () =>
     {
         var user=sessionStorage.getItem('user');
-        console.log(user);
           if(user)
           {
              var r = confirm("Sure You want to Logout");
@@ -103,7 +102,7 @@ function Header() {
                     <Route exact path="/insertchild" element={<InsertChild />} />
                     <Route exact path="/signup" element={<Signup />}/>
                     <Route exact path="/login" element={<Login />}/>
-                    <Route exact path="/change" element={<Passwordchange />} />
+                    <Route exact path="/resetpassword" element={<Passwordchange />} />
 
 
                     <Route exact path="/showchild/:id" element={<Showchild />} />
