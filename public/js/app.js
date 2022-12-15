@@ -14698,7 +14698,7 @@ var AdminzipChild = /*#__PURE__*/function (_Component) {
             placeholder: "Search"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
-          className: "table bg-dark text-white mt-4 text-center",
+          className: "table bg-dark text-white mt-1 text-center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("thead", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tr", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
@@ -14927,7 +14927,7 @@ var AdminZipmaster = /*#__PURE__*/function (_Component) {
             placeholder: "Search"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
-          className: "table bg-dark text-white mt-2 text-center",
+          className: "table bg-dark text-white mt-1 text-center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("thead", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tr", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
@@ -15067,7 +15067,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Dropdown() {
-  var Menus = ['Profile', 'Setting', 'Logout'];
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState2 = _slicedToArray(_useState, 2),
     open = _useState2[0],
@@ -26129,7 +26128,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".insert{\n   width: 475px;\n   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);\n   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);\n}\n#i1{\n    width: 300px;\n    height: 500px;\n    margin-left: 200px;\n}\n.main{\n    background-image: linear-gradient(-225deg, #e8fcc4 0%, #f6feca 100%);\n   background-image: linear-gradient(to top, #eaf9c0 0%, #f8fec6 100%);\n}\n\n/* Dropdown */\n.dropdown{\n    margin-top: 245px;\n    width : 150px;\n    text-align: center;\n}\n\n.cursor-pointer{\n    cursor: pointer;\n}\n\n.hoverclass:hover{\n    background-color: #a8edea;\n}\n\n.profile{\n    background-color :#E3FDF5;\n}\n\n/* header */\n.navbar{\n    max-height:55px;\n    margin: auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".insert{\n   width: 475px;\n   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);\n   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);\n}\n#i1{\n    width: 300px;\n    height: 500px;\n    margin-left: 200px;\n}\n.main{\n    background-image: linear-gradient(-225deg, #e8fcc4 0%, #f6feca 100%);\n   background-image: linear-gradient(to top, #eaf9c0 0%, #f8fec6 100%);\n}\n\n/* Dropdown */\n.dropdown{\n    /* margin-top:245px; */\n    margin-top:245px;\n    animation-name: navbar;\n    animation-duration: 1s;\n    animation-iteration-count: 1;\n    /* animation-timing-function: ease-out; */\n    width : 150px;\n    text-align: center;\n}\n\n@keyframes navbar {\n    from{\n        margin-top:35px;\n    }\n    to{\n        margin-top: 245px;\n    }\n}\n\n.cursor-pointer{\n    cursor: pointer;\n}\n\n.hoverclass:hover{\n    background-color: #a8edea;\n}\n\n.profile{\n    background-color :#E3FDF5;\n}\n\n/* header */\n.navbar{\n    max-height:55px;\n    margin: auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

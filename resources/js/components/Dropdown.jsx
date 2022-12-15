@@ -8,7 +8,6 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import LockResetIcon from '@mui/icons-material/LockReset';
 
 function Dropdown() {
-    const Menus = ['Profile', 'Setting', 'Logout'];
     const [open, setOpen] = useState(false);
 
     //solution

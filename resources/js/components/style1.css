@@ -15,9 +15,23 @@
 
 /* Dropdown */
 .dropdown{
-    margin-top: 245px;
+    /* margin-top:245px; */
+    margin-top:245px;
+    animation-name: navbar;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    /* animation-timing-function: ease-out; */
     width : 150px;
     text-align: center;
+}
+
+@keyframes navbar {
+    from{
+        margin-top:35px;
+    }
+    to{
+        margin-top: 245px;
+    }
 }
 
 .cursor-pointer{

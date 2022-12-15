@@ -76,7 +76,7 @@ class AdminZipmaster extends Component {
                  <div className='col-md-4 mt-3'>
                 <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>this.setState({search : e.target.value})} placeholder="Search"></input>
             </div>
-                <table className="table bg-dark text-white mt-2 text-center">
+                <table className="table bg-dark text-white mt-1 text-center">
                     <thead>
                         <tr>
                             <th>
