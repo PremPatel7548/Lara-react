@@ -58,5 +58,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/logindata',[usercontroller::class,'logindata']);
 Route::post('/change',[usercontroller::class,'change']);
+Route::get('/profile/{email}',[usercontroller::class,'profile']);
+Route::post('/profile/{email}',[usercontroller::class,'changeprofile']);
 
 Route::post('/search',[CustomerController::class,'search']);

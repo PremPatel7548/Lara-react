@@ -32,6 +32,7 @@ class usercontroller extends Controller
             return  $user;
         }
     }
+    
     public function change(Request $req)
     {
         $email=$req->email;
@@ -46,6 +47,23 @@ class usercontroller extends Controller
             $user->password=Hash::make($req['newPassword']);
             $user->save();
             return true;
+        }
+    }
+
+    public function profile($email)
+    {
+        $data=UserModel::where('email','=',$email)->first();
+        return $data;
+    }
+
+    public function changeprofile(Request $req,$email)
+    {
+        $data=UserModel::where('email','=',$email)->first();
+        if($data)
+        {
+            $data->name=$req['name'];
+            // $data->picture=$req['picture'];
+            $data->save();
         }
     }
 }

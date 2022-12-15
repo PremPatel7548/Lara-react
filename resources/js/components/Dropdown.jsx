@@ -6,6 +6,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Person2Icon from '@mui/icons-material/Person2';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LockResetIcon from '@mui/icons-material/LockReset';
+import { Email } from '@mui/icons-material';
 
 function Dropdown() {
     const [open, setOpen] = useState(false);
@@ -41,6 +42,12 @@ function Dropdown() {
     {
         navigate('/resetpassword');
     }
+    const changeprofile = () =>
+    {
+        let email=sessionStorage.getItem('email');
+        navigate(`/changeprofile/${email}`);
+    }
+
     return (
         <div>
             <div className='relative'>
@@ -59,7 +66,7 @@ function Dropdown() {
                         <ul>
                             <li
                                 onClick={() => setOpen(false)}
-                                className='p-2 text-lg cursor-pointer rounded profile hoverclass'>
+                                className='p-2 text-lg cursor-pointer rounded profile hoverclass' onClickCapture={changeprofile}>
                                 <Person2Icon /> Profile
                             </li>
                             <li

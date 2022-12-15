@@ -16,6 +16,7 @@ import Showchild from './Showchild';
 import Showmaster from './Showmaster';
 import Dropdown from './Dropdown';
 import Passwordchange from './Passwordchange';
+import Changeprofile from './Changeprofile';
 
 function Header() {
     const [loggedin,setloggedin] = useState(false);
@@ -103,6 +104,7 @@ function Header() {
                     <Route exact path="/signup" element={<Signup />}/>
                     <Route exact path="/login" element={<Login />}/>
                     <Route exact path="/resetpassword" element={<Passwordchange />} />
+                    <Route exact path="/changeprofile/:email" element={<Changeprofile />} />
 
 
                     <Route exact path="/showchild/:id" element={<Showchild />} />
