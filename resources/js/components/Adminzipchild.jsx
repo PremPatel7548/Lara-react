@@ -67,7 +67,7 @@ class AdminzipChild extends Component {
 
     render() {
         return (
-            <div>
+            <div className='col-md-12'>
                  <div className='col-md-4 mt-3'>
                 <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>this.setState({search : e.target.value})} placeholder="Search"></input>
                  </div>

@@ -45,7 +45,7 @@ function Dropdown() {
     const changeprofile = () =>
     {
         let email=sessionStorage.getItem('email');
-        navigate(`/changeprofile/${email}`);
+        navigate(`/profile/${email}`);
     }
 
     return (

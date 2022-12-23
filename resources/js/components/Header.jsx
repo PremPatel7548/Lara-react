@@ -17,6 +17,7 @@ import Showmaster from './Showmaster';
 import Dropdown from './Dropdown';
 import Passwordchange from './Passwordchange';
 import Changeprofile from './Changeprofile';
+import Profile from './Profile';
 
 function Header() {
     const [loggedin,setloggedin] = useState(false);
@@ -39,7 +40,7 @@ function Header() {
     }
 
         return (
-                <div className="container">
+                <div className="container col-md-12 ml-2">
                     <nav className="navbar navbar-expand-sm navbar-light bg-secondary text-white">
                         <a className="navbar-brand text-white" href="/">Navbar</a>
                         <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -104,6 +105,7 @@ function Header() {
                     <Route exact path="/signup" element={<Signup />}/>
                     <Route exact path="/login" element={<Login />}/>
                     <Route exact path="/resetpassword" element={<Passwordchange />} />
+                    <Route exact path="/profile/:email" element={<Profile />} />
                     <Route exact path="/changeprofile/:email" element={<Changeprofile />} />
 
 

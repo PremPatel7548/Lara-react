@@ -75,62 +75,7 @@ function Passwordchange() {
         setNewpassword(e.target.value);
     }
 
-    // return (
-    //     <div class="container h-100">
-    //         <div class="row d-flex justify-content-center align-items-center h-100">
-    //             <div class="col-lg-12 col-xl-11">
-    //                 <div class="card text-black">
-    //                     <div class="card-body p-md-5 main">
-    //                         <div class="row justify-content-center">
-    //                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-    //                                 <div className="container">
-    //                                     <div className="mx-1 mx-md-4 insert">
-    //                                     <h2 className='text-success ml-5'>Change Password</h2><br/>
-    //                                         <p className='text-danger all'>{errorAll}</p>
-    //                                         {/* <p className='text-danger all'>{msg}</p> */}
-    //                                         {/* <div className="form-group mx-5">
-    //                                             <label>Name </label>
-    //                                             <input type="text" className="form-control" name="name" placeholder='name' onChange={changeName} value={name} />
-    //                                         </div> */}
-    //                                         <div className="form-group mx-5">
-    //                                             <label>Email </label>
-    //                                             <input type="text" className="form-control" name="email" placeholder='Email' onChange={changeEmail} value={email} />
-    //                                             <p className='text-danger'>{errorEmail}</p>
-    //                                         </div>
-
-    //                                         <div className="form-group mx-5">
-    //                                             <label>New Password </label>
-    //                                             <input type="password" className="form-control" name="password" placeholder='New Password' onChange={changePassword} value={password} />
-    //                                             <p className='text-danger'>{errorPassword}</p>
-    //                                         </div>
-
-    //                                         <div className="form-group mx-5">
-    //                                             <label>Confirm New Password </label>
-    //                                             <input type="password" className="form-control" name="cpassword" placeholder='Confirm New Password' onChange={changeCpassword} value={cpassword} />
-    //                                             <p className='text-danger'>{errorCpassword}</p>
-    //                                         </div>
-
-    //                                         <button className="btn btn-outline-primary col-md-6 mx-5" onClick={HandleInsert}>Submit</button>
-    //                                     </div>
-    //                                 </div>
-
-
-    //                             </div>
-    //                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-    //                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-    //                                     id='i1' alt="Sample image" />
-
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-
-    // )
 
     return(
 

@@ -32,7 +32,7 @@ class usercontroller extends Controller
             return  $user;
         }
     }
-    
+
     public function change(Request $req)
     {
         $email=$req->email;
@@ -59,10 +59,13 @@ class usercontroller extends Controller
     public function changeprofile(Request $req,$email)
     {
         $data=UserModel::where('email','=',$email)->first();
+        $image = $req['image'];
+        $image->storeAs('public/images',$image);
         if($data)
         {
             $data->name=$req['name'];
             // $data->picture=$req['picture'];
+            $data->image = $req['image'];
             $data->save();
         }
     }
