@@ -54,7 +54,7 @@ function Header() {
             const data = {
                 name: name,
                 email: email,
-                password: password
+                password: password,
             }
 
             axios.post('http://127.0.0.1:8000/signup', data)
@@ -95,7 +95,6 @@ function Header() {
           <p className='text-danger'>{errorPassword}</p>
           <input type="password" name="cpassword" placeholder="Confirm Password" className='text-dark' onChange={changeCpassword} value={cpassword}/>
           <p className='text-danger'>{errorCpassword}</p>
-
 
           <div className="loginlink">
             <Link className="nav-link text-primary size-20" to="/login"> Already have a account?</Link>

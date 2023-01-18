@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\UserModel;
+use App\Models\UserImageModel;
 
 class usercontroller extends Controller
 {
@@ -53,19 +54,26 @@ class usercontroller extends Controller
     public function profile($email)
     {
         $data=UserModel::where('email','=',$email)->first();
-        return $data;
+        $data2 = UserImageModel::where('user_id','=',$data->user_id)->first();
+        return [$data,$data2];
     }
 
     public function changeprofile(Request $req,$email)
     {
         $data=UserModel::where('email','=',$email)->first();
-        $image = $req['image'];
-        $image->storeAs('public/images',$image);
+        $id = $data->user_id;
+
         if($data)
         {
+            if($req->has('image'))
+            {
+                $image = $req->file('image');
+                $name = time().'.'.$image->getClientOriginalExtension();
+                $image->move('images/',$name);
+                UserImageModel::create(['user_id'=>$id,'image'=>$name]);
+                return response()->json(['success'=>'Upload Successfully']);
+            }
             $data->name=$req['name'];
-            // $data->picture=$req['picture'];
-            $data->image = $req['image'];
             $data->save();
         }
     }

@@ -78,7 +78,7 @@ class CustomerController extends Controller
         return $cust;
         // $cust=realtorScrapedDump::all();
         // return json_encode($cust);
-    } 
+    }
 
     public function insertchild(Request $request)
     {
@@ -132,17 +132,17 @@ class CustomerController extends Controller
         $customer->delete();
     }
 
-    public function search(Request $req)
+    public function searchChild(Request $req)
     {
         $search=$req['search'];
-        if($search!="")
+        if($search == "")
         {
-            $display=zipcodesearch::where('zip','=',$search)->first();
-            return $display;
+            $cust=realtorScrapedDump::paginate(30);
+            return $cust;
         }
         else
         {
-            $display=zipcodesearch::paginate(30);
+            $display=realtorScrapedDump::where('Zip','LIKE','%'.$search.'%')->orWhere('City','LIKE','%'.$search.'%')->paginate(30);
             return $display;
         }
     }

@@ -15068,27 +15068,25 @@ function Changeprofile() {
     _useState4 = _slicedToArray(_useState3, 2),
     email = _useState4[0],
     setEmail = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState6 = _slicedToArray(_useState5, 2),
     image = _useState6[0],
     setImage = _useState6[1];
   var listParam = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)();
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
-  var handleChangePassword = function handleChangePassword() {
-    var data = {
-      name: name,
-      email: email,
-      image: image
-    };
+  var handleEdit = function handleEdit(e) {
+    e.preventDefault();
+    var data = new FormData();
+    data.append('image', image);
+    data.append('name', name);
     axios__WEBPACK_IMPORTED_MODULE_1__["default"].post('http://127.0.0.1:8000/profile/' + listParam.email, data).then(navigate("/profile/".concat(email)));
   };
 
   // console.log(listParam.id);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     axios__WEBPACK_IMPORTED_MODULE_1__["default"].get('http://127.0.0.1:8000/profile/' + listParam.email).then(function (Response) {
-      setName(Response.data.name);
-      setEmail(Response.data.email);
-      setPicture(Response.data.image);
+      setName(Response.data[0].name);
+      setEmail(Response.data[0].email);
     });
   }, []);
   var changeUserName = function changeUserName(e) {
@@ -15098,8 +15096,9 @@ function Changeprofile() {
   //     setEmail(e.target.value);
   // }
   var changeImage = function changeImage(e) {
-    setImage(e.target.value);
+    setImage(e.target.files[0]);
   };
+  console.log(image);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     "class": "main-block",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -15116,7 +15115,8 @@ function Changeprofile() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
         children: "Edit Profile"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
-        className: "info",
+        className: "info col-md-12",
+        onSubmit: handleEdit,
         encType: "multipart/form-data",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
           type: "text",
@@ -15126,15 +15126,14 @@ function Changeprofile() {
           onChange: changeUserName
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
           type: "file",
-          name: "file",
+          name: "image",
           className: "text-dark",
           onChange: changeImage
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          type: "submit",
+          className: "btn btn-danger col-md-11 mx-2",
+          children: "Edit"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-        type: "submit",
-        className: "btn btn-danger col-md-11 mx-2",
-        onClick: handleChangePassword,
-        children: "Edit"
       })]
     })]
   });
@@ -17640,9 +17639,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+// import { Dialog } from 'primereact/dialog';
 
 
 function Profile() {
+  // const [dailogs,setdailogs] = useState(false);
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState2 = _slicedToArray(_useState, 2),
     name = _useState2[0],
@@ -17661,11 +17662,12 @@ function Profile() {
   // console.log(listParam.id);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     axios__WEBPACK_IMPORTED_MODULE_1__["default"].get('http://127.0.0.1:8000/profile/' + listParam.email).then(function (Response) {
-      setName(Response.data.name);
-      setEmail(Response.data.email);
-      setPicture(Response.data.image);
+      setName(Response.data[0].name);
+      setEmail(Response.data[0].email);
+      setPicture(Response.data[1].image);
     });
   }, []);
+  console.log(picture);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     "class": "col-md-10",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
@@ -17675,7 +17677,7 @@ function Profile() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "col-md-4",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-            src: _images_Userimage_png__WEBPACK_IMPORTED_MODULE_3__["default"],
+            src: picture.length ? picture : _images_Userimage_png__WEBPACK_IMPORTED_MODULE_3__["default"],
             alt: "Some Problem",
             height: "150px"
           })
@@ -18612,7 +18614,7 @@ var ZipChildSearch = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
-      axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipchild").then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"].post("http://127.0.0.1:8000/searchChild", this.state.search).then(function (response) {
         _this2.setState({
           zipchilds: response.data.data,
           itemsCountPerPage: response.data.per_page,
@@ -18622,32 +18624,13 @@ var ZipChildSearch = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
-    key: "onDelete",
-    value: function onDelete(customer_id) {
-      var _this3 = this;
-      var d = confirm("Are You Sure Delete This Record");
-      if (d == true) {
-        axios__WEBPACK_IMPORTED_MODULE_1__["default"]["delete"]('http://127.0.0.1:8000/deletechild/' + customer_id).then(function (response) {
-          var zipchilds = _this3.state.zipchilds;
-          for (var i = 0; i < zipchilds.length; i++) {
-            if (zipchilds[i].Zip == customer_id) {
-              zipchilds.splice(i, 1);
-              _this3.setState({
-                zipchilds: zipchilds
-              });
-            }
-          }
-        });
-      }
-    }
-  }, {
     key: "handlePageChange",
     value: function handlePageChange(pageNumber) {
-      var _this4 = this;
+      var _this3 = this;
       console.log('active page is ${pageNumber}');
       // this.setState({ activePage: pageNumber });
       axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://127.0.0.1:8000/zipchild?page=" + pageNumber).then(function (response) {
-        _this4.setState({
+        _this3.setState({
           zipchilds: response.data.data,
           itemsCountPerPage: response.data.per_page,
           totalItemsCount: response.data.total,
@@ -18658,7 +18641,7 @@ var ZipChildSearch = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
+      var _this4 = this;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "col-md-4 mt-3",
@@ -18667,7 +18650,7 @@ var ZipChildSearch = /*#__PURE__*/function (_Component) {
             className: "bg-dark text-white",
             name: "search",
             onChange: function onChange(e) {
-              return _this5.setState({
+              return _this4.setState({
                 search: e.target.value
               });
             },
@@ -18698,9 +18681,7 @@ var ZipChildSearch = /*#__PURE__*/function (_Component) {
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
-            children: this.state.zipchilds.filter(function (zipchild) {
-              return zipchild.Zip.toString().toLowerCase().includes(_this5.state.search) || zipchild.City.toLowerCase().includes(_this5.state.search) || zipchild.State.toLowerCase().includes(_this5.state.search) || zipchild.City.includes(_this5.state.search) || zipchild.State.includes(_this5.state.search) || zipchild.HomeSale.toString().toLowerCase().includes(_this5.state.search) || zipchild.HomeBaseValue.toString().toLowerCase().includes(_this5.state.search) || zipchild.HomeMaxValue.toString().toLowerCase().includes(_this5.state.search) || zipchild.MedianListPrice.toString().toLowerCase().includes(_this5.state.search) || zipchild.MedianSoldPrice.toString().toLowerCase().includes(_this5.state.search) || zipchild.Year.toString().toLowerCase().includes(_this5.state.search);
-            }).map(function (zipchild) {
+            children: this.state.zipchilds.map(function (zipchild) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
                   children: zipchild.Zip
@@ -18727,7 +18708,7 @@ var ZipChildSearch = /*#__PURE__*/function (_Component) {
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_icons_material_Visibility__WEBPACK_IMPORTED_MODULE_5__["default"], {})
                   })
                 })]
-              });
+              }, zipchild.Zip);
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {

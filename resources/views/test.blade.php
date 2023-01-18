@@ -267,5 +267,6 @@ a{
           <body>
               <div id="app"></div>
               <script src="/js/app.js"></script>
+              <script src="https://unpkg.com/primereact/core/core.min.js"></script>
           </body>
 </html>

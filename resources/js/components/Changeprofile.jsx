@@ -6,31 +6,30 @@ import "./style1.css";
 function Changeprofile() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [image, setImage] = useState('')
+    const [image, setImage] = useState(null)
 
     let listParam = useParams();
 
     const navigate = useNavigate();
 
 
-    const handleChangePassword = () => {
-        const data = {
-            name: name,
-            email: email,
-            image: image
-        }
+    const handleEdit = (e) => {
+        e.preventDefault();
+        const data = new FormData();
+        data.append(
+            'image', image);
+            data.append('name',name);
+
         axios.post('http://127.0.0.1:8000/profile/' + listParam.email, data)
-            .then(navigate(`/profile/${email}`)
-            );
+            .then(navigate(`/profile/${email}`));
     }
 
     // console.log(listParam.id);
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/profile/' + listParam.email)
             .then(Response => {
-                setName(Response.data.name)
-                setEmail(Response.data.email)
-                setPicture(Response.data.image)
+                setName(Response.data[0].name)
+                setEmail(Response.data[0].email)
             });
     }, [])
 
@@ -43,8 +42,9 @@ function Changeprofile() {
     //     setEmail(e.target.value);
     // }
     const changeImage = (e) => {
-        setImage(e.target.value);
+        setImage(e.target.files[0]);
     }
+    console.log(image);
 
     return (
         <div class="main-block">
@@ -55,11 +55,11 @@ function Changeprofile() {
             </div>
             <div className='formlogin'>
                 <h1>Edit Profile</h1>
-                <form className="info" encType='multipart/form-data'>
+                <form className="info col-md-12" onSubmit={handleEdit} encType="multipart/form-data">
                     <input type="text" name="UserName" value={name} className='text-dark' onChange={changeUserName}/>
-                    <input type="file" name="file" className='text-dark' onChange={changeImage}/>
+                    <input type="file"name="image" className='text-dark' onChange={changeImage}/>
+                <button type="submit" className='btn btn-danger col-md-11 mx-2'>Edit</button>
                 </form>
-                <button type="submit" className='btn btn-danger col-md-11 mx-2' onClick={handleChangePassword}>Edit</button>
             </div>
         </div>
     )

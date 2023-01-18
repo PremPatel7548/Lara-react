@@ -61,4 +61,4 @@ Route::post('/change',[usercontroller::class,'change']);
 Route::get('/profile/{email}',[usercontroller::class,'profile']);
 Route::post('/profile/{email}',[usercontroller::class,'changeprofile']);
 
-Route::post('/search',[CustomerController::class,'search']);
+Route::post('/searchChild',[CustomerController::class,'searchChild']);

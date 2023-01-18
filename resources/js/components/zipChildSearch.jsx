@@ -84,7 +84,7 @@ class ZipChildSearch extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/zipchild")
+        axios.post("http://127.0.0.1:8000/searchChild",this.state.search)
             .then(response => {
                 this.setState({
                     zipchilds: response.data.data,
@@ -93,25 +93,6 @@ class ZipChildSearch extends Component {
                     activePage: response.data.current_page
                 });
             });
-    }
-
-    onDelete(customer_id) {
-        var d=confirm("Are You Sure Delete This Record");
-        if(d == true)
-        {
-            axios.delete('http://127.0.0.1:8000/deletechild/' + customer_id)
-                .then(response => {
-
-                    var zipchilds = this.state.zipchilds;
-
-                    for (var i = 0; i < zipchilds.length; i++) {
-                        if (zipchilds[i].Zip == customer_id) {
-                            zipchilds.splice(i, 1);
-                            this.setState({ zipchilds: zipchilds });
-                        }
-                    }
-                });
-        }
     }
 
     handlePageChange(pageNumber) {
@@ -149,7 +130,7 @@ class ZipChildSearch extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {
+                        {/* {
                             this.state.zipchilds.filter(zipchild=>
                                 zipchild.Zip.toString().toLowerCase().includes(this.state.search)||
                                 zipchild.City.toLowerCase().includes(this.state.search)||
@@ -165,6 +146,24 @@ class ZipChildSearch extends Component {
                                 ).map(zipchild => {
                                 return (
                                     <tr>
+                                        <td>{zipchild.Zip}</td>
+                                        <td>{zipchild.City}</td>
+                                        <td>{zipchild.State}</td>
+                                        <td>{zipchild.HomeSale}</td>
+                                        <td>{zipchild.HomeBaseValue}</td>
+                                        <td>{zipchild.HomeMaxValue}</td>
+                                        <td>{zipchild.MedianListPrice}</td>
+                                        <td>{zipchild.MedianSoldPrice}</td>
+                                        <td>{zipchild.Year}</td>
+                                        <td><Link class="btn btn-outline-warning" to={`/showchild/${zipchild.Zip}`}><VisibilityIcon /></Link></td>
+                                    </tr>
+                                )
+                            })
+                        } */}
+                        {
+                            this.state.zipchilds.map(zipchild => {
+                                return (
+                                    <tr key={zipchild.Zip}>
                                         <td>{zipchild.Zip}</td>
                                         <td>{zipchild.City}</td>
                                         <td>{zipchild.State}</td>

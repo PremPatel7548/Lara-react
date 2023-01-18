@@ -4,8 +4,11 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import "./style1.css";
 import image from './images/Userimage.png';
 import EditIcon from '@mui/icons-material/Edit';
+// import { Dialog } from 'primereact/dialog';
+
 
 function Profile() {
+    // const [dailogs,setdailogs] = useState(false);
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [picture, setPicture] = useState('')
@@ -18,19 +21,19 @@ function Profile() {
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/profile/' + listParam.email)
             .then(Response => {
-                setName(Response.data.name)
-                setEmail(Response.data.email)
-                setPicture(Response.data.image)
+                setName(Response.data[0].name)
+                setEmail(Response.data[0].email)
+                setPicture(Response.data[1].image)
             });
     }, [])
 
-
+    console.log(picture);
     return (
         <div class="col-md-10">
             <form className='col-md-7'>
                 <div className='row'>
                     <div className='col-md-4'>
-                        <img src={image} alt="Some Problem" height="150px"/>
+                        <img src={picture.length?picture:image} alt="Some Problem" height="150px" />
                     </div>
                     <div className='col-md-6'>
                         <div className='profile-head'>
@@ -101,6 +104,18 @@ function Profile() {
                 </div>
 
             </form>
+            {/* <Dialog
+              visible = {dailogs}
+            //   onHide = {()=>setdailogs(false)}
+              >
+                <div className='confirmation-content flex flex-column align-items-center'>
+                    <div className='flex flex-column align-items-center mt-5 w-12'>
+                        <div className='flex flex-column justify-content-around w-12 mt-4'>
+                            <div className='btn btn-primary'>Save</div>
+                        </div>
+                    </div>
+                </div>
+              </Dialog> */}
         </div>
 
     )
