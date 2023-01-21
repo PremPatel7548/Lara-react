@@ -18,8 +18,38 @@ class AdminzipChild extends Component {
             pageRangeDisplayed: 5
         }
         this.handlePageChange = this.handlePageChange.bind(this);
+        this.searching = this.searching.bind(this);
+        this.onSearch = this.onSearch.bind(this);
     }
 
+    onSearch(e)
+    {
+        this.setState(
+            {
+                search: e.target.value
+            }
+        );
+    }
+    
+    searching()
+    {
+        console.log(this.state.search);
+        //alert(this.state.search);
+        const data = {
+            search : this.state.search
+        }
+        axios.post("http://127.0.0.1:8000/childsearch",data)
+        .then(response => {
+            this.setState({
+                zipchilds: response.data.data,
+                itemsCountPerPage: response.data.per_page,
+                totalItemsCount: response.data.total,
+                activePage: response.data.current_page
+                
+            });
+        });
+    }
+    
     componentDidMount() {
         axios.get("http://127.0.0.1:8000/zipchild")
             .then(response => {
@@ -69,7 +99,8 @@ class AdminzipChild extends Component {
         return (
             <div className='col-md-12'>
                  <div className='col-md-4 mt-3'>
-                <input type="text" className='bg-dark text-white' name="search" onChange={(e)=>this.setState({search : e.target.value})} placeholder="Search"></input>
+                <input type="text" className='bg-dark text-white' name="search" onChange={this.onSearch} value={this.state.search} placeholder="Search"></input>
+                 <button className='btn btn-warning' onClick={this.searching}>Search</button>
                  </div>
                 <table className="table bg-dark text-white mt-1 text-center">
                     <thead>
@@ -92,19 +123,7 @@ class AdminzipChild extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.zipchilds.filter(zipchild=>
-                                zipchild.Zip.toString().toLowerCase().includes(this.state.search)||
-                                zipchild.City.toLowerCase().includes(this.state.search)||
-                                zipchild.State.toLowerCase().includes(this.state.search)||
-                                zipchild.City.includes(this.state.search)||
-                                zipchild.State.includes(this.state.search)||
-                                zipchild.HomeSale.toString().toLowerCase().includes(this.state.search)||
-                                zipchild.HomeBaseValue.toString().toLowerCase().includes(this.state.search)||
-                                zipchild.HomeMaxValue.toString().toLowerCase().includes(this.state.search)||
-                                zipchild.MedianListPrice.toString().toLowerCase().includes(this.state.search)||
-                                zipchild.MedianSoldPrice.toString().toLowerCase().includes(this.state.search)||
-                                zipchild.Year.toString().toLowerCase().includes(this.state.search)
-                                ).map(zipchild => {
+                            this.state.zipchilds.map(zipchild => {
                                 return (
                                     <tr>
                                         <td>{zipchild.Zip}</td>

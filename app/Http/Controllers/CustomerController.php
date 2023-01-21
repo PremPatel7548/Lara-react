@@ -158,4 +158,21 @@ class CustomerController extends Controller
         $customer = zipcodesearch::find($id);
         return $customer;
     }
+
+    public function childsearch(Request $req)
+    {
+        $search = $req['search'];
+        print_r($search);
+        //exit;
+        
+        if($search == "")
+        {
+            return NULL;
+        }
+        else
+        {
+            $cust=realtorScrapedDump::where('Zip','=',$search)->first();
+            return $cust;
+        }
+    }
 }
